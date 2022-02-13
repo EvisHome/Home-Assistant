@@ -26,6 +26,17 @@ I am using an automation on Home Assistant start to set the theme to my custom t
 
 Some examples of my dashboards below
 
-![HA Overview](/examples/HA-overview-dashboard.png)
+## NETWORK (Dashboard)
+
+* custom:mini-graph-card
+* [card-mod](https://github.com/thomasloven/lovelace-card-mod) by Thomas Loven
 
 ![HA Overview](/examples/Network-dashboard.png)
+
+
+## Home Assistant Overview
+
+![HA Overview](/examples/HA-overview-dashboard.png)
+
+
+
