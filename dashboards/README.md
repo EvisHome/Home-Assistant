@@ -5,7 +5,7 @@ Standard HA Integrations:
 
 Custom Integrations Used:
 * [sensor.unifigatewar](https://github.com/custom-components/sensor.unifigateway)
-* [Unifi-Device-info](https://github.com/w1tw0lf/Unifi-Device-info)
+* [unifi-device-info](https://github.com/w1tw0lf/Unifi-Device-info) | created separate sensors scripts for APs, switch and UDMP to pull more info.
 
 Custom HACS frontend cards & elements used:
 * [mini-graph-card](https://github.com/kalkih/mini-graph-card)
