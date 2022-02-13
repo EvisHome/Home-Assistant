@@ -11,3 +11,7 @@ Custom HACS frontend cards & elements used:
 * [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
 ![HA Overview](/examples/Network-dashboard.png)
+
+## Access Points (Dashboard)
+
+![Access Points](/examples/HA-AccessPoints.png)
