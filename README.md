@@ -21,3 +21,6 @@ I am using an automation on Home Assistant start to set the theme to my custom t
 
 Some examples of my dashboards below
 
+![HA Overview](/examples/HA-overview-dashboard.png)
+
+![HA Overview](/examples/Network-dashboard.png)
