@@ -1,7 +1,7 @@
 # home-assistant
 My Home Assistant Configurations
 
-I am using an automation on Home Assistant start to set the theme to my custom theme
+I am using an automation on Home Assistant start to set the theme to my custom theme, so I everyone has the same theme though backend-selected.
 
 ```
 - id: '1602845089462'
@@ -17,3 +17,7 @@ I am using an automation on Home Assistant start to set the theme to my custom t
       name: Evis Theme
   mode: single
 ```
+
+
+Some examples of my dashboards below
+
