@@ -5,9 +5,7 @@ Standard HA Integrations:
 
 Custom Integrations Used:
 * [sensor.unifigatewar](https://github.com/custom-components/sensor.unifigateway)
-
-I followed this tutorial
-https://pythonawesome.com/unifi-ap-device-info-via-api-for-home-assistant/
+* [Unifi-Device-info](https://github.com/w1tw0lf/Unifi-Device-info)
 
 Custom HACS frontend cards & elements used:
 * [mini-graph-card](https://github.com/kalkih/mini-graph-card)
