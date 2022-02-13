@@ -19,4 +19,4 @@ Custom HACS frontend cards & elements used:
 
 ## DNS (Dashboard)
 
-![DNS](/examples/HA-DNS-dashbboard.png)
+![DNS](/examples/HA-DNS-dashboard.png)
