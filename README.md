@@ -28,6 +28,9 @@ Some examples of my dashboards below
 
 ## NETWORK (Dashboard)
 
+Standard HA Integrations:
+* Unifi Network
+
 Custom Integrations Used:
 * [sensor.unifigatewar](https://github.com/custom-components/sensor.unifigateway)
 
