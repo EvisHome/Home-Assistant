@@ -26,7 +26,7 @@ I am using an automation on Home Assistant start to set the theme to my custom t
 
 ## Home Assistant Overview
 
-![HA Overview](/examples/HA-overview-dashboard.png)
+![HA Overview](/examples/HA-overview-dashboard-3.png)
 
 
 
