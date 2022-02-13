@@ -8,7 +8,7 @@
           - type: custom:mini-graph-card
             icon: mdi:web
             height: 50
-            hours_to_show: 20
+            hours_to_show: 24
             points_per_hour: 5
             line_width: 2
             show:
