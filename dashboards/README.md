@@ -16,3 +16,7 @@ Custom HACS frontend cards & elements used:
 ## Access Points (Dashboard)
 
 ![Access Points](/examples/HA-AccessPoints.png)
+
+## DNS (Dashboard)
+
+![DNS](/examples/HA-DNS-dashbboard.png)
