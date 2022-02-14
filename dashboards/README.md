@@ -19,4 +19,11 @@ Custom HACS frontend cards & elements used:
 
 ## DNS (Dashboard)
 
+Standard HA Integrations:
+* Adguard Home
+* Glances
+
+Custom Integrations Used:
+* Monitor Docker
+
 ![DNS](/examples/HA-DNS-dashboard.png)
