@@ -26,4 +26,7 @@ Standard HA Integrations:
 Custom Integrations Used:
 * Monitor Docker
 
+Custom HACS frontend cards & elements used:
+* custom:multiple-entity-row
+
 ![DNS](/examples/HA-DNS-dashboard.png)
