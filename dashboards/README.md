@@ -1,5 +1,7 @@
 ## DOCKER SERVER (Dashboard)
 
+-- drop me a line if you need more detailed setup info and I'll see what I can do --
+
 Standard HA Integrations
 * Glances (glances container needs to run on the remote docker)
 
