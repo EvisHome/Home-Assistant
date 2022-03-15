@@ -1,5 +1,12 @@
 ## DOCKER SERVER (Dashboard)
 
+Integrations Used:
+* Monitor Docker
+* [Scheduler](* [mini-graph-card](https://github.com/nielsfaber/scheduler-component))
+* Glances
+
+Frontend Cards:
+* [scheduler-card](https://github.com/nielsfaber/scheduler-card)
 
 ## NETWORK (Dashboard)
 
