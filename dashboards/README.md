@@ -15,6 +15,8 @@ Frontend Cards:
 * [auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
 * [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
+![Docker Server](/examples/HA-Docker-Server-dashboard.png)
+
 ## NETWORK (Dashboard)
 
 Standard HA Integrations:
