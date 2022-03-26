@@ -241,6 +241,7 @@ filter:
                             type: area
                             opacity: 0.3
                             name: Upload
+                            unit: kB/s
                             yaxis_id: network
                             color: skyblue
                             group_by:
@@ -254,6 +255,7 @@ filter:
                             type: area
                             opacity: 0.3
                             name: Download
+                            unit: kB/s
                             yaxis_id: network
                             color: darkorange
                             group_by:
