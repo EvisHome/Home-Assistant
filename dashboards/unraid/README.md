@@ -16,7 +16,8 @@ List of integrations needed to set this up:
 
 * [Glances](https://github.com/nicolargo/glances) - This is my go to integration for monitoring my servers statistics (depending on your system and OS you can get different access to different sensors, CPU usage, RAM usages, disck usasge, container stats, temps, Fan speeds etc.)
 
-* [Monitor Docker](https://github.com/ualex73/monitor_docker) & Docker-Socket-Proxy - Control your docker instances/containers, pay attention to the security!
+* [Monitor Docker](https://github.com/ualex73/monitor_docker) & Docker-Socket-Proxy - Control your docker instances/containers, pay attention to the security! You could probably use just the Unraid-API for this dashboard, but I am using this as my integration to my other docker instances also.
+
 * [browser_mod](https://github.com/thomasloven/hass-browser_mod) - In this dashboard I used browser_mod for custom popups, to provide more details on the Docker containers.
 
 &nbsp;
