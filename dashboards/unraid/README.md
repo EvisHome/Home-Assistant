@@ -131,4 +131,8 @@ List of cards used:
 
 ### CARDS
 
-| ![Containers Running](/dashboards/unraid/img/containers-running.png) | Containers Running uses custom:auto-entities to automatically list all containers with state "on". Custom:layout-card is used to will the card in 3 rows with custom:button-cards presenting each individual container.
+| CARD | Containers Running |
+|:-:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="/dashboards/unraid/img/containers-running.png" width="250px">  | Containers Running uses custom:auto-entities to automatically list all containers with state "on". Custom:layout-card fills the card in 3 columns, with custom:button-cards presenting each individual container.</br><br>Containers can be turned of from the Green Indicator Circle (confirmation popup). By clicking the button-card, custom popup, using browser-mod integration is shown, with container specific details. |
+| <img src="/dashboards/unraid/img/containers-running.png"> | Container - Popup</br><br> |
+
