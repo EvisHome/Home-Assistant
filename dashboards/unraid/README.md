@@ -24,6 +24,7 @@ List of integrations needed to set this up:
 On Unraid side, you need to setup these.
 
 **1. Unraid-API**
+
 The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI/wiki/Home-Assistant-Integration) by ElectricBrainUK
 
 &nbsp;
@@ -39,6 +40,7 @@ The setup process is really well described [here](https://github.com/ElectricBra
 ### HOME ASSISTANT
 
 **1. Unraid-API**
+
 The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI/wiki/Home-Assistant-Integration) by ElectricBrainUK
 
 &nbsp;
