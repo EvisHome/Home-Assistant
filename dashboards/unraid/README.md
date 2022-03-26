@@ -21,10 +21,9 @@ List of integrations needed to set this up:
 
 ### UNRAID
 
-On Unraid side, three Docker containers needs to be set first
+On Unraid side, you need to setup these.
 
 **1. Unraid-API**
-
 The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI/wiki/Home-Assistant-Integration) by ElectricBrainUK
 
 &nbsp;
@@ -40,6 +39,7 @@ The setup process is really well described [here](https://github.com/ElectricBra
 ### HOME ASSISTANT
 
 **1. Unraid-API**
+The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI/wiki/Home-Assistant-Integration) by ElectricBrainUK
 
 &nbsp;
 
