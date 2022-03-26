@@ -1,0 +1,110 @@
+type: custom:auto-entities
+card:
+  type: custom:layout-card
+  layout_type: horizontal
+  layout_options:
+    width: 120
+    max_cols: 3
+card_param: cards
+filter:
+  include:
+    - entity_id: switch.unraiddocker*
+      not:
+        state: 'on'
+      options:
+        type: custom:button-card
+        layout: vertical
+        show_name: true
+        show_state: false
+        show_icon: false
+        show_label: false
+        show_entity_picture: true
+        tap_action:
+          action: more-info
+        style: |
+          ha-card {
+            box-shadow: none;
+            overflow: visible;
+            border-top: 1px solid #333333;
+          }
+        name: |
+          [[[
+            return states['this.entity_id'.replace("switch.", "sensor.")].attributes.friendly_name;
+          ]]]
+        entity_picture: |
+          [[[
+            if (states['this.entity_id'].attributes.friendly_name.includes("phpmyadmin"))
+              return '/local/icons/phpmyadmin.png';
+            if (states['this.entity_id'].attributes.friendly_name.includes("mariadb"))
+              return '/local/icons/mariadb.png';
+            if (states['this.entity_id'].attributes.friendly_name.includes("postgre"))
+              return '/local/icons/postgresql.png';
+            else if (states['this.entity_id'].attributes.friendly_name.includes("mongodb"))
+              return '/local/icons/mongodb.png';
+            else
+              return '/local/icons/' + 'this.entity_id'.replace("switch.unraiddocker_", "") + '.png';
+          ]]]
+        state_display: |
+          [[[
+            if (states['this.entity_id'].state == "on")
+              return states['this.entity_id'.replace("switch.", "sensor.")].attributes.cpu_percentage + "% <ha-icon icon='mdi:pulse' style='width: 18px; height: 18px; color: white;'>";
+            else
+              return " ";
+          ]]]
+        styles:
+          name:
+            - position: absolute
+            - top: 10px
+            - color: white
+            - font-size: 15px
+          state:
+            - position: absolute
+            - left: 8px
+            - bottom: 5px
+            - font-size: 12px
+          icon:
+            - position: absolute
+            - top: 40%
+            - margin: 0px
+            - padding: 0px
+            - width: 40px
+          card:
+            - border-radius: 8px
+            - height: 100px
+            - margin: 0px
+            - padding: 0px
+          custom_fields:
+            power:
+              - margin: 0px
+              - padding: 0px
+              - position: absolute
+              - width: 30px
+              - right: '-5px'
+              - bottom: 3px
+        custom_fields:
+          power:
+            card:
+              type: custom:button-card
+              entity: this.entity_id
+              name: Running Containers
+              icon: mdi:circle-outline
+              show_name: false
+              show_state: false
+              color: red
+              styles:
+                icon:
+                  - color: red
+              style: |
+                ha-card {
+                  box-shadow: none;
+                }
+              tap_action:
+                action: toggle
+                confirmation:
+                  text: |
+                    [[[
+                      if (states['this.entity_id'].state == "on")
+                        return "Turn OFF " + 'this.entity_id'.replace("switch.unraiddocker_", "");
+                      else
+                        return "Turn ON " + 'this.entity_id'.replace("switch.unraiddocker_", "");
+                    ]]]
