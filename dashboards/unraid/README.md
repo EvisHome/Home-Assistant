@@ -12,8 +12,7 @@
 
 List of integrations needed to set this up:
 
-* [Unraid API](https://github.com/ElectricBrainUK/UnraidAPI)
-*  - This will allow you to control the 
+* [Unraid API](https://github.com/ElectricBrainUK/UnraidAPI) - This will allow you to control the 
 
 * Glances
 - This is my go to integration for monitoring my servers statistics
