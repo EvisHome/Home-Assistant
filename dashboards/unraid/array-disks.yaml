@@ -1,0 +1,43 @@
+type: custom:auto-entities
+card:
+  type: entities
+  show_header_toggle: false
+  title: Array Disks
+  state_color: false
+filter:
+  include:
+    - entity_id: '*_mnt_disk*used_percent'
+      options:
+        type: custom:bar-card
+        entities:
+          - icon: mdi:harddisk
+            unit_of_measurement: '%'
+            min: 0
+            max: 100
+            color: darkgreen
+        severity:
+          - color: green
+            from: 0
+            to: 50
+          - color: darkorange
+            from: 51
+            to: 75
+          - color: red
+            from: 76
+            to: 100
+        style: |
+          :host {
+            box-shadow: none;
+          }
+          bar-card-currentbar, bar-card-backgroundbar {
+            border-radius: 0px;
+          }
+          ha-card {
+            box-shadow: none;
+            margin: -10px
+          }
+          bar-card-name, bar-card-value {
+            color: black;
+            font-weight: normal;
+          }
+
