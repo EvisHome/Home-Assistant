@@ -1,0 +1,41 @@
+type: custom:apexcharts-card
+graph_span: 48h
+show:
+  loading: false
+header:
+  show: true
+  title: Array
+  standard_format: false
+  show_states: true
+  colorize_states: true
+color_list:
+  - green
+  - rgba(253,80,80,1)
+  - skyblue
+all_series_config:
+  stroke_width: 2
+  opacity: 1
+chart_type: donut
+series:
+  - entity: sensor.unraid_array_free_space
+    name: Free Space
+    unit: TB
+    float_precision: 1
+    show:
+      in_header: false
+  - entity: sensor.unraid_array_used_space
+    name: Used Space
+    unit: TB
+    float_precision: 1
+    show:
+      in_header: false
+  - entity: sensor.unraid_array_total_space
+    name: Total Space
+    unit: TB
+    float_precision: 1
+    show:
+      in_chart: false
+style: |
+  ha-card {
+    padding-bottom: 30px;
+  }
