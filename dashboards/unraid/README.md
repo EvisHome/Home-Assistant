@@ -9,10 +9,10 @@
 * Monitor Docker
 * browser_mod
 
-#### -- Unraid --
+#### -- UNRAID --
 
 
-#### -- Home Assistant --
+#### -- HOME ASSISTANT --
 
 
 ### CARDS
