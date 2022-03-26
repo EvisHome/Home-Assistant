@@ -2,10 +2,13 @@
 
 ![Unraid Overview](/dashboards/unraid/img/HA-Unraid-dashboard-overview.png)
 
+## ADD-ONS
+
+* MQTT Broker
 
 ## INTEGRATIONS
 
-List of integrations needed to set this up
+List of integrations needed to set this up:
 
 * [Unraid API](https://github.com/ElectricBrainUK/UnraidAPI)
 * Glances
@@ -18,6 +21,8 @@ List of integrations needed to set this up
 On Unraid side, three Docker containers needs to be set first
 
 **1. Unraid-API**
+
+The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI/wiki/Home-Assistant-Integration) by ElectricBrainUK
 
 **2. Glances**
 
