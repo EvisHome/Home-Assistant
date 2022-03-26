@@ -14,9 +14,9 @@ List of integrations needed to set this up:
 
 * [Unraid API](https://github.com/ElectricBrainUK/UnraidAPI) - This will allow you to control the 
 
-* Glances - This is my go to integration for monitoring my servers statistics (depending on your system and OS you can get different access to different sensors, CPU usage, RAM usages, disck usasge, container stats, temps, Fan speeds etc.)
+* [Glances](https://github.com/nicolargo/glances) - This is my go to integration for monitoring my servers statistics (depending on your system and OS you can get different access to different sensors, CPU usage, RAM usages, disck usasge, container stats, temps, Fan speeds etc.)
 
-* [Monitor Docker](https://github.com/ualex73/monitor_docker) & [DockerProxy](https://github.com/Tecnativa/docker-socket-proxy) - I am using this as my default integration to control any docker instance.
+* [Monitor Docker](https://github.com/ualex73/monitor_docker) & Docker-Socket-Proxy - Control your docker instances/containers, pay attention to the security!
 * [browser_mod](https://github.com/thomasloven/hass-browser_mod) - In this dashboard I used browser_mod for custom popups, to provide more details on the Docker containers.
 
 &nbsp;
@@ -41,7 +41,9 @@ Take note of the ip and port you Glances is runnign, you need these in Home Assi
 
 &nbsp;
 
-**3. Monitor Docker**
+**3. Monitor Docker & Docker-Socket-Proxy**
+
+In order the Monitor Docker integration to work, you need Docker-Socket-Proxy on Unraid side.
 
 &nbsp;
 
