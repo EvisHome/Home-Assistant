@@ -2,7 +2,7 @@
 
 ![Unraid Overview](/dashboards/unraid/img/HA-Unraid-dashboard-overview.png)
 
-### INTEGRATIONS
+## INTEGRATIONS
 
 List of integrations needed to set this up
 
@@ -11,7 +11,7 @@ List of integrations needed to set this up
 * Monitor Docker
 * browser_mod
 
-#### -- UNRAID --
+### UNRAID
 
 On Unraid side, three Docker containers needs to be set first
 
@@ -21,7 +21,7 @@ On Unraid side, three Docker containers needs to be set first
 
 3. Monitor Docker
 
-#### -- HOME ASSISTANT --
+### HOME ASSISTANT
 
 On Home Assistant side connection to to your Glances docker is easy, through default integration.
 
@@ -29,4 +29,4 @@ On Home Assistant side connection to to your Glances docker is easy, through def
 
 Search for Glances and fill in the setup form. For name you want to use unique name (e.g. Unraid-1) so that it's easier to indentify the entities if you have multiple Glances integrations.
 
-### CARDS
+## CARDS
