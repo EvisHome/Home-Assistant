@@ -14,11 +14,10 @@ List of integrations needed to set this up:
 
 * [Unraid API](https://github.com/ElectricBrainUK/UnraidAPI) - This will allow you to control the 
 
-* Glances
-- This is my go to integration for monitoring my servers statistics
+* Glances - This is my go to integration for monitoring my servers statistics (depending on your system and OS you can get different access to different sensors, CPU usage, RAM usages, disck usasge, container stats, temps, Fan speeds etc.)
 
 * [Monitor Docker](https://github.com/ualex73/monitor_docker) - I am using this as my default integration to control any docker instance.
-* [browser_mod](https://github.com/thomasloven/hass-browser_mod) (this is used for custom popup, to provide more details on the Docker containers.
+* [browser_mod](https://github.com/thomasloven/hass-browser_mod) - In this dashboard I used browser_mod for custom popups, to provide more details on the Docker containers.
 
 &nbsp;
 
