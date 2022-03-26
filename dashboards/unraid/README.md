@@ -27,7 +27,7 @@ On Unraid side, three Docker containers needs to be set first
 
 On Home Assistant side connection to to your Glances docker is easy, through default integration.
 
-*Configurations -> Devices & Services -> Add Integration*
+&ensp;&ensp; *Configurations -> Devices & Services -> Add Integration*
 
 Search for Glances and fill in the setup form. For name you want to use unique name (e.g. Unraid-1) so that it's easier to indentify the entities if you have multiple Glances integrations.
 
