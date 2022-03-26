@@ -1,6 +1,6 @@
 ## UNRAID DASHBOARD
 
-Monitor and control you Unraid instance(s). This allows run Mover, Parity Check, Power Unraid On/Off, monitor various statistics, control and monitor Docker containers. And you can build automations and alarms based on all these sensors or like actionable notifications of containers with higher than normal CPU/MEM usage etc.
+Monitor and control you Unraid instance(s). This allows to run Mover, Parity Check, Power Unraid On/Off, turn the Array On/Off, monitor various statistics, control and monitor Docker containers. It's possible to build automations and alarms based on all these sensors or like actionable notifications of containers with higher than normal CPU/MEM usage etc.
 
 
 ![Unraid Overview](/dashboards/unraid/img/HA-Unraid-dashboard-overview.png)
