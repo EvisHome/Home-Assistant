@@ -8,6 +8,8 @@
 
 &nbsp;
 
+&nbsp;
+
 ## INTEGRATIONS
 
 List of integrations needed to set this up:
@@ -19,6 +21,8 @@ List of integrations needed to set this up:
 * [Monitor Docker](https://github.com/ualex73/monitor_docker) & [Docker-Socket-Proxy](https://github.com/Tecnativa/docker-socket-proxy) - Control your docker instances/containers, pay attention to the security! I am using this as my integration to my other docker instances also, but you could instead modify the dashboard to use Unraid-API only.
 
 * [browser_mod](https://github.com/thomasloven/hass-browser_mod) - In this dashboard I used browser_mod for custom popups, to provide more details on the Docker containers.
+
+&nbsp;
 
 &nbsp;
 
@@ -44,7 +48,9 @@ Take note of the ip and port you Glances is runnign, you need these in Home Assi
 
 **3. Monitor Docker & Docker-Socket-Proxy**
 
-In order the Monitor Docker integration to work, you need Docker-Socket-Proxy on Unraid side. This is quite well documented, also check the Q&A and the Tecnativa Docker-Socket-Proxy security recommendations.
+In order the Monitor Docker integration to work, you need run Docker-Socket-Proxy on Unraid side. Check the QA part of the [Monitor Docker readme](https://github.com/ualex73/monitor_docker), also check the [Tecnativa Docker-Socket-Proxy](https://github.com/Tecnativa/docker-socket-proxy) security recommendations.
+
+&nbsp;
 
 &nbsp;
 
@@ -66,4 +72,31 @@ Search for Glances and fill in the setup form. You want to use unique name (e.g.
 
 &nbsp;
 
-## CARDS
+**3. Docker Monitor**
+
+&nbsp;
+
+&nbsp;
+
+## VIEW & CARDS
+
+For this view I used I used View Type Horizontal (layout-card) the vertical-stack to define the columns of cards. You can easily arrange yours as needed.
+
+### FRONTEND ELEMENTS & CUSTOM CARDS
+
+List of cards used:
+
+* vertical-stack
+* horizontal-stack
+* picture-elements
+* custom:layout-card
+* custom:button-card
+* custom:auto-entities
+* custom:bar-card
+* custom:apexcharts-card
+* history-graph
+* custom:logbook-card
+
+### CARDS
+
+
