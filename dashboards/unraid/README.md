@@ -16,7 +16,7 @@ List of integrations needed to set this up:
 
 * Glances - This is my go to integration for monitoring my servers statistics (depending on your system and OS you can get different access to different sensors, CPU usage, RAM usages, disck usasge, container stats, temps, Fan speeds etc.)
 
-* [Monitor Docker](https://github.com/ualex73/monitor_docker) - I am using this as my default integration to control any docker instance.
+* [Monitor Docker](https://github.com/ualex73/monitor_docker) & [DockerProxy](https://github.com/Tecnativa/docker-socket-proxy) - I am using this as my default integration to control any docker instance.
 * [browser_mod](https://github.com/thomasloven/hass-browser_mod) - In this dashboard I used browser_mod for custom popups, to provide more details on the Docker containers.
 
 &nbsp;
