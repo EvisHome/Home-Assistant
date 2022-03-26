@@ -28,6 +28,7 @@ The setup process is really well described [here](https://github.com/ElectricBra
 
 **3. Monitor Docker**
 
+&nbsp
 
 ### HOME ASSISTANT
 
