@@ -6,6 +6,8 @@
 
 * MQTT Broker
 
+&nbsp;
+
 ## INTEGRATIONS
 
 List of integrations needed to set this up:
@@ -15,6 +17,7 @@ List of integrations needed to set this up:
 * [Monitor Docker](https://github.com/ualex73/monitor_docker)
 * browser_mod
 
+&nbsp;
 
 ### UNRAID
 
@@ -26,6 +29,8 @@ The setup process is really well described [here](https://github.com/ElectricBra
 
 **2. Glances**
 
+&nbsp;
+
 **3. Monitor Docker**
 
 &nbsp;
@@ -34,6 +39,7 @@ The setup process is really well described [here](https://github.com/ElectricBra
 
 **1. Unraid-API
 
+&nbsp;
 
 **2. Glances**
 
@@ -43,5 +49,6 @@ On Home Assistant side connection to to your Glances docker is easy, through def
 
 Search for Glances and fill in the setup form. You want to use unique name (e.g. Unraid-1) so that it's easier to indentify the entities when you start having multiple Glances integrations.
 
+&nbsp;
 
 ## CARDS
