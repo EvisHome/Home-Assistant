@@ -1,0 +1,103 @@
+type: picture-elements
+image: local/unraid2.jpg
+title: UnRAID Server
+elements:
+  - type: custom:button-card
+    entity: binary_sensor.tower_server
+    name: Version
+    state_display: |
+      [[[
+        return states['binary_sensor.tower_server'].attributes.version;
+      ]]]
+    layout: icon_name_state
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 53%
+      left: 75%
+      width: 50%
+      height: 20%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,0.8)
+        - padding-left: 14px
+        - justify-self: start
+      card:
+        - font-size: 14px
+        - font-weight: bold
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: binary_sensor.tower_server
+    name: Version
+    state_display: |
+      [[[
+        return states['binary_sensor.tower_server'].attributes.cpu;
+      ]]]
+    layout: icon_name_state
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 93%
+      left: 19%
+      width: 80%
+      height: 20%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,0.8)
+        - padding-left: 14px
+        - justify-self: start
+      card:
+        - font-size: 12px
+        - font-weight: normal
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: binary_sensor.tower_server
+    name: Version
+    state_display: |
+      [[[
+        return states['binary_sensor.tower_server'].attributes.memory;
+      ]]]
+    layout: icon_name_state
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 99%
+      left: 19%
+      width: 80%
+      height: 20%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,0.8)
+        - padding-left: 14px
+        - justify-self: start
+      card:
+        - font-size: 12px
+        - font-weight: normal
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
