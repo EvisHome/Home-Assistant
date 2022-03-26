@@ -1,6 +1,6 @@
 ## OVERVIEW
 
-
+![Docker Server](/img/HA-Docker-Server-dashboard.png)
 
 ### INTEGRATIONS
 
