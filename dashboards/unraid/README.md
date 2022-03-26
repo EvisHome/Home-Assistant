@@ -21,7 +21,7 @@ List of integrations needed to set this up:
 
 ### UNRAID
 
-On Unraid side, you need to setup these.
+On Unraid side, you must have Docker enabled to setup the containers below.
 
 **1. Unraid-API**
 
@@ -31,7 +31,11 @@ The setup process is really well described [here](https://github.com/ElectricBra
 
 **2. Glances**
 
-Setup Glances docker container in Unraid
+Setup Glances docker container in Unraid, this is quite straight forward.
+
+&ensp;&ensp; APPS -> Search for Glances -> Install
+
+Once installed, open in WebUI and take note of the ip and port, you need these in Home Assistant when setting up the integration.
 
 &nbsp;
 
