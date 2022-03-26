@@ -1,6 +1,6 @@
 ## UNRAID DASHBOARD
 
-Monitor and control you Unraid instance(s). This allows run Mover, Parity Check, Power Unraid On/Off, monitor various statistics, control and monitor Docker containers. And you can build automations and alarms based on all these sensors or like actionable notifications of containers with higher than normal CPU/MEM usage etc. .. imaginations is the limit.
+Monitor and control you Unraid instance(s). This allows run Mover, Parity Check, Power Unraid On/Off, monitor various statistics, control and monitor Docker containers. And you can build automations and alarms based on all these sensors or like actionable notifications of containers with higher than normal CPU/MEM usage etc.
 
 
 ![Unraid Overview](/dashboards/unraid/img/HA-Unraid-dashboard-overview.png)
@@ -133,6 +133,6 @@ List of cards used:
 
 | CARD | Containers Running |
 |:-:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="/dashboards/unraid/img/containers-running.png">  | Containers Running uses custom:auto-entities to automatically list all containers with state "on". Custom:layout-card fills the card in 3 columns, with custom:button-cards presenting each individual container.</br><br>Containers can be turned of from the Green Indicator Circle (confirmation popup). By clicking the button-card, custom popup, using browser-mod integration is shown, with container specific details.</br><br>[containers-running.yaml](/dashboards/unraid/containers-running.yaml) </br> The icons I am currently manually saving from Unraid to HA www/icons folder and renaming them to match the container name. |
+| <img src="/dashboards/unraid/img/containers-running.png">  | Containers Running uses custom:auto-entities to automatically list all containers with state "on". Custom:layout-card fills the card in 3 columns, with custom:button-cards presenting each individual container.</br><br>Containers can be turned of from the Green Indicator Circle (confirmation popup). By clicking the button-card, custom popup, using browser-mod integration is shown, with container specific details.</br><br>The icons I am currently manually saving from Unraid to HA www/icons folder and renaming them to match the container name.</br></br> [containers-running.yaml](/dashboards/unraid/containers-running.yaml) </br> |
 | <img src="/dashboards/unraid/img/containers-running-popup.png"> | Container - Popup</br><br>Defined within the containers-running.yaml. Uses custom:button-card for the first "Power" element. 2nd element is history-graph, 4th and 5th element uses custom:apexcharts-card. Final element is custom:logbook-card. </br> <br> </br> |
 
