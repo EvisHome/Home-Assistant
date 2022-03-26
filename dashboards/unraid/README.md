@@ -48,7 +48,7 @@ Take note of the ip and port you Glances is runnign, you need these in Home Assi
 
 **3. Monitor Docker & Docker-Socket-Proxy**
 
-In order the Monitor Docker integration to work, you need run Docker-Socket-Proxy on Unraid side. Check the QA part of the [Monitor Docker readme](https://github.com/ualex73/monitor_docker), also check the [Tecnativa Docker-Socket-Proxy](https://github.com/Tecnativa/docker-socket-proxy) security recommendations.
+In order the Monitor Docker integration to work, you need run to Docker-Socket-Proxy on Unraid side. Check the QA part of the [Monitor Docker readme](https://github.com/ualex73/monitor_docker), also check the [Tecnativa Docker-Socket-Proxy](https://github.com/Tecnativa/docker-socket-proxy) security recommendations.
 
 &nbsp;
 
@@ -74,13 +74,38 @@ Search for Glances and fill in the setup form. You want to use unique name (e.g.
 
 **3. Docker Monitor**
 
+Install Monitor Docker through HACS [Monitor Docker readme](https://github.com/ualex73/monitor_docker). To use the monitor_docker you have to add the config in to your configuration.yaml, below is my config.
+
+```YAML
+## MONITOR DOCKER ##
+monitor_docker:
+  - name: UnraidDocker
+    url: tcp://Your-Unraid-IP:Docker-Socket-Proxy-Port
+    scan_interval: 30
+    monitored_conditions:
+      - version
+      - containers_running
+      - containers_paused
+      - containers_stopped
+      - containers_cpu_percentage
+      - containers_memory_percentage
+      - cpu_percentage
+      - health
+      - uptime
+      - memory
+      - memory_percentage
+      - network_speed_up
+      - network_speed_down
+      - allinone
+```
+
 &nbsp;
 
 &nbsp;
 
 ## VIEW & CARDS
 
-For this view I used I used View Type Horizontal (layout-card) the vertical-stack to define the columns of cards. You can easily arrange yours as needed.
+For this view I used I used *View Type Horizontal (layout-card)* and *vertical-stacks* to define the columns of cards. You can easily arrange yours as needed.
 
 ### FRONTEND ELEMENTS & CUSTOM CARDS
 
@@ -96,6 +121,10 @@ List of cards used:
 * custom:apexcharts-card
 * history-graph
 * custom:logbook-card
+
+&nbsp;
+
+&nbsp;
 
 ### CARDS
 
