@@ -37,7 +37,7 @@ Setup Glances docker container in Unraid, this is quite straight forward.
 
 &ensp;&ensp; APPS -> Search for Glances -> Install
 
-Once installed, open in WebUI and take note of the ip and port, you need these in Home Assistant when setting up the integration.
+Take note of the ip and port you Glances is runnign, you need these in Home Assistant when setting up the integration. You can also open the WebUI to check all the info Glances is giving (Note! all might not be available through the integration)
 
 &nbsp;
 
