@@ -1,0 +1,373 @@
+type: custom:auto-entities
+card:
+  type: custom:layout-card
+  layout_type: horizontal
+  layout_options:
+    width: 120
+    max_cols: 3
+card_param: cards
+sort:
+  method: name
+filter:
+  include:
+    - entity_id: sensor.unraiddocker*
+      state: running
+      options:
+        type: custom:button-card
+        layout: vertical
+        show_name: true
+        show_state: false
+        show_icon: false
+        show_label: false
+        show_entity_picture: true
+        tap_action:
+          action: fire-dom-event
+          browser_mod:
+            command: call-service
+            service: browser_mod.popup
+            service_data:
+              deviceID: this
+              title: Container
+              large: false
+              card:
+                type: vertical-stack
+                cards:
+                  - type: custom:button-card
+                    layout: icon_name_state2nd
+                    show_name: true
+                    show_state: true
+                    show_icon: false
+                    show_label: false
+                    show_entity_picture: true
+                    style: |
+                      ha-card {
+                        box-shadow: none;
+                        overflow: visible;
+                        border-top: 0px solid #333333;
+                      }
+                    tap_action:
+                      action: more-info
+                    name: |
+                      [[[
+                        return states['this.entity_id'.replace("switch.", "sensor.")].attributes.friendly_name;
+                      ]]]
+                    entity_picture: |
+                      [[[
+                        if (states['this.entity_id'].attributes.friendly_name.includes("phpmyadmin"))
+                          return '/local/icons/phpmyadmin.png';
+                        if (states['this.entity_id'].attributes.friendly_name.includes("mariadb"))
+                          return '/local/icons/mariadb.png';
+                        if (states['this.entity_id'].attributes.friendly_name.includes("postgre"))
+                          return '/local/icons/postgresql.png';
+                        else if (states['this.entity_id'].attributes.friendly_name.includes("mongodb"))
+                          return '/local/icons/mongodb.png';
+                        else
+                          return '/local/icons/' + 'this.entity_id'.replace("sensor.unraiddocker_", "") + '.png';
+                      ]]]
+                    state_display: |
+                      [[[
+                        if (states['this.entity_id'].state == "on")
+                          return states['this.entity_id'.replace("switch.", "sensor.")].attributes.cpu_percentage + "% <ha-icon icon='mdi:pulse' style='width: 18px; height: 18px; color: white;'>";
+                        else
+                          return " ";
+                      ]]]
+                    styles:
+                      name:
+                        - position: absolute
+                        - left: 80px
+                        - top: 28px
+                        - color: white
+                        - font-size: 20px
+                      state:
+                        - position: absolute
+                        - right: 80px
+                        - top: 22px
+                        - font-size: 12px
+                      icon:
+                        - position: absolute
+                        - left: 20px
+                        - top: 16px
+                        - margin-left: 0px
+                        - padding: 0px
+                        - width: 45px
+                      card:
+                        - border-radius: 0px
+                        - height: 70px
+                        - margin: 0px
+                        - margin-bottom: '-10px'
+                        - padding: 0px
+                      custom_fields:
+                        power:
+                          - margin: 0px
+                          - padding: 0px
+                          - position: absolute
+                          - width: 80px
+                          - right: 0px
+                          - top: 20px
+                    custom_fields:
+                      power:
+                        card:
+                          type: custom:button-card
+                          entity: |
+                            [[[
+                              return 'this.entity_id'.replace("sensor.", "switch.");
+                            ]]]
+                          name: Running Containers
+                          icon: mdi:power
+                          show_name: false
+                          show_state: false
+                          color: orange
+                          style: |
+                            ha-card {
+                              box-shadow: none;
+                            }
+                          hold_action:
+                            action: more-info
+                          tap_action:
+                            action: toggle
+                            confirmation:
+                              text: |
+                                [[[
+                                  if (states['this.entity_id'].state == "running")
+                                    return "Turn OFF " + states['this.entity_id'].attributes.friendly_name;
+                                  else
+                                    return "Turn ON " + states['this.entity_id'].attributes.friendly_name;
+                                ]]]
+                  - type: history-graph
+                    entities:
+                      - entity: this.entity_id
+                    style: |
+                      ha-card {
+                          margin: 0px;
+                          margin-top: 0px;
+                          padding: 0px;
+                          border-radius: 0px;
+                          border: 0px;
+                          border-bottom: 2px solid #111;
+                          box-shadow: none;
+                      }
+                  - type: horizontal-stack
+                    cards:
+                      - type: custom:apexcharts-card
+                        apex_config:
+                          chart:
+                            height: 160px
+                          grid:
+                            show: true
+                            borderColor: rgba(255,255,255,0.2)
+                          legend:
+                            show: false
+                        header:
+                          title: System Resources
+                          show: true
+                          show_states: true
+                          colorize_states: true
+                          standard_format: true
+                        all_series_config:
+                          stroke_width: 2
+                        yaxis:
+                          - id: percentage
+                            min: ~0
+                            max: ~100
+                            show: true
+                            opposite: false
+                            apex_config:
+                              tickAmount: 5
+                        series:
+                          - entity: this.entity_id
+                            attribute: cpu_percentage
+                            type: area
+                            opacity: 0.3
+                            name: CPU
+                            yaxis_id: percentage
+                            color: skyblue
+                            group_by:
+                              func: avg
+                              duration: 10min
+                            show:
+                              legend_value: false
+                            fill_raw: last
+                          - entity: this.entity_id
+                            attribute: memory_percentage
+                            type: area
+                            opacity: 0.3
+                            name: MEM
+                            yaxis_id: percentage
+                            color: darkorange
+                            group_by:
+                              func: avg
+                              duration: 10min
+                            show:
+                              legend_value: false
+                            fill_raw: last
+                        style: |
+                          ha-card {
+                              margin: 0px;
+                              padding: 0px;
+                              padding-right: 10px;
+                              border-radius: 0px;
+                              border: 0px;
+                              border-bottom: 2px solid #111;
+                              box-shadow: none;
+                          }
+                  - type: horizontal-stack
+                    cards:
+                      - type: custom:apexcharts-card
+                        apex_config:
+                          chart:
+                            height: 160px
+                          grid:
+                            show: true
+                            borderColor: rgba(255,255,255,0.2)
+                          legend:
+                            show: false
+                        header:
+                          title: Network
+                          show: true
+                          show_states: true
+                          colorize_states: true
+                          standard_format: true
+                        all_series_config:
+                          stroke_width: 2
+                        yaxis:
+                          - id: network
+                            show: true
+                            opposite: false
+                            apex_config:
+                              tickAmount: 5
+                        series:
+                          - entity: this.entity_id
+                            attribute: network_speed_up
+                            type: area
+                            opacity: 0.3
+                            name: Upload
+                            yaxis_id: network
+                            color: skyblue
+                            group_by:
+                              func: avg
+                              duration: 1min
+                            show:
+                              legend_value: false
+                            fill_raw: last
+                          - entity: this.entity_id
+                            attribute: network_speed_down
+                            type: area
+                            opacity: 0.3
+                            name: Download
+                            yaxis_id: network
+                            color: darkorange
+                            group_by:
+                              func: avg
+                              duration: 1min
+                            show:
+                              legend_value: false
+                            fill_raw: last
+                        style: |
+                          ha-card {
+                              margin: 0px;
+                              padding: 0px;
+                              padding-right: 10px;
+                              border-radius: 0px;
+                              border: 0px;
+                              border-bottom: 2px solid #111;
+                              box-shadow: none;
+                          }
+                  - type: custom:logbook-card
+                    desc: true
+                    entity: this.entity_id
+                    title: History
+                    style: |
+                      ha-card {
+                          margin: 0px;
+                          padding: 0px;
+                          padding-right: 10px;
+                          border: 0px;
+                          box-shadow: none;
+                      }
+        style: |
+          ha-card {
+            box-shadow: none;
+            overflow: visible;
+            border-top: 1px solid #333333;
+          }
+        name: |
+          [[[
+            return states['this.entity_id'.replace("switch.", "sensor.")].attributes.friendly_name;
+          ]]]
+        entity_picture: |
+          [[[
+            if (states['this.entity_id'].attributes.friendly_name.includes("phpmyadmin"))
+              return '/local/icons/phpmyadmin.png';
+            if (states['this.entity_id'].attributes.friendly_name.includes("mariadb"))
+              return '/local/icons/mariadb.png';
+            if (states['this.entity_id'].attributes.friendly_name.includes("postgre"))
+              return '/local/icons/postgresql.png';
+            else if (states['this.entity_id'].attributes.friendly_name.includes("mongodb"))
+              return '/local/icons/mongodb.png';
+            else
+              return '/local/icons/' + 'this.entity_id'.replace("sensor.unraiddocker_", "") + '.png';
+          ]]]
+        state_display: |
+          [[[
+            if (states['this.entity_id'].state == "on")
+              return states['this.entity_id'.replace("switch.", "sensor.")].attributes.cpu_percentage + "% <ha-icon icon='mdi:pulse' style='width: 18px; height: 18px; color: white;'>";
+            else
+              return " ";
+          ]]]
+        styles:
+          name:
+            - position: absolute
+            - top: 10px
+            - color: white
+            - font-size: 15px
+          state:
+            - position: absolute
+            - left: 8px
+            - bottom: 5px
+            - font-size: 12px
+          icon:
+            - position: absolute
+            - top: 40%
+            - margin: 0px
+            - padding: 0px
+            - width: 40px
+          card:
+            - border-radius: 8px
+            - height: 100px
+            - margin: 0px
+            - padding: 0px
+          custom_fields:
+            power:
+              - margin: 0px
+              - padding: 0px
+              - position: absolute
+              - width: 30px
+              - right: '-5px'
+              - bottom: 3px
+        custom_fields:
+          power:
+            card:
+              type: custom:button-card
+              entity: |
+                [[[
+                  return 'this.entity_id'.replace("sensor.", "switch.");
+                ]]]
+              name: Running Containers
+              icon: mdi:circle
+              show_name: false
+              show_state: false
+              color: lightgreen
+              style: |
+                ha-card {
+                  box-shadow: none;
+                }
+              tap_action:
+                action: toggle
+                confirmation:
+                  text: |
+                    [[[
+                      if (states['this.entity_id'].state == "running")
+                        return "Turn OFF " + states['this.entity_id'].attributes.friendly_name;
+                      else
+                        return "Turn ON " + states['this.entity_id'].attributes.friendly_name;
+                    ]]]
