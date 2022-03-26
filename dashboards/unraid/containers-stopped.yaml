@@ -6,6 +6,8 @@ card:
     width: 120
     max_cols: 3
 card_param: cards
+sort:
+  method: name
 filter:
   include:
     - entity_id: switch.unraiddocker*
