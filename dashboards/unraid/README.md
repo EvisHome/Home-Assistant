@@ -15,13 +15,15 @@ List of integrations needed to set this up
 
 On Unraid side, three Docker containers needs to be set first
 
-1. Unraid-API
+**1. Unraid-API**
 
-2. Glances
+**2. Glances**
 
-3. Monitor Docker
+**3. Monitor Docker**
 
 ### HOME ASSISTANT
+
+**3. Glances**
 
 On Home Assistant side connection to to your Glances docker is easy, through default integration.
 
