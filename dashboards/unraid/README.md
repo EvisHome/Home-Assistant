@@ -1,6 +1,6 @@
 ## OVERVIEW
 
-![Unraid Overview](/dashboards/unraid/img/HA-Docker-Server-dashboard.png)
+![Unraid Overview](/dashboards/unraid/img/HA-Unraid-dashboard-overview.png)
 
 ### INTEGRATIONS
 
