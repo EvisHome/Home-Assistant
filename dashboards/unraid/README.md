@@ -2,7 +2,7 @@
 
 ![Unraid Overview](/dashboards/unraid/img/HA-Unraid-dashboard-overview.png)
 
-## ADD-ONS
+## HOME ASSISTANT ADD-ONS
 
 * MQTT Broker
 
@@ -12,10 +12,10 @@
 
 List of integrations needed to set this up:
 
-* [Unraid API](https://github.com/ElectricBrainUK/UnraidAPI)
+* [Unraid API](https://github.com/ElectricBrainUK/UnraidAPI) - This will allow you to control the 
 * Glances
-* [Monitor Docker](https://github.com/ualex73/monitor_docker)
-* browser_mod
+* [Monitor Docker](https://github.com/ualex73/monitor_docker) - I am using this as my default integration to control any docker instance.
+* [browser_mod](https://github.com/thomasloven/hass-browser_mod) (this is used for custom popup, to provide more details on the Docker containers.
 
 &nbsp;
 
@@ -25,11 +25,13 @@ On Unraid side, you need to setup these.
 
 **1. Unraid-API**
 
-The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI/wiki/Home-Assistant-Integration) by ElectricBrainUK
+The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI) by ElectricBrainUK
 
 &nbsp;
 
 **2. Glances**
+
+Setup Glances docker container in Unraid
 
 &nbsp;
 
@@ -41,7 +43,7 @@ The setup process is really well described [here](https://github.com/ElectricBra
 
 **1. Unraid-API**
 
-The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI/wiki/Home-Assistant-Integration) by ElectricBrainUK
+The setup process is really well described [here](https://github.com/ElectricBrainUK/UnraidAPI) by ElectricBrainUK
 
 &nbsp;
 
