@@ -133,6 +133,6 @@ List of cards used:
 
 | CARD | Containers Running |
 |:-:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="/dashboards/unraid/img/containers-running.png">  | Containers Running uses custom:auto-entities to automatically list all containers with state "on". Custom:layout-card fills the card in 3 columns, with custom:button-cards presenting each individual container.</br><br>Containers can be turned of from the Green Indicator Circle (confirmation popup). By clicking the button-card, custom popup, using browser-mod integration is shown, with container specific details. |
-| <img src="/dashboards/unraid/img/containers-running-popup.png"> | Container - Popup</br><br> |
+| <img src="/dashboards/unraid/img/containers-running.png">  | Containers Running uses custom:auto-entities to automatically list all containers with state "on". Custom:layout-card fills the card in 3 columns, with custom:button-cards presenting each individual container.</br><br>Containers can be turned of from the Green Indicator Circle (confirmation popup). By clicking the button-card, custom popup, using browser-mod integration is shown, with container specific details.</br><br>[containers-running.yaml](/dashboards/unraid/containers-running.yaml) </br> <br> </br> |
+| <img src="/dashboards/unraid/img/containers-running-popup.png"> | Container - Popup</br><br>Defined within the containers-running.yaml. Uses custom:button-card for the first "Power" element. 2nd element is history-graph, 4th and 5th element uses custom:apexcharts-card. Final element is custom:logbook-card. </br> <br> </br> |
 
