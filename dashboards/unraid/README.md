@@ -140,3 +140,7 @@ List of cards used:
 | CARD | Picture Element |
 |:-:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <img src="/dashboards/unraid/img/picture-elements.png">  | Picture of my Unraid Enclosure, Shows Unraid Version Number, provided by Unraid-Api, and some hardware info also by Unraid-Api. Uses custom:button-card for the extra info positioning. </br> </br> [picture-elements.yaml](/dashboards/unraid/picture-elements.yaml) |
+
+| CARD | Button Row |
+|:-:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="/dashboards/unraid/img/button-row-0.png"></br><img src="/dashboards/unraid/img/button-row-1.gif"></br><img src="/dashboards/unraid/img/button-row-2.gif"></br><img src="/dashboards/unraid/img/button-row-3.gif">  | Button row to control the Unraid instance, Array, Mover, Parity. BUT Messy YAML, needs clean-up and some parts need total redo (Unnecessary lines, not so perfect positioning (web vs mobile). </br> </br> [button-row.yaml](/dashboards/unraid/button-row.yaml) |
