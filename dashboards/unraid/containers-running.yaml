@@ -346,6 +346,24 @@ filter:
               - width: 30px
               - right: '-5px'
               - bottom: 3px
+            cpu:
+              - margin: 0px
+              - padding: 0px
+              - position: absolute
+              - left: 7%
+              - top: 43%
+            lan-down:
+              - margin: 0px
+              - padding: 0px
+              - position: absolute
+              - right: 15%
+              - top: 60%
+            lan-up:
+              - margin: 0px
+              - padding: 0px
+              - position: absolute
+              - right: 15%
+              - top: 30%
         custom_fields:
           power:
             card:
@@ -373,3 +391,129 @@ filter:
                       else
                         return "Turn ON " + states['this.entity_id'].attributes.friendly_name;
                     ]]]
+              cpu:
+                card:
+                  type: custom:button-card
+                  entity: this.entity_id
+                  name: Running Containers
+                  icon: mdi:cpu-64-bit
+                  show_name: false
+                  show_state: false
+                  state:
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.cpu_percentage > 5
+                        ]]]
+                      styles:
+                        icon:
+                          - color: orange
+                            animation: blink 1s ease infinite
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.cpu_percentage > 70
+                        ]]]
+                      styles:
+                        icon:
+                          - color: rgba(253,89,89,1)
+                            animation: blink 1s ease infinite
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                  styles:
+                    icon:
+                      - color: rgba(0,0,0,0)
+                      - width: 32px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  hold_Action:
+                    action: more-info
+                  tap_action:
+                    action: more-info
+              lan-down:
+                card:
+                  type: custom:button-card
+                  entity: this.entity_id
+                  name: Running Containers
+                  icon: mdi:arrow-down-bold-box
+                  show_name: false
+                  show_state: false
+                  state:
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.network_speed_down > 10000
+                        ]]]
+                      styles:
+                        icon:
+                          - color: rgba(253,89,89,1)
+                            animation: blink 1s ease infinite
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.network_speed_down > 2
+                        ]]]
+                      styles:
+                        icon:
+                          - color: orange
+                            animation: blink 1s ease infinite
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                  styles:
+                    icon:
+                      - color: rgba(0,0,0,0)
+                      - width: 25px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  hold_Action:
+                    action: more-info
+                  tap_action:
+                    action: more-info
+              lan-up:
+                card:
+                  type: custom:button-card
+                  entity: this.entity_id
+                  name: Running Containers
+                  icon: mdi:arrow-up-bold-box
+                  show_name: false
+                  show_state: false
+                  state:
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.network_speed_up > 2
+                        ]]]
+                      styles:
+                        icon:
+                          - color: rgba(253,89,89,1)
+                            animation: blink 1s ease infinite
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.network_speed_up > 1000
+                        ]]]
+                      styles:
+                        icon:
+                          - color: orange
+                            animation: blink 1s ease infinite
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                  styles:
+                    icon:
+                      - color: rgba(0,0,0,0)
+                      - width: 25px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  hold_Action:
+                    action: more-info
+                  tap_action:
+                    action: more-info
