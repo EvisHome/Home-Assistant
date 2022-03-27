@@ -139,4 +139,4 @@ List of cards used:
 
 | CARD | Picture Element |
 |:-:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| <img src="/dashboards/unraid/img/picture-elements.png">  | Picture of my Unraid Enclosure, Shows Unraid Version Number, provided by Unraid-Api, and some hardware info also by Unraid-Api. </br> </br> [picture-element.yaml](/dashboards/unraid/picture-element.yaml) |
+| <img src="/dashboards/unraid/img/picture-elements.png">  | Picture of my Unraid Enclosure, Shows Unraid Version Number, provided by Unraid-Api, and some hardware info also by Unraid-Api. </br> </br> [picture-elements.yaml](/dashboards/unraid/picture-elements.yaml) |
