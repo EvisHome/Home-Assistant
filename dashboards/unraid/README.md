@@ -137,3 +137,6 @@ List of cards used:
 | <img src="/dashboards/unraid/img/container-indicators.gif"> | Containers can be turned toggled (on/off) from the Green Indicator Circle (with confirmation popup). High CPU and bandwith cues for each container. |
 | <img src="/dashboards/unraid/img/containers-running-popup.png"> | Container - Popup</br><br>Defined within the containers-running.yaml. Uses custom:button-card for the first "Power" element. 2nd element is history-graph, 4th and 5th element uses custom:apexcharts-card. Final element is custom:logbook-card. </br> <br> </br> |
 
+| CARD | Picture Element |
+|:-:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="/dashboards/unraid/img/picture-elements.png">  | Picture of my Unraid Enclosure, Shows Unraid Version Number, provided by Unraid-Api, and some hardware info also by Unraid-Api.
