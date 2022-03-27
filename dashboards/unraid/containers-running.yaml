@@ -403,7 +403,7 @@ filter:
                     - operator: template
                       value: |
                         [[[
-                          return states['this.entity_id'].attributes.cpu_percentage > 5
+                          return states['this.entity_id'].attributes.cpu_percentage > 30
                         ]]]
                       styles:
                         icon:
@@ -455,7 +455,7 @@ filter:
                     - operator: template
                       value: |
                         [[[
-                          return states['this.entity_id'].attributes.network_speed_down > 2
+                          return states['this.entity_id'].attributes.network_speed_down > 5000
                         ]]]
                       styles:
                         icon:
@@ -487,7 +487,7 @@ filter:
                     - operator: template
                       value: |
                         [[[
-                          return states['this.entity_id'].attributes.network_speed_up > 2
+                          return states['this.entity_id'].attributes.network_speed_up > 5000
                         ]]]
                       styles:
                         icon:
