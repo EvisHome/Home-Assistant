@@ -1,0 +1,51 @@
+type: custom:apexcharts-card
+graph_span: 24h
+show:
+  loading: false
+apex_config:
+  chart:
+    height: 140px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: false
+header:
+  title: System Fans
+  show: true
+  show_states: true
+  colorize_states: true
+  standard_format: true
+all_series_config:
+  stroke_width: 2
+series:
+  - entity: sensor.glances_nct6791_1_fan_speed
+    type: line
+    opacity: 1
+    name: FAN 1
+    color: orange
+    group_by:
+      func: avg
+      duration: 5min
+    show:
+      legend_value: false
+  - entity: sensor.glances_nct6791_2_fan_speed
+    type: line
+    opacity: 1
+    name: FAN 2
+    color: darkorange
+    group_by:
+      func: avg
+      duration: 5min
+    show:
+      legend_value: false
+  - entity: sensor.glances_nct6791_3_fan_speed
+    type: line
+    opacity: 1
+    name: FAN 3
+    color: violet
+    group_by:
+      func: avg
+      duration: 5min
+    show:
+      legend_value: false
