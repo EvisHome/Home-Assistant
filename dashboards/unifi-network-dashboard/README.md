@@ -13,19 +13,3 @@ Custom HACS frontend cards & elements used:
 
 ![HA Overview](/examples/Network-dashboard.png)
 
-## Access Points (Dashboard)
-
-![Access Points](/examples/HA-AccessPoints.png)
-
-## DNS (Dashboard)
-
-Standard HA Integrations:
-* Adguard Home
-* Glances
-
-Custom Integrations Used:
-* Monitor Docker
-
-Custom HACS frontend cards & elements used:
-* [multiple-entity-row](https://github.com/benct/lovelace-multiple-entity-row)
-* [mini-graph-card](https://github.com/kalkih/mini-graph-card)
