@@ -1,0 +1,41 @@
+type: custom:apexcharts-card
+graph_span: 24h
+show:
+  loading: false
+apex_config:
+  chart:
+    height: 140px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: false
+header:
+  title: CPU Temperatures
+  show: true
+  show_states: true
+  colorize_states: true
+  standard_format: true
+all_series_config:
+  stroke_width: 2
+series:
+  - entity: sensor.glances_core_0_temperature
+    type: area
+    opacity: 0.3
+    name: Core 0
+    color: skyblue
+    group_by:
+      func: avg
+      duration: 10min
+    show:
+      legend_value: false
+  - entity: sensor.glances_core_1_temperature
+    type: area
+    opacity: 0.3
+    name: Core 1
+    color: darkorange
+    group_by:
+      func: avg
+      duration: 10min
+    show:
+      legend_value: false
