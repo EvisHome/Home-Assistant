@@ -1,0 +1,302 @@
+  - title: Access Points
+    path: access-points
+    badges: []
+    cards:
+      - type: vertical-stack
+        title: UniFi AP U6 Lite
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.unifi_ap_u6lite
+                type: attribute
+                attribute: Uptime
+                name: Uptime
+                icon: mdi:timelapse
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.unifi_ap_u6lite_update
+                name: Firmware Update
+                icon: mdi:reload
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - type: section
+                label: DEVICES
+              - entity: sensor.unifi_ap_u6lite
+                name: All
+                icon: mdi:devices
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - entity: sensor.unifi_ap_u6lite
+                name: 5GHz Clients
+                icon: mdi:wifi
+                type: attribute
+                attribute: Clients_wifi0
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - entity: sensor.unifi_ap_u6lite
+                name: 2GHz Clients
+                icon: mdi:wifi
+                type: attribute
+                attribute: Clients_wifi1
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+            state_color: true
+            header:
+              type: picture
+              image: local/unifi_ap_u6lite.png
+              tap_action:
+                action: none
+              hold_action:
+                action: none
+            title: Upstairs
+          - type: custom:mini-graph-card
+            name: Wifi Experience
+            icon: mdi:cpu
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_ap_u6lite5_score
+                name: 5GHz
+                show_state: true
+                unit: '%'
+                color: lightgreen
+              - entity: sensor.unifi_ap_u6lite2_score
+                name: 2GHz
+                show_state: true
+                unit: '%'
+                color: orange
+          - type: custom:mini-graph-card
+            icon: mdi:wifi-arrow-up-down
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_ap_u6lite_activity
+                name: Upstairs Activity
+                show_state: true
+                unit: Mbps
+                color: lightgreen
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_ap_u6lite_cpu
+                    name: CPU
+                    show_state: true
+                    unit: '%'
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_ap_u6lite_ram
+                    name: Memory
+                    show_state: true
+                    unit: '%'
+                    color: skyblue
+      - type: vertical-stack
+        title: UniFi AP FlexHD
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.unifi_ap_flexhd
+                type: attribute
+                attribute: Uptime
+                name: Uptime
+                icon: mdi:timelapse
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.unifi_ap_flexhd_update
+                name: Firmware Update
+                icon: mdi:reload
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - type: section
+                label: DEVICES
+              - entity: sensor.unifi_ap_flexhd
+                name: All
+                icon: mdi:devices
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - entity: sensor.unifi_ap_flexhd
+                name: 5GHz Clients
+                icon: mdi:wifi
+                type: attribute
+                attribute: Clients_wifi0
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - entity: sensor.unifi_ap_flexhd
+                name: 2GHz Clients
+                icon: mdi:wifi
+                type: attribute
+                attribute: Clients_wifi1
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+            state_color: true
+            header:
+              type: picture
+              image: local/unifi_ap_flexHD.png
+              tap_action:
+                action: none
+              hold_action:
+                action: none
+            title: Downstairs
+          - type: custom:mini-graph-card
+            name: Wifi Experience
+            icon: mdi:cpu
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_ap_flexhd5_score
+                name: 5GHz
+                show_state: true
+                unit: '%'
+                color: lightgreen
+              - entity: sensor.unifi_ap_flexhd2_score
+                name: 2GHz
+                show_state: true
+                unit: '%'
+                color: orange
+          - type: custom:mini-graph-card
+            icon: mdi:wifi-arrow-up-down
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_ap_flexhd_activity
+                name: Downstairs Activity
+                show_state: true
+                unit: Mbps
+                color: lightgreen
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_ap_flexhd_cpu
+                    name: CPU
+                    show_state: true
+                    unit: '%'
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_ap_flexhd_ram
+                    name: Memory
+                    show_state: true
+                    unit: '%'
+                    color: skyblue
