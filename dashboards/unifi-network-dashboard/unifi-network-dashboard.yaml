@@ -1,0 +1,551 @@
+  - title: Network
+    path: home
+    badges: []
+    cards:
+      - type: vertical-stack
+        title: WAN
+        cards:
+          - type: custom:mini-graph-card
+            icon: mdi:web
+            height: 50
+            hours_to_show: 24
+            points_per_hour: 5
+            line_width: 2
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_udmpro_latency_ms
+                name: Connection Latency
+                label: test
+                show_state: true
+                unit: ms
+                color: lightgreen
+            card_mod:
+              style: |
+                :host {
+                  --card-mod-icon-color: skyblue;
+                }
+          - type: entities
+            entities:
+              - type: section
+                label: WAN
+              - entity: sensor.unifi_gateway_wan
+                name: ISP Name
+                type: attribute
+                attribute: isp_name
+                icon: mdi:web
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: skyblue;
+                    }
+              - entity: sensor.myip
+                name: External IP
+                icon: mdi:ip-network
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: skyblue;
+                    }
+              - entity: sensor.unifi_gateway_wan
+                name: DNS Servers
+                type: attribute
+                attribute: nameservers
+                icon: mdi:shield-check
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: skyblue;
+                    }
+              - type: section
+                label: PRIMARY WAN
+              - entity: sensor.primary_wan_availability
+                name: Availability
+                icon: mdi:web
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - type: conditional
+                conditions:
+                  - entity: sensor.primary_wan_availability
+                    state_not: unavailable
+                row:
+                  entity: sensor.primary_wan_latency_avg
+                  name: Latency Average
+                  icon: mdi:pulse
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - type: conditional
+                conditions:
+                  - entity: sensor.primary_wan_availability
+                    state_not: unavailable
+                row:
+                  entity: sensor.primary_wan_uptime
+                  name: Uptime
+                  icon: mdi:timelapse
+              - type: conditional
+                conditions:
+                  - entity: sensor.primary_wan_availability
+                    state: unavailable
+                row:
+                  entity: sensor.primary_wan_downtime
+                  name: Downtime
+                  icon: mdi:timelapse
+              - type: section
+                label: FAILOVER WAN
+              - entity: sensor.failover_wan_availability
+                name: Availability
+                icon: mdi:web
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - type: conditional
+                conditions:
+                  - entity: sensor.failover_wan_availability
+                    state_not: unavailable
+                row:
+                  entity: sensor.failover_wan_latency_avg
+                  name: Latency Average
+                  icon: mdi:pulse
+              - type: conditional
+                conditions:
+                  - entity: sensor.failover_wan_availability
+                    state_not: unavailable
+                row:
+                  entity: sensor.failover_wan_uptime
+                  name: Uptime
+                  icon: mdi:timelapse
+              - type: conditional
+                conditions:
+                  - entity: sensor.failover_wan_availability
+                    state: unavailable
+                row:
+                  entity: sensor.failover_wan_downtime
+                  name: Downtime
+                  icon: mdi:timelapse
+              - type: section
+                label: SPEEDTEST
+              - entity: sensor.wan_speedtest_lastrun
+                name: Last Run
+                icon: mdi:calendar
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: #931;
+                    }
+              - entity: sensor.unifi_gateway_www
+                name: Ping
+                type: attribute
+                attribute: speedtest_ping
+                icon: mdi:pulse
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: #931;
+                    }
+              - entity: sensor.unifi_gateway_www
+                name: Download
+                type: attribute
+                attribute: xput_down
+                suffix: Mbps
+                icon: mdi:download-network-outline
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: #931;
+                    }
+              - entity: sensor.unifi_gateway_www
+                name: Upload
+                type: attribute
+                attribute: xput_up
+                suffix: Mbps
+                icon: mdi:upload-network-outline
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: #931;
+                    }
+            state_color: true
+      - type: vertical-stack
+        title: UniFi Dream Machine Pro
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.unifi_gateway_wan
+                name: UniFi OS version
+                type: attribute
+                attribute: gw_version
+                icon: mdi:console-network-outline
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.udm_pro_uptime_friendly
+                name: Uptime
+                icon: mdi:timelapse
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.unifi_udmpro_update
+                name: Firmware Update
+                icon: mdi:reload
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - type: section
+                label: NETWORK
+              - entity: sensor.unifi_gateway_lan
+                name: LAN users
+                type: attribute
+                attribute: num_user
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - entity: sensor.unifi_gateway_wlan
+                name: WLAN users
+                type: attribute
+                attribute: num_user
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+              - entity: sensor.unifi_gateway_wlan
+                name: Access Points
+                type: attribute
+                attribute: num_ap
+                icon: mdi:access-point-network
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color: lightgreen;
+                    }
+            state_color: true
+            header:
+              type: picture
+              image: local/UDM-Pro-front2.png
+              tap_action:
+                action: none
+              hold_action:
+                action: none
+          - type: custom:mini-graph-card
+            icon: mdi:ethernet
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_udmpro_activity_mbps
+                name: UDM Pro Activity
+                show_state: true
+                unit: Mbps
+                color: lightgreen
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_udmpro_cpu
+                    name: CPU
+                    show_state: true
+                    unit: '%'
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_udmpro_ram
+                    name: Memory
+                    show_state: true
+                    unit: '%'
+                    color: skyblue
+          - type: custom:mini-graph-card
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_dream_machine_pro_cpu_temperature
+                name: Temperature
+                show_state: true
+                color: yellow
+      - type: vertical-stack
+        title: USW Enterprise 24 PoE
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.unifi_usw_24e
+                name: Uptime
+                type: attribute
+                attribute: Uptime
+                icon: mdi:timelapse
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.unifi_usw_24e
+                name: Ports In Use
+                type: attribute
+                attribute: Ports_used
+                icon: mdi:ethernet
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.unifi_usw_24e_update
+                name: Firmware Update
+                icon: mdi:reload
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+            state_color: true
+            header:
+              type: picture
+              image: local/USW-Enterprise-24-PoE-2.png
+              tap_action:
+                action: none
+              hold_action:
+                action: none
+          - type: custom:mini-graph-card
+            icon: mdi:ethernet
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_usw_24e_acitivity_mbps
+                name: USW Activity
+                show_state: true
+                unit: Mbps
+                color: lightgreen
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_usw_24e_cpu
+                    name: CPU
+                    show_state: true
+                    unit: '%'
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_usw_24e_ram
+                    name: Memory
+                    show_state: true
+                    unit: '%'
+                    color: skyblue
+          - type: custom:mini-graph-card
+            icon: mdi:fan
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_usw_24e_fan_level
+                name: FAN Level
+                show_state: true
+                unit: '%'
+                color: crimson
+      - type: vertical-stack
+        title: USW Flex
+        cards:
+          - type: entities
+            entities:
+              - entity: sensor.unifi_usw_flex
+                name: Uptime
+                type: attribute
+                attribute: Uptime
+                icon: mdi:timelapse
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.unifi_usw_flex
+                name: Ports In Use
+                type: attribute
+                attribute: Ports_used
+                icon: mdi:ethernet
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+              - entity: sensor.unifi_usw_flex_update
+                name: Firmware Update
+                icon: mdi:reload
+                card_mod:
+                  style: |
+                    :host {
+                      --card-mod-icon-color:yellow; 
+                    }
+            state_color: true
+            header:
+              type: picture
+              image: local/USW-Flex-front.png
+              tap_action:
+                action: none
+              hold_action:
+                action: none
+          - type: custom:mini-graph-card
+            icon: mdi:ethernet
+            height: 50
+            line_width: 3
+            hour24: true
+            group: false
+            points_per_hour: 5
+            hours_to_show: 24
+            show:
+              fill: fade
+              extrema: false
+              name: true
+              icon: true
+              points: false
+            entities:
+              - entity: sensor.unifi_usw_flex_acitivity_mbps
+                name: USW Flex Activity
+                show_state: true
+                unit: Mbps
+                color: lightgreen
+          - type: horizontal-stack
+            cards:
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_usw_flex_cpu
+                    name: CPU
+                    show_state: true
+                    unit: '%'
+              - type: custom:mini-graph-card
+                icon: mdi:memory
+                height: 50
+                line_width: 3
+                hour24: true
+                group: false
+                points_per_hour: 5
+                hours_to_show: 24
+                show:
+                  fill: fade
+                  extrema: false
+                  name: true
+                  icon: true
+                  points: false
+                entities:
+                  - entity: sensor.unifi_usw_flex_ram
+                    name: Memory
+                    show_state: true
+                    unit: '%'
+                    color: skyblue
