@@ -1,0 +1,696 @@
+type: vertical-stack
+title: Virtual Machines
+cards:
+  - type: entities
+    entities:
+      - entity: switch.esxi_vm_graphs
+        icon: mdi:chart-areaspline
+        name: VM Graphs
+    state_color: true
+    show_header_toggle: false
+  - type: custom:auto-entities
+    card:
+      type: custom:layout-card
+      layout_type: horizontal
+      layout_options:
+        width: 400
+        max_cols: 1
+    card_param: cards
+    sort:
+      method: name
+    filter:
+      include:
+        - name: '*vm *'
+          options:
+            type: custom:button-card
+            layout: icon_name_state2nd
+            show_name: true
+            show_state: false
+            show_icon: false
+            show_label: false
+            style: |
+              ha-card {
+
+                overflow: visible;
+                border-top: 1px solid #333333;
+              }
+            name: |
+              [[[
+                return states['this.entity_id'].attributes.name;
+              ]]]
+            state_display: |
+              [[[
+                return states['this.entity_id'].attributes.uptime_hours + " hours";
+              ]]]
+            styles:
+              name:
+                - position: absolute
+                - top: 15px
+                - left: 65px
+                - color: white
+                - font-size: 15px
+                - text-transform: uppercase
+              state:
+                - position: absolute
+                - top: 37px
+                - left: 65px
+                - font-size: 12px
+              card:
+                - border-radius: 8px
+                - height: |
+                    [[[
+                      if (states['switch.esxi_vm_graphs'].state == 'on') {
+                        return "220px";
+                      } else {
+                        return "70px";
+                      }
+                    ]]]
+                - overflow: unset
+                - margin-bottom: 13px
+                - padding: 0px
+              custom_fields:
+                cpugraph:
+                  - position: absolute
+                  - top: 60px
+                  - left: 0%
+                  - margin: 0px
+                  - padding: 0px
+                  - width: 100%
+                  - display: |
+                      [[[
+                        if (states['switch.esxi_vm_graphs'].state == 'on') {
+                          return "block";
+                        } else {
+                          return "none";
+                        }
+                      ]]]
+                icon:
+                  - margin: 0px
+                  - padding: 0px
+                  - position: absolute
+                  - left: '-12px'
+                  - top: 12px
+                power:
+                  - position: absolute
+                  - top: 9px
+                  - right: 0px
+                  - margin: 0px
+                  - padding: 0px
+                  - z-index: 99
+                cores:
+                  - position: absolute
+                  - top: 9px
+                  - right: 90px
+                  - margin: 0px
+                  - padding: 0px
+                  - display: |
+                      [[[
+                        if (states['switch.esxi_vm_graphs'].state == 'on') {
+                          return "none";
+                        } else {
+                          return "block";
+                        }
+                      ]]]
+                snapshots:
+                  - position: absolute
+                  - top: 9px
+                  - right: 35px
+                  - margin: 0px
+                  - padding: 0px
+                  - z-index: 99
+                vmtools:
+                  - position: absolute
+                  - top: 9px
+                  - right: 0px
+                  - margin: 0px
+                  - padding: 0px
+                  - display: none
+                ip:
+                  - position: absolute
+                  - top: 28px
+                  - left: 64px
+                  - margin: 0px
+                  - padding: 0px
+                  - display: block
+                uptime:
+                  - position: absolute
+                  - top: 28px
+                  - left: 156px
+                  - margin: 0px
+                  - padding: 0px
+                  - display: block
+                navoverlay:
+                  - margin: 0px
+                  - padding: 0px
+                  - position: absolute
+                  - width: 100%
+                  - height: 100%
+                  - right: 0px
+                  - top: 0px
+                  - z-index: 90
+            custom_fields:
+              icon:
+                card:
+                  type: custom:button-card
+                  entity: this.entity_id
+                  name: Icon
+                  icon: |
+                    [[[
+                      if (states['this.entity_id'].attributes.name.includes("plex"))
+                        return 'mdi:plex';
+                      else if (states['this.entity_id'].attributes.name.includes("home"))
+                        return 'mdi:home-assistant';
+                      else if (states['this.entity_id'].attributes.name.includes("docker"))
+                        return 'mdi:docker';
+                      else if (states['this.entity_id'].attributes.name.includes("linux"))
+                        return 'mdi:linux';
+                      else if (states['this.entity_id'].attributes.name.includes("ubuntu"))
+                        return 'mdi:ubuntu';
+                      else if (states['this.entity_id'].attributes.name.includes("win"))
+                        return 'mdi:microsoft-windows';
+                      else
+                        return 'mdi:vector-combine';
+                    ]]]
+                  show_name: false
+                  show_state: false
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                    }
+                  styles:
+                    card:
+                      - width: 90px
+                      - background-color: rgba(0,0,0,0)
+                    icon:
+                      - color: |
+                          [[[
+                            if (states['this.entity_id'].attributes.state == "running")
+                              if (states['this.entity_id'].attributes.name.includes("plex"))
+                                return 'rgba(222,155,13,1)';
+                              else
+                                return 'rgba(9,151,229,1)';
+                            else
+                              return 'gray';
+                          ]]]
+                      - filter: drop-shadow(0px 0px 2px rgba(0,0,0,0)
+              snapshots:
+                card:
+                  type: custom:button-card
+                  layout: icon_name_state2nd
+                  entity: this.entity_id
+                  name: Snap
+                  icon: mdi:book-multiple-outline
+                  show_name: false
+                  show_state: true
+                  state_display: |
+                    [[[
+                      var snapshots = states['this.entity_id'].attributes.snapshots;
+                      if (snapshots == 0) {
+                        return "0";
+                      } else {
+                        return snapshots;
+                      }
+                    ]]]
+                  styles:
+                    name:
+                      - position: absolute
+                      - top: 18px
+                      - left: '-22px'
+                      - color: '#aaa'
+                      - font-size: 10px
+                      - transform: rotate(-90deg)
+                      - text-transform: uppercase
+                      - font-weight: bold
+                    icon:
+                      - position: absolute
+                      - top: 0px
+                      - left: 0px
+                      - overflow: unset
+                      - color: lightgreen
+                      - width: 25px
+                      - filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    state:
+                      - position: absolute
+                      - top: 18px
+                      - left: 26px
+                      - color: white
+                      - font-size: 11px
+                      - text-transform: uppercase
+                      - font-weight: bold
+                    card:
+                      - overflow: unset
+                      - width: 60px
+                      - height: 50px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  hold_Action:
+                    action: more-info
+                  tap_action:
+                    action: call-service
+                    confirmation:
+                      text: |
+                        [[[
+                          return "Take a snapshot from " + states['this.entity_id'].attributes.name;
+                        ]]]
+                    service: esxi_stats.create_snapshot
+                    service_data:
+                      host: 10.0.0.37
+                      vm: |
+                        [[[
+                          return states['this.entity_id'].attributes.name;
+                        ]]]
+                      name: Snapshot from HA
+                      memory: true
+                      quiesce: true
+              power:
+                card:
+                  type: custom:button-card
+                  entity: this.entity_id
+                  name: VM Power
+                  icon: mdi:power
+                  show_name: false
+                  show_state: false
+                  tap_action:
+                    action: call-service
+                    confirmation:
+                      text: |
+                        [[[
+                          if (states['this.entity_id'].attributes.guest_os.includes("Windows"))
+                            if (states['this.entity_id'].attributes.state == "running")
+                              return "Suspend " + states['this.entity_id'].attributes.name;
+                            else
+                              return "Power On " + states['this.entity_id'].attributes.name;
+                          else
+                             if (states['this.entity_id'].attributes.state == "running")
+                              return "Power Off " + states['this.entity_id'].attributes.name;
+                            else
+                              return "Power On " + states['this.entity_id'].attributes.name;
+
+                        ]]]
+                    service: esxi_stats.vm_power
+                    service_data:
+                      host: 10.0.0.37
+                      vm: |
+                        [[[
+                          return states['this.entity_id'].attributes.name;
+                        ]]]
+                      command: |
+                        [[[ 
+                          if (states['this.entity_id'].attributes.state == 'running')
+                            if (states['this.entity_id'].attributes.guest_os.includes("Windows"))
+                              return "suspend";
+                            else
+                              return "shutdown";
+                          else
+                            return "on";
+                        ]]]
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  styles:
+                    card:
+                      - overflow: unset
+                      - width: 45px
+                      - height: 50px
+                    icon:
+                      - position: absolute
+                      - top: 0px
+                      - left: 0px
+                      - overflow: unset
+                      - width: 25px
+                      - color: |
+                          [[[
+                            if (states['this.entity_id'].attributes.state == "running")
+                              return 'lightgreen';
+                            else
+                              return 'rgba(253,89,89,1)';
+                          ]]]
+                      - filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+              cpugraph:
+                card:
+                  type: custom:apexcharts-card
+                  graph_span: 12h
+                  show:
+                    loading: false
+                  apex_config:
+                    chart:
+                      height: 140px
+                    grid:
+                      show: true
+                      borderColor: rgba(255,255,255,0.2)
+                    legend:
+                      show: false
+                  header:
+                    show: false
+                    show_states: true
+                    colorize_states: true
+                    standard_format: true
+                  experimental:
+                    color_threshold: true
+                  all_series_config:
+                    stroke_width: 3
+                  yaxis:
+                    - id: first
+                      opposite: false
+                      max: 100
+                      min: 0
+                      apex_config:
+                        tickAmount: 4
+                        decimalsInFloat: 0
+                        labels:
+                          show: true
+                        title:
+                          text: CPU
+                          style:
+                            color: orange
+                    - id: second
+                      opposite: true
+                      min: 0
+                      apex_config:
+                        tickAmount: 4
+                        decimalsInFloat: 0
+                        title:
+                          text: MEM
+                          style:
+                            color: skyblue
+                  series:
+                    - entity: this.entity_id
+                      float_precision: 0
+                      yaxis_id: first
+                      type: line
+                      opacity: 1
+                      name: CPU
+                      color: orange
+                      show:
+                        legend_value: false
+                      group_by:
+                        func: avg
+                        duration: 1min
+                      fill_raw: last
+                      color_threshold:
+                        - value: 0
+                          color: lightgreen
+                        - value: 25
+                          color: yellow
+                        - value: 50
+                          color: orange
+                        - value: 75
+                          color: red
+                    - entity: this.entity_id
+                      attribute: memory_allocated_mb
+                      float_precision: 0
+                      yaxis_id: second
+                      type: line
+                      opacity: 0
+                      name: Memory Max
+                      color: red
+                      show:
+                        legend_value: false
+                      group_by:
+                        func: avg
+                        duration: 1min
+                    - entity: this.entity_id
+                      attribute: memory_used_mb
+                      float_precision: 0
+                      yaxis_id: second
+                      type: line
+                      opacity: 0.9
+                      name: Memory Used
+                      color: skyblue
+                      show:
+                        legend_value: false
+                      group_by:
+                        func: avg
+                        duration: 1min
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                    }
+              cores:
+                card:
+                  type: custom:button-card
+                  layout: icon_name_state2nd
+                  entity: this.entity_id
+                  name: Cores
+                  icon: mdi:cpu-64-bit
+                  show_name: false
+                  show_state: true
+                  state_display: |
+                    [[[
+                      var cpu = states['this.entity_id'].attributes.cpu_use_pct;
+                      if (cpu == 'n/a') {
+                        return " ";
+                      } else {
+                        cpu = Math.round(cpu)
+                        return cpu + "%";
+                      }
+                    ]]]
+                  state:
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.cpu_use_pct == 'n/a'
+                        ]]]
+                      styles:
+                        icon:
+                          - color: rgba(74,74,74,1)
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.cpu_use_pct > '75'
+                        ]]]
+                      styles:
+                        icon:
+                          - color: rgba(253,89,89,1)
+                            animation: blink 1s ease infinite
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.cpu_use_pct > '50'
+                        ]]]
+                      styles:
+                        icon:
+                          - color: rgba(222,155,13,1)
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.cpu_use_pct > '20'
+                        ]]]
+                      styles:
+                        icon:
+                          - color: yellow
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    - operator: template
+                      value: |
+                        [[[
+                          return states['this.entity_id'].attributes.cpu_use_pct > '0'
+                        ]]]
+                      styles:
+                        icon:
+                          - color: lightgreen
+                            filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                  styles:
+                    name:
+                      - position: absolute
+                      - top: 18px
+                      - left: '-22px'
+                      - color: '#aaa'
+                      - font-size: 10px
+                      - transform: rotate(-90deg)
+                      - text-transform: uppercase
+                      - font-weight: bold
+                    icon:
+                      - position: absolute
+                      - top: 0px
+                      - left: 0px
+                      - overflow: unset
+                      - color: gray
+                      - width: 25px
+                    state:
+                      - position: absolute
+                      - top: 18px
+                      - left: 26px
+                      - color: white
+                      - font-size: 11px
+                      - text-transform: uppercase
+                      - font-weight: bold
+                    card:
+                      - overflow: unset
+                      - width: 60px
+                      - height: 50px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+              vmtools:
+                card:
+                  type: custom:button-card
+                  layout: icon_name_state2nd
+                  entity: this.entity_id
+                  name: Tools
+                  icon: mdi:hammer-wrench
+                  show_name: false
+                  show_state: true
+                  state_display: |
+                    [[[
+                      var tools_status = states['this.entity_id'].attributes.tools_status;
+                      if (tools_status == 'toolsOk') {
+                        return "OK";
+                      } else {
+                        return "Err";
+                      }
+                    ]]]
+                  styles:
+                    name:
+                      - position: absolute
+                      - top: 18px
+                      - left: '-22px'
+                      - color: '#aaa'
+                      - font-size: 10px
+                      - transform: rotate(-90deg)
+                      - text-transform: uppercase
+                      - font-weight: bold
+                    icon:
+                      - position: absolute
+                      - top: 0px
+                      - left: 0px
+                      - overflow: unset
+                      - color: lightgreen
+                      - width: 25px
+                    state:
+                      - position: absolute
+                      - top: 18px
+                      - left: 26px
+                      - color: white
+                      - font-size: 11px
+                      - font-weight: bold
+                    card:
+                      - overflow: unset
+                      - width: 60px
+                      - height: 50px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  hold_Action:
+                    action: more-info
+                  tap_action:
+                    action: more-info
+              ip:
+                card:
+                  type: custom:button-card
+                  layout: icon_name_state2nd
+                  entity: this.entity_id
+                  name: Snap
+                  icon: mdi:ip
+                  show_name: false
+                  show_state: true
+                  state_display: |
+                    [[[
+                      return states['this.entity_id'].attributes.guest_ip;
+                    ]]]
+                  styles:
+                    icon:
+                      - position: absolute
+                      - top: 0px
+                      - left: 0px
+                      - overflow: unset
+                      - color: '#666'
+                      - width: 16px
+                      - filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    state:
+                      - position: absolute
+                      - top: 9px
+                      - left: 18px
+                      - color: '#aaa'
+                      - font-size: 11px
+                      - text-transform: uppercase
+                      - font-weight: bold
+                    card:
+                      - overflow: unset
+                      - width: 100px
+                      - height: 30px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  hold_Action:
+                    action: more-info
+                  tap_action:
+                    action: more-info
+              uptime:
+                card:
+                  type: custom:button-card
+                  layout: icon_name_state2nd
+                  entity: this.entity_id
+                  name: Snap
+                  icon: mdi:update
+                  show_name: false
+                  show_state: true
+                  state_display: |
+                    [[[
+                      return states['this.entity_id'].attributes.uptime_hours + " hours";
+                    ]]]
+                  styles:
+                    icon:
+                      - position: absolute
+                      - top: 0px
+                      - left: 0px
+                      - overflow: unset
+                      - color: '#666'
+                      - width: 16px
+                      - filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+                    state:
+                      - position: absolute
+                      - top: 9px
+                      - left: 18px
+                      - color: '#aaa'
+                      - font-size: 11px
+                      - font-weight: bold
+                    card:
+                      - overflow: unset
+                      - width: 80px
+                      - height: 30px
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                      background-color: rgba(0,0,0,0);
+                    }
+                  hold_Action:
+                    action: more-info
+                  tap_action:
+                    action: more-info
+              navoverlay:
+                card:
+                  type: custom:button-card
+                  entity: |
+                    [[[
+                      return 'this.entity_id';
+                    ]]]
+                  name: Running Containers
+                  icon: mdi:circle
+                  show_name: false
+                  show_state: false
+                  show_icon: false
+                  color: lightgreen
+                  styles:
+                    card:
+                      - height: 100px
+                      - background-color: rgba(0,0,0,0)
+                  style: |
+                    ha-card {
+                      box-shadow: none;
+                    }
+                  tap_action:
+                    action: more-info
