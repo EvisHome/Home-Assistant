@@ -1,0 +1,238 @@
+type: vertical-stack
+cards:
+  - type: picture-elements
+    image: /local/apps/vmware-nuc.png
+    title: VMware ESXi Host
+    elements:
+      - type: custom:button-card
+        entity: sensor.esxi_vmhost_localhost_localdomain_version
+        name: Version
+        layout: icon_name_state
+        show_name: true
+        show_state: true
+        show_icon: false
+        style:
+          top: 20%
+          left: 58%
+          width: 50%
+          height: 20%
+        tap_action:
+          action: none
+        hold_action:
+          action: none
+        styles:
+          name:
+            - color: rgba(255,255,255,0.8)
+            - padding-left: 14px
+            - justify-self: start
+          card:
+            - font-size: 14px
+            - font-weight: bold
+            - height: 10%
+            - border-radius: 0px
+            - border: 0px solid rgba(100,100,100,0)
+            - background-color: rgba(65,65,65,0)
+            - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      - type: custom:button-card
+        entity: sensor.esxi_vmhost_localhost_localdomain_uptime_hours
+        show_name: true
+        show_state: true
+        show_icon: true
+        style:
+          top: 70%
+          left: 17%
+          width: 30%
+          height: 100%
+        tap_action:
+          action: more-info
+        hold_action:
+          action: more-info
+        styles:
+          name:
+            - color: rgba(255,255,255,0.8)
+            - padding-bottom: 4px
+            - font-size: 12px
+            - font-weight: normal
+          state:
+            - color: rgba(255,255,255,1)
+            - padding-bottom: 0px
+            - font-weight: bold
+          card:
+            - font-size: 14px
+            - height: 36%
+            - border-radius: 4px
+            - border: 0px solid rgba(100,100,100,0)
+            - background-color: rgba(32,32,32,0.6)
+            - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+          icon:
+            - top: 2px
+            - height: 40px
+            - width: 40px
+            - padding-top: 0px
+            - padding-bottom: 5px
+            - color: lightgreen
+            - transform: rotate(0deg)
+      - type: custom:button-card
+        entity: sensor.esxi_vmhost_localhost_localdomain_vms
+        name: Virtual Machines
+        show_name: true
+        show_state: true
+        show_icon: true
+        style:
+          top: 110%
+          left: 17%
+          width: 30%
+          height: 100%
+        tap_action:
+          action: more-info
+        hold_action:
+          action: more-info
+        styles:
+          name:
+            - color: rgba(255,255,255,0.8)
+            - padding-bottom: 4px
+            - font-size: 12px
+            - font-weight: normal
+          state:
+            - color: rgba(255,255,255,1)
+            - padding-bottom: 0px
+            - font-weight: bold
+          card:
+            - font-size: 14px
+            - height: 36%
+            - border-radius: 4px
+            - border: 0px solid rgba(100,100,100,0)
+            - background-color: rgba(32,32,32,0.6)
+            - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+          icon:
+            - top: 2px
+            - height: 40px
+            - width: 40px
+            - padding-top: 0px
+            - padding-bottom: 5px
+            - color: lightgreen
+            - transform: rotate(0deg)
+  - type: entity
+    entity: sensor.esxi_license_1
+    name: ESXi License
+    state_color: false
+    attribute: status
+  - type: horizontal-stack
+    cards:
+      - type: custom:apexcharts-card
+        graph_span: 48h
+        show:
+          loading: false
+        header:
+          show: true
+          title: Datastore 1
+          standard_format: false
+          show_states: true
+          colorize_states: true
+        color_list:
+          - green
+          - rgba(253,80,80,1)
+          - skyblue
+        all_series_config:
+          stroke_width: 2
+          opacity: 1
+        chart_type: donut
+        series:
+          - entity: sensor.esxi_datastore_datastore1
+            name: Free space
+            unit: GB
+            show:
+              in_header: false
+          - entity: sensor.esxi_datastore1_used_space_gb
+            name: Used space
+            show:
+              in_header: false
+          - entity: sensor.esxi_datastore_datastore1_total_space_gb
+            name: Total
+            show:
+              in_chart: false
+        style: |
+          ha-card {
+            padding-bottom: 20px;
+          }
+      - type: custom:apexcharts-card
+        graph_span: 48h
+        show:
+          loading: false
+        header:
+          show: true
+          title: Datastore 2
+          standard_format: false
+          show_states: true
+          colorize_states: true
+        color_list:
+          - green
+          - rgba(253,80,80,1)
+          - skyblue
+        all_series_config:
+          stroke_width: 2
+          opacity: 1
+        chart_type: donut
+        series:
+          - entity: sensor.esxi_datastore_datastore2
+            name: Free space
+            unit: GB
+            show:
+              in_header: false
+          - entity: sensor.esxi_datastore2_used_space_gb
+            name: Used space
+            show:
+              in_header: false
+          - entity: sensor.esxi_datastore_datastore2_total_space_gb
+            name: Total
+            show:
+              in_chart: false
+        style: |
+          ha-card {
+            padding-bottom: 20px;
+          }
+  - type: custom:apexcharts-card
+    graph_span: 24h
+    show:
+      loading: false
+    apex_config:
+      chart:
+        height: 200px
+      grid:
+        show: true
+        borderColor: rgba(255,255,255,0.2)
+      legend:
+        show: false
+    header:
+      title: Host System Resources
+      show: true
+      show_states: true
+      colorize_states: true
+      standard_format: true
+    all_series_config:
+      stroke_width: 2
+    series:
+      - entity: sensor.esxi_vmhost_localhost_localdomain_cpuusage_ghz
+        transform: return x / 0.096;
+        unit: '%'
+        type: area
+        opacity: 0.3
+        name: CPU
+        color: darkorange
+        group_by:
+          func: avg
+          duration: 1min
+        show:
+          legend_value: false
+      - entity: sensor.esxi_vmhost_localhost_localdomain_memusage_gb
+        transform: return x / 0.32;
+        unit: '%'
+        type: area
+        opacity: 0.3
+        name: Memory
+        color: skyblue
+        group_by:
+          func: avg
+          duration: 5min
+        show:
+          legend_value: false
