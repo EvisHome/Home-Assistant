@@ -11,4 +11,4 @@ From the dashboard you can also
 * Start/Stop/Suspend VMs
 * Take Snapshot of a VM
 
-![ESXi Overview](/dashboards/esxi-vm-dashboard/img/HA-ESXi-dashboard.gif)
+![ESXi Overview](/dashboards/esxi-vm-dashboard/img/HA_ESXi_dashboard.gif)
