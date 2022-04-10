@@ -6,7 +6,7 @@ Monitor and control your ESXi host and virtual machines. I wanted to have a sing
 
 Couple of notications running for datastores and high CPU.
 
-From the dashboard you can also
+From the dashboard you can also run some service calls (these need a "real" ESXi license to access the API)
 
 * Start/Stop/Suspend VMs
 * Take Snapshot of a VM
