@@ -33,4 +33,23 @@ To make the graphs collapsible, there is one helper switch switch.esxi_vm_graphs
 
 * switch.esxi_vm_graphs
 
+## VIEW & CARDS
+
+Standard Masonry view was used for this
+
+### FRONTEND ELEMENTS & CUSTOM CARDS
+
+List of cards used:
+
+* vertical-stack
+* horizontal-stack
+* picture-elements
+* entities
+* entity
+* custom:layout-card
+* custom:button-card
+* custom:auto-entities
+* custom:apexcharts-card
+
+
 
