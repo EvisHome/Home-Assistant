@@ -12,3 +12,25 @@ From the dashboard you can also run some service calls (these need a "real" ESXi
 * Take Snapshot of a VM
 
 ![ESXi Overview](/dashboards/esxi-vm-dashboard/img/HA_ESXi_dashboard.gif)
+
+&nbsp;
+
+&nbsp;
+
+## INTEGRATIONS
+
+List of integrations needed to set this up:
+
+* [ESXi_Stats](https://github.com/wxt9861/esxi_stats)
+
+&nbsp;
+
+&nbsp;
+
+## HELPERS
+
+To make the graphs collapsible, there is one helper switch switch.esxi_vm_graphs, that controls the state.
+
+* switch.esxi_vm_graphs
+
+
