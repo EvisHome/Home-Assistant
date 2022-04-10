@@ -33,6 +33,10 @@ To make the graphs collapsible, there is one helper switch switch.esxi_vm_graphs
 
 * switch.esxi_vm_graphs
 
+&nbsp;
+
+&nbsp;
+
 ## VIEW & CARDS
 
 Standard Masonry view was used for this
