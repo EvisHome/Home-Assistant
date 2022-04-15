@@ -1,0 +1,1174 @@
+type: picture-elements
+image: local/devices/diskstation_1.png
+title: Synology DS1512+
+elements:
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_1_status
+    name: Synology
+    show_name: true
+    show_state: false
+    show_icon: false
+    style:
+      top: 59.5%
+      left: 25%
+      width: 25%
+      height: 100%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,0.5)
+        - padding-left: 14px
+        - font-weight: bold
+        - justify-self: start
+      card:
+        - font-size: 12px
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_1_status
+    name: STATUS
+    show_name: true
+    show_state: false
+    show_icon: false
+    style:
+      top: 28%
+      left: 8.5%
+      width: 17%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-left: 14px
+        - font-weight: normal
+        - justify-self: end
+      card:
+        - font-size: 10px
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_1_status
+    name: TEMP
+    show_name: true
+    show_state: false
+    show_icon: false
+    style:
+      top: 39.5%
+      left: 8.5%
+      width: 17%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-left: 14px
+        - font-weight: normal
+        - justify-self: end
+      card:
+        - font-size: 10px
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_1_status
+    name: LIFE
+    show_name: true
+    show_state: false
+    show_icon: false
+    style:
+      top: 49%
+      left: 8.5%
+      width: 17%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-left: 14px
+        - font-weight: normal
+        - justify-self: end
+      card:
+        - font-size: 10px
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_1_status
+    name: BAD SECTORS
+    show_name: true
+    show_state: false
+    show_icon: false
+    style:
+      top: 60.5%
+      left: 8.5%
+      width: 18%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-left: 14px
+        - font-weight: normal
+        - justify-self: end
+      card:
+        - font-size: 10px
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_1_status
+    name: SMART
+    show_name: true
+    show_state: false
+    show_icon: false
+    style:
+      top: 71.5%
+      left: 8.5%
+      width: 17%
+    tap_action:
+      action: none
+    hold_action:
+      action: none
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-left: 14px
+        - font-weight: normal
+        - justify-self: end
+      card:
+        - font-size: 11px
+        - height: 10%
+        - border-radius: 0px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(65,65,65,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: switch.td_ds1_2
+    name: POWER
+    icon: mdi:power
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 14%
+      left: 80.8%
+      width: 6%
+      height: 8%
+    tap_action:
+      action: none
+    hold_action:
+      action: more-info
+    state:
+      - operator: '=='
+        value: 'off'
+        styles:
+          icon:
+            - color: black
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,0)
+      - operator: '=='
+        value: 'on'
+        styles:
+          icon:
+            - color: lightgreen
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,0)
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-bottom: 5px
+        - font-weight: normal
+      card:
+        - font-size: 10px
+        - border-radius: 6px
+        - height: 100%
+        - width: 40px
+        - border: 2px solid rgba(255,255,255,0.1)
+        - background-color: rgba(32,32,32,0.2)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 0px
+        - padding-bottom: 1px
+        - color: gray
+        - border-radius: 4px
+        - border: 0px solid rgba(60,60,60,0)
+        - background-color: rgba(0,0,0,0)
+        - filter: drop-shadow(0px 0px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_1_status
+    name: DISK 1
+    icon: mdi:harddisk
+    show_name: true
+    show_state: false
+    show_icon: true
+    style:
+      top: 73%
+      left: 25.5%
+      width: 10.1%
+      height: 100%
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '!='
+        value: normal
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-bottom: 4px
+        - font-weight: normal
+      card:
+        - font-size: 10px
+        - height: 63.2%
+        - border-radius: 4px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(32,32,32,1)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - top: 2px
+        - height: 25px
+        - width: 25px
+        - padding-top: 0px
+        - padding-bottom: 5px
+        - color: lightgreen
+        - transform: rotate(0deg)
+  - type: custom:button-card
+    entity: sensor.synology_temperature_sda
+    name: Temperature
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 35%
+      left: 25.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '>'
+        value: 35
+        styles:
+          state:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      state:
+        - padding-top: 4px
+        - padding-bottom: 4px
+        - font-size: 12px
+        - color: lightgreen
+      card:
+        - font-size: 13px
+        - height: 30px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_1_below_min_remaining_life
+    name: Life
+    icon: mdi:cards-heart
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 43%
+      left: 25.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_1_exceeded_max_bad_sectors
+    name: Bad Sector
+    icon: mdi:hexagon-slice-5
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 54%
+      left: 25.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.synology_status_smart_sda
+    name: Bad Sector
+    icon: mdi:checkbox-marked-circle-outline
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 65%
+      left: 25.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_2_status
+    name: DISK 2
+    icon: mdi:harddisk
+    show_name: true
+    show_state: false
+    show_icon: true
+    style:
+      top: 73%
+      left: 37.6%
+      width: 10.1%
+      height: 100%
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '!='
+        value: normal
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-bottom: 4px
+        - font-weight: normal
+      card:
+        - font-size: 10px
+        - height: 63.2%
+        - border-radius: 4px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(32,32,32,1)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - top: 2px
+        - height: 25px
+        - width: 25px
+        - padding-top: 0px
+        - padding-bottom: 5px
+        - color: lightgreen
+        - transform: rotate(0deg)
+  - type: custom:button-card
+    entity: sensor.synology_temperature_sdb
+    name: Temperature
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 35%
+      left: 37.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '>'
+        value: 35
+        styles:
+          state:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      state:
+        - padding-top: 4px
+        - padding-bottom: 4px
+        - font-size: 12px
+        - color: lightgreen
+      card:
+        - font-size: 13px
+        - height: 30px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_2_below_min_remaining_life
+    name: Life
+    icon: mdi:cards-heart
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 43%
+      left: 37.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_2_exceeded_max_bad_sectors
+    name: Bad Sector
+    icon: mdi:hexagon-slice-5
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 54%
+      left: 37.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.synology_status_smart_sdb
+    name: Bad Sector
+    icon: mdi:checkbox-marked-circle-outline
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 65%
+      left: 37.5%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_3_status
+    name: DISK 3
+    icon: mdi:harddisk
+    show_name: true
+    show_state: false
+    show_icon: true
+    style:
+      top: 73%
+      left: 49.8%
+      width: 10.1%
+      height: 100%
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '!='
+        value: normal
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-bottom: 4px
+        - font-weight: normal
+      card:
+        - font-size: 10px
+        - height: 63.2%
+        - border-radius: 4px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(32,32,32,1)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - top: 2px
+        - height: 25px
+        - width: 25px
+        - padding-top: 0px
+        - padding-bottom: 5px
+        - color: lightgreen
+        - transform: rotate(0deg)
+  - type: custom:button-card
+    entity: sensor.synology_temperature_sdc
+    name: Temperature
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 35%
+      left: 49.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '>'
+        value: 35
+        styles:
+          state:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      state:
+        - padding-top: 4px
+        - padding-bottom: 4px
+        - font-size: 12px
+        - color: lightgreen
+      card:
+        - font-size: 13px
+        - height: 30px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_3_below_min_remaining_life
+    name: Life
+    icon: mdi:cards-heart
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 43%
+      left: 49.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_3_exceeded_max_bad_sectors
+    name: Bad Sector
+    icon: mdi:hexagon-slice-5
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 54%
+      left: 49.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.synology_status_smart_sdc
+    name: Bad Sector
+    icon: mdi:checkbox-marked-circle-outline
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 65%
+      left: 49.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_4_status
+    name: DISK 4
+    icon: mdi:harddisk
+    show_name: true
+    show_state: false
+    show_icon: true
+    style:
+      top: 73%
+      left: 61.8%
+      width: 10.1%
+      height: 100%
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '!='
+        value: normal
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-bottom: 4px
+        - font-weight: normal
+      card:
+        - font-size: 10px
+        - height: 63.2%
+        - border-radius: 4px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(32,32,32,1)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - top: 2px
+        - height: 25px
+        - width: 25px
+        - padding-top: 0px
+        - padding-bottom: 5px
+        - color: lightgreen
+        - transform: rotate(0deg)
+  - type: custom:button-card
+    entity: sensor.synology_temperature_sdd
+    name: Temperature
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 35%
+      left: 61.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '>'
+        value: 35
+        styles:
+          state:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      state:
+        - padding-top: 4px
+        - padding-bottom: 4px
+        - font-size: 12px
+        - color: lightgreen
+      card:
+        - font-size: 13px
+        - height: 30px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_4_below_min_remaining_life
+    name: Life
+    icon: mdi:cards-heart
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 43%
+      left: 61.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_4_exceeded_max_bad_sectors
+    name: Bad Sector
+    icon: mdi:hexagon-slice-5
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 54%
+      left: 61.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.synology_status_smart_sdd
+    name: Bad Sector
+    icon: mdi:checkbox-marked-circle-outline
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 65%
+      left: 61.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.td_ds1_drive_5_status
+    name: DISK 5
+    icon: mdi:harddisk
+    show_name: true
+    show_state: false
+    show_icon: true
+    style:
+      top: 73%
+      left: 73.8%
+      width: 10.1%
+      height: 100%
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '!='
+        value: normal
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      name:
+        - color: rgba(255,255,255,1)
+        - padding-bottom: 4px
+        - font-weight: normal
+      card:
+        - font-size: 10px
+        - height: 63.2%
+        - border-radius: 4px
+        - border: 0px solid rgba(100,100,100,0)
+        - background-color: rgba(32,32,32,1)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - top: 2px
+        - height: 25px
+        - width: 25px
+        - padding-top: 0px
+        - padding-bottom: 5px
+        - color: lightgreen
+        - transform: rotate(0deg)
+  - type: custom:button-card
+    entity: sensor.synology_temperature_sde
+    name: Temperature
+    show_name: false
+    show_state: true
+    show_icon: false
+    style:
+      top: 35%
+      left: 73.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - operator: '>'
+        value: 35
+        styles:
+          state:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      state:
+        - padding-top: 4px
+        - padding-bottom: 4px
+        - font-size: 12px
+        - color: lightgreen
+      card:
+        - font-size: 13px
+        - height: 30px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_5_below_min_remaining_life
+    name: Life
+    icon: mdi:cards-heart
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 43%
+      left: 73.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: binary_sensor.td_ds1_drive_5_exceeded_max_bad_sectors
+    name: Bad Sector
+    icon: mdi:hexagon-slice-5
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 54%
+      left: 73.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
+  - type: custom:button-card
+    entity: sensor.synology_status_smart_sde
+    name: Bad Sector
+    icon: mdi:checkbox-marked-circle-outline
+    show_name: false
+    show_state: false
+    show_icon: true
+    style:
+      top: 65%
+      left: 73.8%
+      width: 47px
+      height: 0px
+    tap_action:
+      action: more-info
+    hold_action:
+      action: more-info
+    state:
+      - value: 'on'
+        styles:
+          icon:
+            - color: rgba(253,89,89,1)
+              animation: blink 1s ease infinite
+              filter: drop-shadow(0px 0px 2px rgba(0,0,0,1)
+    styles:
+      card:
+        - font-size: 13px
+        - height: 40px
+        - border-radius: 5px
+        - border: 1px solid rgba(0,0,0,0.0)
+        - background-color: rgba(0,0,0,0)
+        - box-shadow: 0px 0px 2px 2px rgba(0,0,0,0)
+      icon:
+        - height: 20px
+        - width: 20px
+        - padding-top: 4px
+        - padding-bottom: 5px
+        - color: lightgreen
