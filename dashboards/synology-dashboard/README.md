@@ -24,7 +24,7 @@ The LAN switches, in the button row, are through Unifi Network Integration
 
 ## SENSORS
 
-I used on template sensor to calculate the Free Space for the Apex Chart donut
+I used a template sensor to calculate the Free Space for the Apex Chart donut
 
 This goes to the sensors section in the configuration.yaml, and you need to change the sensor names to correspond your actual sensors. Currently the volumen values are presented as strings which include the unit, the unit needs to be removed and value converted make the calculation.
 
