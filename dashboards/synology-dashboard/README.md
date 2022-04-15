@@ -22,6 +22,28 @@ The LAN switches, in the button row, are through Unifi Network Integration
 
 &nbsp;
 
+## SENSORS
+
+I used on template sensor to calculate the Free Space for the Apex Chart donut
+
+This goes to the sensors section in the configuration.yaml, and you need to change the sensor names to correspond your actual sensors. Currently the volumen values are presented as strings which include the unit, the unit needs to be removed and value converted make the calculation.
+
+```
+  - platform: template
+    sensors:
+      synology_free_space_volume_1:
+        value_template: >-
+          {{ (states('sensor.synology_total_size_volume_1')|replace('Tb','')|float - states('sensor.synology_used_space_volume_1')|replace('Tb','')|float)|round(2) }}
+        unit_of_measurement: 'TB'
+        friendly_name: Synology Free Space Volume 1
+  
+```
+
+
+&nbsp;
+
+&nbsp;
+
 ## VIEW & CARDS
 
 Standard Masonry view was used for this
