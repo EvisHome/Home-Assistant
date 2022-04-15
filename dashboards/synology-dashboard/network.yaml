@@ -1,0 +1,35 @@
+type: custom:apexcharts-card
+graph_span: 24h
+show:
+  loading: false
+apex_config:
+  chart:
+    height: 150px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: true
+header:
+  title: Network
+  show: true
+  show_states: true
+  colorize_states: true
+  standard_format: true
+all_series_config:
+  stroke_width: 2
+series:
+  - entity: sensor.synology_network_up
+    type: area
+    opacity: 0.3
+    name: Upload
+    color: skyblue
+    show:
+      legend_value: false
+  - entity: sensor.synology_network_down
+    type: area
+    opacity: 0.3
+    name: Download
+    color: darkorange
+    show:
+      legend_value: false
