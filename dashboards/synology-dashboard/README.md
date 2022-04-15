@@ -39,6 +39,19 @@ This goes to the sensors section in the configuration.yaml, and you need to chan
   
 ```
 
+## BUTTONS
+
+Now days the Synology DSM integration offers reboot and shutdown buttons, before that I create few shell_commands to do the shutdown and reboot and I am still using those. I also have WOL (Wake-On-LAN) setup to turn the NAS back on, I am not going through the shell-command and certification setup here, so you should replace the shell_commands with the new integration buttons.
+
+```
+  ## WAKE-ON-LAN ##
+  - platform: wake_on_lan
+    mac: {your-nas-mac-1}
+    name: "TD_DS1"
+    host: {your-nas-lan-ip-1}
+    turn_off:
+      service: shell_command.td_ds1_shutdown
+```
 
 &nbsp;
 
