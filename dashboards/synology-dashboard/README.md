@@ -8,3 +8,12 @@
 
 &nbsp;
 
+## INTEGRATIONS
+
+List of integrations needed to set this up:
+
+* [Synology DSM](https://www.home-assistant.io/integrations/synology_dsm)
+
+The LAN switches, in the button row, are through Unifi Network Integration
+
+* [Unifi Network](https://www.home-assistant.io/integrations/unifi/)
