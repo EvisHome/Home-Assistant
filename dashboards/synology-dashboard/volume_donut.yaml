@@ -1,0 +1,41 @@
+type: custom:apexcharts-card
+graph_span: 12h
+show:
+  loading: false
+header:
+  show: true
+  title: Volume 1
+  standard_format: false
+  show_states: true
+  colorize_states: true
+color_list:
+  - green
+  - rgba(253,80,80,1)
+  - skyblue
+all_series_config:
+  stroke_width: 2
+  opacity: 1
+apex_config:
+  chart:
+    height: 340px
+chart_type: donut
+series:
+  - entity: sensor.synology_free_space_volume_1
+    name: Free Space
+    float_precision: 2
+    show:
+      in_header: false
+  - entity: sensor.synology_used_space_volume_1
+    name: Used Space
+    float_precision: 2
+    show:
+      in_header: false
+  - entity: sensor.synology_total_size_volume_1
+    name: Total Space
+    float_precision: 2
+    show:
+      in_chart: false
+style: |
+  ha-card {
+    padding-bottom: 20px;
+  }
