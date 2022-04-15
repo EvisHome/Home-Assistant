@@ -1,0 +1,35 @@
+type: custom:apexcharts-card
+graph_span: 24h
+show:
+  loading: false
+apex_config:
+  chart:
+    height: 155px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: false
+header:
+  title: System Resources
+  show: true
+  show_states: true
+  colorize_states: true
+  standard_format: true
+all_series_config:
+  stroke_width: 2
+series:
+  - entity: sensor.synology_memory_usage_real
+    type: area
+    opacity: 0.3
+    name: Memory
+    color: skyblue
+    show:
+      legend_value: false
+  - entity: sensor.synology_cpu_load_total
+    type: area
+    opacity: 0.3
+    name: CPU
+    color: orange
+    show:
+      legend_value: false
