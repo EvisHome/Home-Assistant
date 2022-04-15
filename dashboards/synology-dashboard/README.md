@@ -26,7 +26,7 @@ The LAN switches, in the button row, are through Unifi Network Integration
 
 I used a template sensor to calculate the Free Space for the Apex Chart donut
 
-This goes to the sensors section in the configuration.yaml, and you need to change the sensor names to correspond your actual sensors. Currently the volumen values are presented as strings which include the unit, the unit needs to be removed and value converted make the calculation.
+This goes to the sensors section in the configuration.yaml, and you need to change the sensor names to correspond your actual sensors. Currently the volumes values are presented as strings which include the unit, the unit needs to be removed and value converted make the calculation.
 
 ```
   - platform: template
@@ -41,7 +41,7 @@ This goes to the sensors section in the configuration.yaml, and you need to chan
 
 ## BUTTONS
 
-Now days the Synology DSM integration offers reboot and shutdown buttons, before that I create few shell_commands to do the shutdown and reboot and I am still using those. I also have WOL (Wake-On-LAN) setup to turn the NAS back on, I am not going through the shell-command and certification setup here, so you should replace the shell_commands with the new integration buttons.
+Now days the Synology DSM integration offers reboot and shutdown buttons, before that I create few shell_commands to do the shutdown and reboot and I am still using those. I also have WOL (Wake-On-LAN) setup to turn the NAS back on, I am not going through the shell-command and certification setup here (unless there is enough interest how to do that), so you should replace the shell_commands with the new integration buttons, I think this is anyway a lot easier and better way for now.
 
 ```
   ## WAKE-ON-LAN ##
