@@ -37,6 +37,25 @@ To make the graphs collapsible, there is one helper switch switch.esxi_vm_graphs
 
 &nbsp;
 
+## CONFIGURATIONS
+
+I calculate the datastore used space, used in the "donuts", with this template sensor.
+
+```
+#sensor:
+  - platform: template
+    sensors:
+      esxi_datastore1_used_space_gb:
+        value_template: >-
+          {{ (state_attr('sensor.esxi_datastore_datastore1', 'total_space_gb') | float - states('sensor.esxi_datastore_datastore1') | float) }}
+        unit_of_measurement: 'GB'
+        friendly_name: ESXi Datastore 1 Used Space
+```
+
+&nbsp;
+
+&nbsp;
+
 ## VIEW & CARDS
 
 Standard Masonry view was used for this
