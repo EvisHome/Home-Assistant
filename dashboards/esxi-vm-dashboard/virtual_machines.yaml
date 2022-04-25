@@ -380,6 +380,7 @@ cards:
                             color: skyblue
                   series:
                     - entity: this.entity_id
+                      attribute: cpu_use_pct
                       float_precision: 0
                       yaxis_id: first
                       type: line
