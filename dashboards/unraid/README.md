@@ -41,7 +41,7 @@ The setup process is really well described [here](https://github.com/ElectricBra
 
 **2. Glances**
 
-Setup Glances docker container in Unraid, this is quite straight forward.
+Setup Glances docker container in Unraid, this is quite straight forward. (EDIT 25.4.2022: Glances v3.2.5 is not working HA 2022.4, using nicolargo/glances:3.2.4.2)
 
 &ensp;&ensp; APPS -> Search for Glances -> Install
 
