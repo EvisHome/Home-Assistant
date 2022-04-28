@@ -1,1 +1,86 @@
-
+type: vertical-stack
+cards:
+  - type: entities
+    entities:
+      - entity: binary_sensor.nest_protect_upstairs_co_status
+        type: custom:multiple-entity-row
+        name: Upstairs
+        icon: mdi:circle-outline
+        state_color: true
+        show_state: false
+        entities:
+          - entity: binary_sensor.nest_protect_upstairs_co_status
+            name: CO
+            styles:
+              color: orange
+          - entity: binary_sensor.nest_protect_upstairs_heat_status
+            name: HEAT
+            styles:
+              color: orange
+          - entity: binary_sensor.nest_protect_upstairs_smoke_status
+            name: SMOKE
+            styles:
+              color: orange
+          - entity: binary_sensor.nest_protect_upstairs_battery_health
+            name: BATTERY
+            styles:
+              color: orange
+      - entity: binary_sensor.nest_protect_downstairs_co_status
+        type: custom:multiple-entity-row
+        name: Downstairs
+        icon: mdi:circle-outline
+        show_state: false
+        entities:
+          - entity: binary_sensor.nest_protect_downstairs_co_status
+            name: CO
+            styles:
+              color: orange
+          - entity: binary_sensor.nest_protect_downstairs_heat_status
+            name: HEAT
+            styles:
+              color: orange
+          - entity: binary_sensor.nest_protect_downstairs_smoke_status
+            name: SMOKE
+            styles:
+              color: orange
+          - entity: binary_sensor.nest_protect_downstairs_battery_health
+            name: BATTERY
+            styles:
+              color: orange
+    header:
+      type: picture
+      image: /local/system/nest-protect-green.png
+      tap_action:
+        action: none
+      hold_action:
+        action: none
+    title: Fire Alarm
+  - type: horizontal-stack
+    cards:
+      - type: entities
+        title: Upstairs
+        entities:
+          - entity: switch.nest_protect_upstairs_pathlight
+            name: Path Light
+          - entity: switch.nest_protect_upstairs_nightly_promise
+            name: Nightly Promise
+            secondary_info: none
+          - entity: switch.nest_protect_upstairs_steam_check
+            name: Steam Check
+          - entity: switch.nest_protect_upstairs_heads_up
+            name: Heads-Up
+        show_header_toggle: false
+        state_color: true
+      - type: entities
+        title: Downstairs
+        entities:
+          - entity: switch.nest_protect_downstairs_pathlight
+            name: Path Light
+          - entity: switch.nest_protect_downstairs_nightly_promise
+            name: Nightly Promise
+          - entity: switch.nest_protect_downstairs_steam_check
+            name: Steam Check
+          - entity: switch.nest_protect_downstairs_heads_up
+            name: Heads-Up
+        show_header_toggle: false
+        state_color: true
