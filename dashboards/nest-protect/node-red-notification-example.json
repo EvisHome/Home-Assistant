@@ -1,0 +1,975 @@
+[
+    {
+        "id": "6dc0247c.d7210c",
+        "type": "subflow",
+        "name": "System Notification Actionable",
+        "info": "[Documentation](https://zachowj.github.io/node-red-contrib-home-assistant-websocket/cookbook/actionable-notifications-subflow-for-android.html)\n",
+        "category": "",
+        "in": [
+            {
+                "x": 136,
+                "y": 240,
+                "wires": [
+                    {
+                        "id": "9d85d137.fe487"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1240,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "974bd48d.c253e8",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 1240,
+                "y": 340,
+                "wires": [
+                    {
+                        "id": "974bd48d.c253e8",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 1240,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "974bd48d.c253e8",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 1016,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "5bc7345c.07b1cc",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "service",
+                "type": "str",
+                "value": "notify",
+                "ui": {
+                    "label": {
+                        "en-US": "Notify Service"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "title",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Title"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "message",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Message"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "action1Title",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Action 1 Title"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "action1Uri",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Action 1 URI (optional)"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "action2Title",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Action 2 Title"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "action2Uri",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Action 2 URI (optional)"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "action3Title",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Action 3 Title"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "action3Uri",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Action 3 URI (optional)"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "userInfo",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "label": {
+                        "en-US": "Populate User Information"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "sticky",
+                "type": "bool",
+                "value": "false",
+                "ui": {
+                    "label": {
+                        "en-US": "Sticky"
+                    },
+                    "type": "checkbox"
+                }
+            },
+            {
+                "name": "group",
+                "type": "str",
+                "value": "None",
+                "ui": {
+                    "label": {
+                        "en-US": "Group"
+                    },
+                    "type": "select",
+                    "opts": {
+                        "opts": [
+                            {
+                                "l": {
+                                    "en-US": "None"
+                                },
+                                "v": ""
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Cameras"
+                                },
+                                "v": "camera"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Security"
+                                },
+                                "v": "security"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Garage"
+                                },
+                                "v": "garage"
+                            },
+                            {
+                                "l": {
+                                    "en-US": "Laundry Room"
+                                },
+                                "v": "laundry_room"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "color",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Color"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "timeout",
+                "type": "num",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Timeout"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "num"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "icon",
+                "type": "str",
+                "value": "",
+                "ui": {
+                    "label": {
+                        "en-US": "Icon"
+                    },
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            }
+        ],
+        "meta": {},
+        "color": "#C0C0C0",
+        "outputLabels": [
+            "Action 1",
+            "Action 2",
+            "Action 3",
+            "Cleared"
+        ],
+        "icon": "font-awesome/fa-mobile-phone",
+        "status": {
+            "x": 300,
+            "y": 432,
+            "wires": [
+                {
+                    "id": "204dbcfc.144ae4",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "f9e57204.71076",
+        "type": "function",
+        "z": "6dc0247c.d7210c",
+        "name": "create service call",
+        "func": "msg._originalPayload = msg.payload;\nflow.set('latestMessage', msg);\n\n/* const services = env.get('service'); */\nconst services = msg.service || env.get('service');\nif(!services) {\n    node.status({\n        text: 'no services defined',\n        shape: 'ring',\n        fill: 'red'\n    });\n    return;    \n}\n\nconst actions = [1, 2, 3].reduce((acc, i) => {\n    const name = `action${i}`\n    const id = flow.get(`${name}Id`);\n    const title = getActionProperty(i, \"title\") ?? env.get(`${name}Title`);\n    const uri = getActionProperty(i, \"uri\") ?? env.get(`${name}Uri`);\n    const action = uri.length ? 'URI' : title ? id : undefined;\n\n    acc.push({ action, title, uri });\n\n    return acc;\n}, []);\n\nconst data = mergeDeep({\n        title: env.get('title'),\n        message: env.get('message'),\n        data: {\n            tag: flow.get('notificationTag'),\n            color: env.get(\"color\"),\n            group: env.get(\"group\"),\n            sticky: env.get(\"sticky\"),\n            timeout: env.get(\"timeout\"),\n            icon: env.get(\"icon\"),\n            priority: \"high\"\n        },\n    },    \n    msg.actionable,    \n    {data: {actions}},\n);\n\nservices.trim().split(/,\\s*/).forEach(service => {\n    if(!service) return;\n    \n    msg.payload = {\n        service,\n        data,\n    };\n    node.send(msg);\n});\n\nnode.done();\n\nfunction getActionProperty(index, prop) {\n    const i = index - 1;\n\n    return msg?.actionable?.data?.actions?.[i]?.[prop];\n}\n\n/**\n * Simple object check.\n * @param item\n * @returns {boolean}\n */\nfunction isObject(item) {\n    return (item && typeof item === 'object' && !Array.isArray(item));\n}\n\n/**\n * Deep merge two objects.\n * @param target\n * @param sources\n */\nfunction mergeDeep(target, ...sources) {\n    if (!sources.length) return target;\n    const source = sources.shift();\n\n    if (isObject(target) && isObject(source)) {\n        for (const key in source) {\n            if (isObject(source[key])) {\n                if (!target[key]) Object.assign(target, { [key]: {} });\n                mergeDeep(target[key], source[key]);\n            } else {\n                Object.assign(target, { [key]: source[key] });\n            }\n        }\n    }\n\n    return mergeDeep(target, ...sources);\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "const randomId = () => Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5);\n\n[1,2,3].forEach(i => {\n    flow.set(`action${i}Id`, `action${i}_${randomId()}`);\n})\n\n\nflow.set('notificationTag', `${env.get('title')}_${randomId()}`);",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "16e9b419e41572df",
+                "6006c05c0ff53dff"
+            ]
+        ]
+    },
+    {
+        "id": "974bd48d.c253e8",
+        "type": "switch",
+        "z": "6dc0247c.d7210c",
+        "name": "which action?",
+        "property": "eventData.event.action",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "action1Id",
+                "vt": "flow"
+            },
+            {
+                "t": "eq",
+                "v": "action2Id",
+                "vt": "flow"
+            },
+            {
+                "t": "eq",
+                "v": "action3Id",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 1076,
+        "y": 336,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "204dbcfc.144ae4",
+        "type": "status",
+        "z": "6dc0247c.d7210c",
+        "name": "",
+        "scope": [
+            "f9e57204.71076",
+            "5bc7345c.07b1cc",
+            "a622c92a.2d9898",
+            "368c9723.5876f8"
+        ],
+        "x": 176,
+        "y": 432,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bc7345c.07b1cc",
+        "type": "function",
+        "z": "6dc0247c.d7210c",
+        "name": "build message",
+        "func": "const latestMessage = flow.get('latestMessage');\nconst event = msg.payload.event;\n\nlatestMessage.eventData = msg.payload;\nlatestMessage.payload = latestMessage._originalPayload;\ndelete latestMessage._originalPayload;\n\nif(env.get('userInfo')) {\n    const userData = msg.userData.find(u => u.id === msg.payload.context.user_id);\n    latestMessage.userData = userData;\n}\n\nif(msg.event_type === 'mobile_app_notification_cleared') {\n    node.status({\n        text: `cleared at: ${getPrettyDate()}`,\n        shape: 'dot',\n        fill: 'blue'\n    });\n    \n    return [null, latestMessage];\n}\n\nconst index = [1,2,3].find(i => event[`action_${i}_key`] === event.action);\nnode.status({\n    text: `${event[`action_${index}_title`]} at: ${getPrettyDate()}`,\n    shape: 'dot',\n    fill: 'green'\n});\n\nreturn latestMessage;\n\n\nfunction getPrettyDate() {\n    return new Date().toLocaleDateString('en-US', {\n        month: 'short',\n        day: 'numeric',\n        hour12: false,\n        hour: 'numeric',\n        minute: 'numeric',\n    });\n}",
+        "outputs": 2,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 884,
+        "y": 336,
+        "wires": [
+            [
+                "974bd48d.c253e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8d3bdc0c.37493",
+        "type": "switch",
+        "z": "6dc0247c.d7210c",
+        "name": "belongs here?",
+        "property": "payload.event.tag",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "notificationTag",
+                "vt": "flow"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 484,
+        "y": 336,
+        "wires": [
+            [
+                "83ad2004.d04d"
+            ]
+        ]
+    },
+    {
+        "id": "271e4479.b9249c",
+        "type": "ha-api",
+        "z": "6dc0247c.d7210c",
+        "name": "get user info",
+        "server": "dba636d5.d235b8",
+        "version": 1,
+        "debugenabled": false,
+        "protocol": "websocket",
+        "method": "get",
+        "path": "",
+        "data": "{\"type\": \"config/auth/list\"}",
+        "dataType": "json",
+        "responseType": "json",
+        "outputProperties": [
+            {
+                "property": "userData",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "results"
+            }
+        ],
+        "x": 874,
+        "y": 288,
+        "wires": [
+            [
+                "5bc7345c.07b1cc"
+            ]
+        ]
+    },
+    {
+        "id": "3618f055.6909a",
+        "type": "server-events",
+        "z": "6dc0247c.d7210c",
+        "name": "mobile_app_notification_cleared",
+        "server": "dba636d5.d235b8",
+        "version": 1,
+        "event_type": "mobile_app_notification_cleared",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            },
+            {
+                "property": "event_type",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "x": 246,
+        "y": 384,
+        "wires": [
+            [
+                "8d3bdc0c.37493"
+            ]
+        ]
+    },
+    {
+        "id": "83ad2004.d04d",
+        "type": "switch",
+        "z": "6dc0247c.d7210c",
+        "name": "fetch user info?",
+        "property": "userInfo",
+        "propertyType": "env",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 676,
+        "y": 336,
+        "wires": [
+            [
+                "271e4479.b9249c"
+            ],
+            [
+                "5bc7345c.07b1cc"
+            ]
+        ]
+    },
+    {
+        "id": "9d85d137.fe487",
+        "type": "switch",
+        "z": "6dc0247c.d7210c",
+        "name": "",
+        "property": "clear_notification",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "nnull"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 195,
+        "y": 240,
+        "wires": [
+            [
+                "f9e57204.71076"
+            ],
+            [
+                "a622c92a.2d9898"
+            ]
+        ],
+        "l": false
+    },
+    {
+        "id": "a622c92a.2d9898",
+        "type": "function",
+        "z": "6dc0247c.d7210c",
+        "name": "create clear notification",
+        "func": "const services = env.get('service');\nif(!services) {\n    node.status({\n        text: 'no services defined',\n        shape: 'ring',\n        fill: 'red'\n    });\n    return;    \n}\n\nservices.trim().split(/,\\s*/).forEach(service => {\n    if(!service) return;\n    \n    msg.payload = {\n        service,\n        data: {\n            message: \"clear_notification\",\n            data: {\n                tag: flow.get('notificationTag'),\n            }\n        }\n    };\n    node.send(msg);\n});\n\nnode.status({text: \"cleared\"});\nnode.done();",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 288,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9bfe567c.3d10c8",
+        "type": "server-events",
+        "z": "6dc0247c.d7210c",
+        "name": "mobile_app_notification_action",
+        "server": "dba636d5.d235b8",
+        "version": 1,
+        "event_type": "mobile_app_notification_action",
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "waitForRunning": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            },
+            {
+                "property": "event_type",
+                "propertyType": "msg",
+                "value": "$outputData(\"eventData\").event_type",
+                "valueType": "jsonata"
+            }
+        ],
+        "x": 246,
+        "y": 336,
+        "wires": [
+            [
+                "8d3bdc0c.37493"
+            ]
+        ]
+    },
+    {
+        "id": "16e9b419e41572df",
+        "type": "debug",
+        "z": "6dc0247c.d7210c",
+        "d": true,
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6006c05c0ff53dff",
+        "type": "api-call-service",
+        "z": "6dc0247c.d7210c",
+        "name": "",
+        "server": "dba636d5.d235b8",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "",
+        "entityId": "",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "callServiceData",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 710,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e22798dc873309a7",
+        "type": "server-state-changed",
+        "z": "f42b54c.8b1e628",
+        "name": "Nest Protect Upstairs - CO",
+        "server": "dba636d5.d235b8",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.nest_protect_upstairs_co_status",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is_not",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "device",
+                "propertyType": "msg",
+                "value": "Upstairs",
+                "valueType": "str"
+            },
+            {
+                "property": "alarm_type",
+                "propertyType": "msg",
+                "value": "CO",
+                "valueType": "str"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 150,
+        "y": 2500,
+        "wires": [
+            [
+                "11234e9d2c420f0e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "11234e9d2c420f0e",
+        "type": "function",
+        "z": "f42b54c.8b1e628",
+        "name": "Dynamic Message",
+        "func": "var alarm_type = msg.alarm_type\nvar device = msg.device\n\nmsg.actionable = \n{\n    \"title\": \"Fire Alarm\",\n    \"message\": \"* Protect: \" + device + \"<br>* Alarm: \" + alarm_type \n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 2500,
+        "wires": [
+            [
+                "6a1cccbd7e027933"
+            ]
+        ]
+    },
+    {
+        "id": "b11e94d5b795f0f9",
+        "type": "inject",
+        "z": "f42b54c.8b1e628",
+        "name": "TEST",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "device",
+                "v": "Upstairs",
+                "vt": "str"
+            },
+            {
+                "p": "alarm_type",
+                "v": "Smoke",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 2560,
+        "wires": [
+            [
+                "11234e9d2c420f0e"
+            ]
+        ]
+    },
+    {
+        "id": "6a1cccbd7e027933",
+        "type": "api-current-state",
+        "z": "f42b54c.8b1e628",
+        "name": "Alarm Notify - You",
+        "server": "dba636d5.d235b8",
+        "version": 3,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.alarm_notifications_you",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "service",
+                "propertyType": "msg",
+                "value": "mobile_app_device",
+                "valueType": "str"
+            }
+        ],
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "x": 650,
+        "y": 2500,
+        "wires": [
+            [
+                "e4777b8a0ce879e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e4777b8a0ce879e8",
+        "type": "subflow:6dc0247c.d7210c",
+        "z": "f42b54c.8b1e628",
+        "name": "Nest Protect - Action Notification",
+        "env": [
+            {
+                "name": "service",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "name": "action1Uri",
+                "value": "  ",
+                "type": "str"
+            },
+            {
+                "name": "action2Title",
+                "value": "Extended SMS",
+                "type": "str"
+            },
+            {
+                "name": "action3Title",
+                "value": "Activate Lock",
+                "type": "str"
+            },
+            {
+                "name": "sticky",
+                "type": "bool",
+                "value": "true"
+            },
+            {
+                "name": "group",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "name": "color",
+                "value": "red",
+                "type": "str"
+            }
+        ],
+        "x": 930,
+        "y": 2500,
+        "wires": [
+            [],
+            [
+                "7bd212f799458ff1"
+            ],
+            [
+                "3f07e668d3d5a250"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7bd212f799458ff1",
+        "type": "function",
+        "z": "f42b54c.8b1e628",
+        "name": "EN SMS Message",
+        "func": "var message = \"Fire Alarm (Automatic): \\n\\n YOUR MESSAGE HERE\"\nvar recepients = \"YOUR-RECEPIENTS\"\n\nmsg.payload = \n{ \n    \"messages\": [ { \"body\": \"\" + message + \"\",\n    \"to\": \"\" + recepients + \"\",\n    \"from\": \"YOUR-NUMBER\" } ] }\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1210,
+        "y": 2440,
+        "wires": [
+            [
+                "173d44ab18286a12"
+            ]
+        ]
+    },
+    {
+        "id": "3f07e668d3d5a250",
+        "type": "api-call-service",
+        "z": "f42b54c.8b1e628",
+        "name": "Activate Front Door Lock",
+        "server": "dba636d5.d235b8",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "lock",
+        "service": "unlock",
+        "entityId": "lock.front_door",
+        "data": "{}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1230,
+        "y": 2540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "173d44ab18286a12",
+        "type": "http request",
+        "z": "f42b54c.8b1e628",
+        "name": "Send SMS",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://rest.clicksend.com/v3/sms/send",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "basic",
+        "senderr": false,
+        "x": 1430,
+        "y": 2440,
+        "wires": [
+            []
+        ]
+    }
+]
