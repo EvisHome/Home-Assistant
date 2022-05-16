@@ -45,7 +45,9 @@ From the GUI you can define the name, you could define the message also, but I h
 Extended SMS message - purpose is to manually send a predefined SMS message to predefined numbers (neighbors, family members etc.) For the SMS sending, I am using paid service, [ClickSend](https://clicksend.com/?u=324136). It can be integrated to a huge amount of systems, including [Home Assistant](https://integrations.clicksend.com/listings/home-assistant) and [Node-RED](https://integrations.clicksend.com/listings/node-red). (Costs €0.11 per SMS).
 
 ![image](https://user-images.githubusercontent.com/98347572/168566377-f34f0fd1-ef48-4347-9cb3-b8c050e64e6d.png)
+
 ![image](https://user-images.githubusercontent.com/98347572/168566492-642ca0ae-b228-4ac7-be66-ffb346d18407.png)
+
 ![image](https://user-images.githubusercontent.com/98347572/168566526-85d42bd0-802b-4178-96fd-b6512378a111.png)
 
 
