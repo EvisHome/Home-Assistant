@@ -136,7 +136,7 @@ sensor:
 
 number:
 
-	## SENSING DISTANCE value for mmWave Radar
+    ## SENSING DISTANCE value for mmWave Radar
   - platform: template
     # name for the number (required)
     name: kitchen_distance
@@ -176,7 +176,7 @@ number:
       	# START the sensor again
       - uart.write: "sensorStart"
 
-	## LATENCY FOR TURNING mmWave OFF when no movement detected.
+    ## LATENCY FOR TURNING mmWave OFF when no movement detected.
   - platform: template
     name: kitchen_latency
     id: kitchen_latency
