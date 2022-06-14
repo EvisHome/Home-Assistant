@@ -63,7 +63,7 @@ uart:
   # baud rate for UART bus (required)
   baud_rate: 115200
   debug:
-  	# debug communication to both directions
+    # debug communication to both directions
     direction: BOTH
     # useful to debug all incoming communication
     dummy_receiver: true
@@ -74,7 +74,7 @@ uart:
 
 switch:
 
-	# Switch for Safe Mode
+    # Switch for Safe Mode
   - platform: safe_mode
     internal: true
     name: use_safe_mode
