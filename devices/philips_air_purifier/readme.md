@@ -44,6 +44,7 @@ cards:
 ```
 - Using *custom:mushroom-template-card*
   - change replace the *fan.philips_air_purifier* with your fan entity, and make the same change in the in the card_mod style part where used.
+  - In each card the *mode == auto* matches the modes the device supports (modify in 2 places to your needs), change for each card. Also change the *primary: Auto* text.
  
 ```yaml
       - type: custom:mushroom-template-card
