@@ -172,3 +172,28 @@ cards:
             border-radius: 0px;
           }
 ```
+
+4. The Fourth Row is a Grid of 1 column
+
+```yaml
+  - square: false
+    columns: 1
+    type: grid
+    cards:
+```
+
+  - using custom:mushroom-template-card and displaying the model (I just typed it in, but could be fetched from the fan entity also using *model* attribute )
+
+```yaml
+      - type: custom:mushroom-template-card
+        primary: ''
+        secondary: AC1214/10
+        icon: ''
+        entity: fan.philips_air_purifier
+        card_mod:
+          style: |
+            ha-card {
+              border-top-right-radius: 0px;
+              border-top-left-radius: 0px;
+            }
+```
