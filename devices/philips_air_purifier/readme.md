@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/98347572/186207961-6dfb814b-1d68-4c0f-968a-d62f4906c70c.png)
+![image](air-purifier.gif)
 
 For Philips Air Purifier 1214/10 whitch uses the HTTP protocol for communication, I used https://github.com/GeorgeSG/philips_airpurifier_http integration, which is a fork of xMrVizzy/philips-airpurifier..
 
