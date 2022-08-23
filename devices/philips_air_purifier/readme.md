@@ -6,7 +6,7 @@ The Dashboard controls use Grid, Mushroom Cards and Card Mod.
 
 You can switch the mode from the four buttons, or change the speed from the slider, which then automatically puts the purifier into manual mode. Few visual tricks for the fan spinning faster or slower, depending the actual speed percentage. The filter turn to yellow, when there is a week left, and to red when 48 hours left.
 
-**My fan entity**
+**My fan.philips_air_purifier entity**
 
 ![image](https://user-images.githubusercontent.com/98347572/186247964-52e551ab-e10e-4784-851e-733c4b3da031.png)
 
