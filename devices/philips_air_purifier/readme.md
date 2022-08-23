@@ -12,9 +12,11 @@ You can switch the mode from the four buttons, or change the speed from the slid
 
 ![image](https://user-images.githubusercontent.com/98347572/186247964-52e551ab-e10e-4784-851e-733c4b3da031.png)
 
-There is some weirdness with the speed, basically anything under 40% does not register. Which is a small problem if you change the speed from 60% to 20%, nothing happens. Thats said, id doesn't bother me that much as I usually keep the device on Auto Mode.
+There is some weirdness with the speed, basically anything under 40% does not register. Which is a small problem if you change the speed from 60% to 20%, nothing happens. Thats said, id doesn't bother me that much as I usually keep the device on Auto Mode. I might try to address this issue later on, so that 40% is always selected if you try set it to 20%.
 
-The device has speeds 1, 2, 3 and Turbo. The modes my device supports are Auto Mode, Allergen Mode, Night Sensing Mode, and the Manual Mode, which triggers automatically if you change the speed manually.
+The device has speeds 1, 2, 3 and Turbo. The speed setting moves in steps of 20 and the corresponding speed percentages are 40% = 1, 60% = 2, 80% = 3 and 100% = Turbo.
+
+My device only supports modes Auto Mode, Allergen Mode, Night Sensing Mode, and the Manual Mode, which triggers automatically if you change the speed manually. This is the reason I included these modes in the controls.
 
 ### The YAML
 
