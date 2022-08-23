@@ -113,3 +113,62 @@ cards:
               :host {
               }
 ```
+
+3. Third row is a Grid of 3 columns
+
+```yaml
+  - square: false
+    columns: 3
+    type: grid
+    cards:
+```
+
+- Using *custom:mushroom-template-card*
+  - change the entity *sensor.philips_air_purifier_pre_filter* for each card
+
+```yaml
+      - type: custom:mushroom-template-card
+        entity: sensor.philips_air_purifier_pre_filter
+        primary: Pre-filter
+        secondary: '{{ states(entity) }} hours'
+        icon: mdi:air-filter
+        icon_color: |
+          {% set value = states(entity) | int
+          %}
+          {% if value < 2 %}
+            red
+          {% elif value < 168 %}
+            orange
+          {% else %}
+            green
+          {% endif %}
+        tap_action:
+          action: none
+        hold_action:
+          action: more-info
+        double_tap_action:
+          action: none
+        card_mod: null
+        style: |
+          :host { display:
+            {% set filter = states(entity) | int
+          %}
+            {% if filter > 168 %}
+              inline;
+            {% else %}
+              inline;
+            {% endif %}
+          }
+          @keyframes blink {
+            50% { opacity: 0; }
+          }
+          ha-card {
+            --mush-chip-border-radius: 0px;
+            {% set filter = states(entity) |
+            int %}
+            {% if filter == 0 %}
+            animation: blinks 1s ease infinite;
+            {% endif %}
+            border-radius: 0px;
+          }
+```
