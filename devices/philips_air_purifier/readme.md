@@ -2,14 +2,21 @@
 
 For Philips Air Purifier 1214/10 whitch uses the HTTP protocol for communication, I used https://github.com/GeorgeSG/philips_airpurifier_http integration, which is a fork of xMrVizzy/philips-airpurifier..
 
+### Overview
+
 The Dashboard controls use Grid, Mushroom Cards and Card Mod.
 
 You can switch the mode from the four buttons, or change the speed from the slider, which then automatically puts the purifier into manual mode. Few visual tricks for the fan spinning faster or slower, depending the actual speed percentage. The filter turn to yellow, when there is a week left, and to red when 48 hours left.
 
-**My fan.philips_air_purifier entity**
+### My fan.philips_air_purifier entity
 
 ![image](https://user-images.githubusercontent.com/98347572/186247964-52e551ab-e10e-4784-851e-733c4b3da031.png)
 
+There is some weirdness with the speed, basically anything under 40% does not register. Which is a small problem if you change the speed from 60% to 20%, nothing happens. Thats said, id doesn't bother me that much as I usually keep the device on Auto Mode.
+
+The device has speeds 1, 2, 3 and Turbo. The modes my device supports are Auto Mode, Allergen Mode, Night Sensing Mode, and the Manual Mode, which triggers automatically if you change the speed manually.
+
+### The YAML
 
 Everything is wrapped in a one column Grid
 ```yaml
