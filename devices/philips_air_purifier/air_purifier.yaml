@@ -53,11 +53,11 @@ cards:
             $: |
               .shape ha-icon
                 {
-                  {% set status = states('fan.philips_air_purifier') %}
+                  {% set status = states(config.entity) %}
                   {% if status == 'on' %}
-                  {% set mode = state_attr('fan.philips_air_purifier','preset_mode') %}
+                  {% set mode = state_attr(config.entity,'preset_mode') %}
                   {% if mode == 'auto' %}
-                  {% set speed = state_attr('fan.philips_air_purifier','percentage') | int %}
+                  {% set speed = state_attr(config.entity,'percentage') | int %}
                   {% if speed < 60 %}
                   --icon-animation: rotation 2s linear infinite;
                   {% elif speed < 80 %}
@@ -118,11 +118,11 @@ cards:
             $: |
               .shape ha-icon
                 {
-                  {% set status = states('fan.philips_air_purifier') %}
+                  {% set status = states(config.entity) %}
                   {% if status == 'on' %}
-                  {% set mode = state_attr('fan.philips_air_purifier','preset_mode') %}
+                  {% set mode = state_attr(config.entity,'preset_mode') %}
                   {% if mode == 'allergen' %}
-                  {% set speed = state_attr('fan.philips_air_purifier','percentage') | int %}
+                  {% set speed = state_attr(config.entity,'percentage') | int %}
                   {% if speed < 60 %}
                   --icon-animation: rotation 2s linear infinite;
                   {% elif speed < 80 %}
@@ -183,11 +183,11 @@ cards:
             $: |
               .shape ha-icon
                 {
-                  {% set status = states('fan.philips_air_purifier') %}
+                  {% set status = states(config.entity) %}
                   {% if status == 'on' %}
-                  {% set mode = state_attr('fan.philips_air_purifier','preset_mode') %}
+                  {% set mode = state_attr(config.entity,'preset_mode') %}
                   {% if mode == 'night' %}
-                  {% set speed = state_attr('fan.philips_air_purifier','percentage') | int %}
+                  {% set speed = state_attr(config.entity,'percentage') | int %}
                   {% if speed < 60 %}
                   --icon-animation: rotation 2s linear infinite;
                   {% elif speed < 80 %}
@@ -248,11 +248,11 @@ cards:
             $: |
               .shape ha-icon
                 {
-                  {% set status = states('fan.philips_air_purifier') %}
+                  {% set status = states(config.entity) %}
                   {% if status == 'on' %}
-                  {% set mode = state_attr('fan.philips_air_purifier','preset_mode') %}
+                  {% set mode = state_attr(config.entity,'preset_mode') %}
                   {% if mode == 'manual' %}
-                  {% set speed = state_attr('fan.philips_air_purifier','percentage') | int %}
+                  {% set speed = state_attr(config.entity,'percentage') | int %}
                   {% if speed < 60 %}
                   --icon-animation: rotation 2s linear infinite;
                   {% elif speed < 80 %}
@@ -310,8 +310,7 @@ cards:
         card_mod: null
         style: |
           :host { display:
-            {% set filter = states(entity) | int
-          %}
+            {% set filter = states(config.entity) | int %}
             {% if filter > 168 %}
               inline;
             {% else %}
@@ -323,8 +322,7 @@ cards:
           }
           ha-card {
             --mush-chip-border-radius: 0px;
-            {% set filter = states(entity) |
-            int %}
+            {% set filter = states(config.entity) | int %}
             {% if filter == 0 %}
             animation: blinks 1s ease infinite;
             {% endif %}
@@ -351,9 +349,10 @@ cards:
           action: more-info
         double_tap_action:
           action: none
+        card_mod: null
         style: |
           :host { display:
-            {% set filter = states('sensor.philips_air_purifier_hepa_filter') | int
+            {% set filter = states(config.entity) | int
           %}
             {% if filter < 168 %}
               inline;
@@ -366,7 +365,7 @@ cards:
           }
           ha-card {
             --mush-chip-border-radius: 0px;
-            {% set filter = states('sensor.philips_air_purifier_hepa_filter') |
+            {% set filter = states(config.entity) |
             int %}
             {% if filter == 0 %}
             animation: blinks 1s ease infinite;
@@ -394,9 +393,10 @@ cards:
           action: more-info
         double_tap_action:
           action: none
+        card_mod: null
         style: |
           :host { display:
-            {% set filter = states(entity) | int
+            {% set filter = states(config.entity) | int
           %}
             {% if filter < 168 %}
               inline;
@@ -409,7 +409,7 @@ cards:
           }
           ha-card {
             --mush-chip-border-radius: 0px;
-            {% set filter = states(entity) |
+            {% set filter = states(config.entity) |
             int %}
             {% if filter == 0 %}
             animation: blinks 1s ease infinite;
