@@ -57,8 +57,8 @@ cards:
     cards:
 ```
 - Using *custom:mushroom-template-card*
-  - change replace the *fan.philips_air_purifier* with your fan entity, and make the same change in the in the card_mod style part where used.
-  - In each card the *mode == auto* matches the modes the device supports (modify in 2 places to your needs), change for each card. Also change the *primary: Auto* text.
+  - change replace the *fan.philips_air_purifier* with your fan entity.
+  - In each card the *mode == auto* matches the modes the device supports (modify in 2 places to your needs), change for each card. Also change the *primary: Auto* text to correspond the mode.
  
 ```yaml
       - type: custom:mushroom-template-card
@@ -92,11 +92,11 @@ cards:
             $: |
               .shape ha-icon
                 {
-                  {% set status = states('fan.philips_air_purifier') %}
+                  {% set status = states(config.entity) %}
                   {% if status == 'on' %}
-                  {% set mode = state_attr('fan.philips_air_purifier','preset_mode') %}
+                  {% set mode = state_attr(config.entity) %}
                   {% if mode == 'auto' %}
-                  {% set speed = state_attr('fan.philips_air_purifier','percentage') | int %}
+                  {% set speed = state_attr(config.entity) | int %}
                   {% if speed < 60 %}
                   --icon-animation: rotation 2s linear infinite;
                   {% elif speed < 80 %}
@@ -165,7 +165,7 @@ cards:
         card_mod: null
         style: |
           :host { display:
-            {% set filter = states(entity) | int
+            {% set filter = states(config.entity) | int
           %}
             {% if filter > 168 %}
               inline;
@@ -178,7 +178,7 @@ cards:
           }
           ha-card {
             --mush-chip-border-radius: 0px;
-            {% set filter = states(entity) |
+            {% set filter = states(config.entity) |
             int %}
             {% if filter == 0 %}
             animation: blinks 1s ease infinite;
