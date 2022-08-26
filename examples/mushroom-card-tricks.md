@@ -70,7 +70,7 @@ chips:
     card_mod:
       style: |
         ha-card {
-          ## Changing the box shadow
+          /* chip box shadow */
           --chip-box-shadow: 0px 0px 0px 0px;
         }
 ```
@@ -83,7 +83,7 @@ chips:
     card_mod:
       style: |
         ha-card {
-          # Changing the chip opacity
+          /* chip opacity */
           opacity: 25%;
         }
 ```
