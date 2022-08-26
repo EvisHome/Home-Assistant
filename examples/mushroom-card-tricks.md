@@ -58,3 +58,35 @@ chips:
           animation: blink 1s ease infinite;
         }
 ```
+
+### Chip Wihtout Shadow
+
+#### Chip Box Shadow
+```YAML
+# Shadowless Template Chip
+  - type: template
+    icon: mdi:lightbulb
+    icon_color: green
+    card_mod:
+      style: |
+        ha-card {
+          ## Changing the box shadow
+          --chip-box-shadow: 0px 0px 0px 0px;
+        }
+```
+#### Chip Opacity
+```YAML
+# 25% Opacity Template Chip
+  - type: template
+    icon: mdi:lightbulb
+    icon_color: green
+    card_mod:
+      style: |
+        ha-card {
+          # Changing the chip opacity
+          opacity: 25%;
+        }
+```
+
+
+
