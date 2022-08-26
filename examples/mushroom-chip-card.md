@@ -27,9 +27,9 @@ type: custom:mushroom-chips-card
 chips:
 ```
 
-![image](mushroom-chip-card-animations.gif)
-
 ### CHIP ANIMATIONS
+
+![image](mushroom-chip-card-animations.gif)
 
 #### Wobbling Chip
 
