@@ -7,6 +7,8 @@ I use the ApexChart card quite a lot, I find it more informative with the variou
 
 Using card_mod and css to add and position a background image. The box-shadow adds an 60% shadow overlay on top of the image to make the graph more visible.
 
+See [apexchart-with-background.yaml](apexchart-with-background.yaml) for full YAML
+
 ```YAML
 type: custom:apexcharts-card
 card_mod:
