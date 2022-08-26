@@ -88,5 +88,14 @@ chips:
         }
 ```
 
-
+#### Chip Background Color & Opacity
+  - type: template
+    icon: mdi:lightbulb
+    icon_color: orange
+    card_mod:
+      style: |
+        ha-card {
+          /* chip background color & opacity */
+          --chip-background: rgba(255,155,155,0.5);
+        }
 
