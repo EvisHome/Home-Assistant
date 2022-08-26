@@ -17,4 +17,4 @@ Frontend Cards:
 * [auto-entities](https://github.com/thomasloven/lovelace-auto-entities)
 * [card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
-![Docker Server](/examples/HA-Docker-Server-dashboard.png)
+![Docker Server](HA-Docker-Server-dashboard.png)
