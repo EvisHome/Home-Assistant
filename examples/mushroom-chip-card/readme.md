@@ -3,7 +3,7 @@
 * [mushroom-cards](https://github.com/piitaya/lovelace-mushroom) by piitaya
 * [card-mod](https://github.com/thomasloven/lovelace-card-mod) by Thomas Lovén
 
-Storing some mods I was experimenting with here as examples/reference.
+Storing some mods I was experimenting with, here as examples/reference.
 
 **NOTE!** Quoting the developer (piitay)
 
