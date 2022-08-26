@@ -1,5 +1,5 @@
 # ApexChart Card
-I use the ApexChart card quite a lot, I find it more informative with the various axis options, and I like it how it can be customized. Specifically for apexcharts-card there are some features that are not in the document but can be used from the [apexcharts.js docs](https://apexcharts.com/docs/)
+I use the ApexChart card quite a lot, I find it more informative with the various axis options, and I like it how it can be customized. Specifically for [apexcharts-card](https://github.com/RomRider/apexcharts-card) there are some features that are not in the document but can be used from the [apexcharts.js docs](https://apexcharts.com/docs/), but can need some experimenting.
 
 ## ApexChart with background image
 
