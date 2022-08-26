@@ -102,4 +102,21 @@ chips:
         }
 ```
 
+#### Chip Icon & Text Size
+```YAML
+  - type: template
+    icon: mdi:lightbulb
+    icon_color: orange
+    content: text
+    card_mod:
+      style: |
+        ha-card {
+          /* chip icon size */
+          --chip-icon-size: 0.8em;
+          /* chip font size */
+          --chip-font-size: 0.5em;
+        }
+```
+
+
 
