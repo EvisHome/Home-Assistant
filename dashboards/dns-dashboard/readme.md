@@ -1,4 +1,4 @@
-## DNS (Dashboard)
+## DNS - AdGuard Dashboard
 
 Standard HA Integrations:
 * Adguard Home
