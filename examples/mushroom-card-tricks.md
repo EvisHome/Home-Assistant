@@ -118,5 +118,31 @@ chips:
         }
 ```
 
+#### MUSHROOM CHIP CARD
+* change the all chip sizes withing the chip card
+* change chips spacing
+* change chip icon sizes
+* chips border radius
+
+```YAML
+alignment: center
+style:
+  top: 116%
+  left: 50%
+  width: 100%
+  height: 100%
+  z-index: 80
+card_mod:
+card_mod:
+  style: |
+    ha-card {
+      --chip-height: 34px;
+      --chip-border-radius: 0px;
+      --chip-icon-size: 0.5em;
+      --chip-spacing: 2px;
+    }
+```
+
+
 
 
