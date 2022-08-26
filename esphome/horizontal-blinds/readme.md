@@ -18,6 +18,7 @@ Motorizing and automating horizontal window blinds tilt with a stepper motor and
 ### Wiring Diagrams
 
 Wiring for DRV8825 Stepper Driver
+![With DRV8825 Stepper Driver](image-16.png)
 
 
 Wiring for A4988 Stepper Driver
