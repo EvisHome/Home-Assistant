@@ -6,4 +6,4 @@
 * [mushroom-chip-card examples](examples/mushroom-chip-card.md)
 
 ## Themes
-* [evis-theme](theme/mushroom-chip-card.md)
+* [evis-theme](themes/readme.md)
