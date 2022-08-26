@@ -18,6 +18,8 @@
 ## ESPHome Projects
 * [Presence](esphome/presence/)
 * Plant Irrigation (coming up)
+* Roller Blind
+* Horizontal Blinds (tilt)
 
 ## Themes
 * [evis-theme](themes/readme.md)
