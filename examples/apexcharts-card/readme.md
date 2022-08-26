@@ -4,6 +4,7 @@ I use the [ApexCharts Card by RomRider ](https://github.com/RomRider/apexcharts-
 ### TOC
 
 * [ApexCharts with background image](#apexcharts-with-background-image)
+* [Multiple ApexCharts In A Swipe Card](#multiple-apexcharts-in-a-swipe-card)
 
 ## ApexCharts with background image
 
@@ -40,7 +41,7 @@ In my room card I am using the chart without header or legend values, since I im
 
 ![](apexcharts-with-background-and-labels.png)
 
-## Multiple ApexCharts Background In a Swipe Card
+## Multiple ApexCharts In a Swipe Card
 
 If you have multiple charts on your dashboard, but do not nessarily need to monitor them all at once you can save some screen space and put them on a swipe card and set it on autoplay, and stop it if interacted with.
 
