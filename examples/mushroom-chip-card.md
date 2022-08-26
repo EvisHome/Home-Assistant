@@ -3,7 +3,7 @@
 # Home Assistant Mushroom Card - Card Mod Tricks
 
 ## TOC
-
+CHIP ANIMATIONS
 * [Wobbling Chip](#wobbling-chip)
 * [Rotating Chip](#rotating-chip)
 * [Blinking Chip](#blinking-chip)
