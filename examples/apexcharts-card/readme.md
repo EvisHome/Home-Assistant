@@ -3,7 +3,7 @@ I use the [ApexCharts Card by RomRider ](https://github.com/RomRider/apexcharts-
 
 ## ApexCharts with background image
 
-![](ApexChart-with-background.png)
+![](apexcharts-with-background.png)
 
 Using card_mod and css to add and position a background image. The box-shadow adds an 60% shadow overlay on top of the image to make the graph more visible.
 
@@ -31,3 +31,7 @@ card_mod:
     }
 ...
 ```
+
+In my room card I am using the chart without header or legend values, since I implemented other cards to show the values either all the time or if set threshold are triggered. Anyway the header and/or the legend values are easy to enable in the config.
+
+![](apexcharts-with-background-and-labels.png)
