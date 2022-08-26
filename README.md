@@ -1,6 +1,8 @@
 # Home-Assistant
 
 ## Dashboards
+*Using (custom) integrations to build dashboards
+* [Synology Dashboard](dashboards/synology-dashboard/)
 
 ## [Examples/References](examples/readme.md)
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
