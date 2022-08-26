@@ -24,4 +24,5 @@
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 
 ## Themes
+* This needs some work .. *
 * [evis-theme](themes/readme.md)
