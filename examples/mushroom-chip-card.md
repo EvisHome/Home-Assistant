@@ -15,6 +15,9 @@ CHIP STYLING
 * [Chip Background Color & Background Opacity](#chip-background-color--opacity)
 * [Chip Icon & Text Size](#chip-icon--text-size)
 
+MUSHROOM CHIPS CARD
+* [Applying Changes To All Chips](#mushroom-chip-card)
+
 ## MUSHROOM CHIPS CARD
 ```YAML
 type: custom:mushroom-chips-card
