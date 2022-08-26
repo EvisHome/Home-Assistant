@@ -14,5 +14,7 @@
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
 * [mushroom-chip-card examples](examples/mushroom-chip-card.md)
 
+## ESPHome Projects
+
 ## Themes
 * [evis-theme](themes/readme.md)
