@@ -1,13 +1,15 @@
 # Home Assistant Mushroom Card - Card Mod Tricks
 
 ### Mushroom Chips Card
+```YAML
+type: custom:mushroom-chips-card
+chips:
+```
 
 ### Wobbling Chip
 
 ```YAML
 # Wobbling Template Chip
-type: custom:mushroom-chips-card
-chips:
   - type: template
     entity: null
     icon: mdi:washing-machine
