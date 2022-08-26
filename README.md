@@ -18,10 +18,10 @@
 * [apexcharts-card examples](examples/apexcharts-card)
 
 ## ESPHome Projects
+* [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 * [Presence](esphome/presence/)
 * Plant Irrigation (coming up)
 * Roller Blind
-* [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 
 ## Themes
 *This needs some work ..*
