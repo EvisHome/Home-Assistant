@@ -1,6 +1,10 @@
 # ApexCharts Card
 I use the [ApexCharts Card by RomRider ](https://github.com/RomRider/apexcharts-card) quite a lot, I like it how it can be customized to almost what ever I need. Note that for [apexcharts-card](https://github.com/RomRider/apexcharts-card) there are some features/customizations that are not in the document but can be used from the [apexcharts.js docs](https://apexcharts.com/docs/), but can need a bit experimenting.
 
+## TOC
+
+* [ApexCharts with background image](#apexcharts-with-background-image)
+
 ## ApexCharts with background image
 
 ![](apexcharts-with-background.png)
