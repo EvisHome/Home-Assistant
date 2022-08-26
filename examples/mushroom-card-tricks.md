@@ -126,6 +126,8 @@ Applying changes to all chips
 * chip icon sizes
 * chips border radius
 
+![image](https://user-images.githubusercontent.com/98347572/186850578-5682d257-4cc2-4aae-8610-5c7af50c3ff3.png)
+
 ```YAML
 alignment: center
 card_mod:
