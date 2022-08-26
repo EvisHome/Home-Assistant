@@ -46,7 +46,7 @@ yaxis:
     apex_config:
       tickAmount: 5
 series:
-  - entity: sensor.netatmo_evis_station_temperature
+  - entity: sensor.bedroom_temperature
     yaxis_id: temp
     type: area
     opacity: 0.2
@@ -54,7 +54,7 @@ series:
     color: orange
     show:
       legend_value: false
-  - entity: sensor.netatmo_evis_station_co2
+  - entity: sensor.bedroom__co2
     yaxis_id: co2
     type: area
     opacity: 0.2
@@ -62,7 +62,7 @@ series:
     color: violet
     show:
       legend_value: false
-  - entity: sensor.netatmo_evis_station_humidity
+  - entity: sensor.bedroom__humidity
     yaxis_id: humidity
     type: area
     opacity: 0.2
