@@ -2,7 +2,7 @@
 
 [mushroom-cards](https://github.com/piitaya/lovelace-mushroom) by piitaya
 
-Storing some mods I was experimenting with here as examples/reference
+Storing some mods I was experimenting with here as examples/reference.
 
 **NOTE!** Quoting the developer (piitay)
 
