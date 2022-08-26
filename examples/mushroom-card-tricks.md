@@ -42,3 +42,19 @@ chips:
           animation: rotation 1s linear infinite;
         }
 ```
+
+#### Blinking Chip
+```YAML
+# Blinking Template Chip
+  - type: template
+    icon: mdi:lightbulb
+    icon_color: green
+    card_mod:
+      style: |
+        @keyframes blink {
+          50% { opacity: 0; }
+        }
+        ha-card {
+          animation: blink 1s ease infinite;
+        }
+```
