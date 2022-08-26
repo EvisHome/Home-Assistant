@@ -39,3 +39,30 @@ card_mod:
 In my room card I am using the chart without header or legend values, since I implemented other cards to show the values either all the time or if set threshold are triggered. Anyway the header and/or the legend values are easy to enable in the config.
 
 ![](apexcharts-with-background-and-labels.png)
+
+## Multiple ApexCharts Background In a Swipe Card
+
+If you have multiple charts on your dashboard, but do not nessarily need to monitor them all at once you can save some screen space and put them on a swipe card and set it on autoplay, and stop it if interacted with.
+
+![](swipe-card-charts.gif)
+
+```YAML
+type: custom:swipe-card
+# which card is shown first
+start_card: 1
+parameters:
+# If you want to show navigation arrows, uncomment the line 'navigation: null'
+#  navigation: null
+  navigation: null
+  autoplay:
+# this will disable autoplay if interacted with.
+    disableOnInteraction: true
+# Time to show one chart
+    delay: 5000
+  scrollbar:
+    hide: false
+    draggable: true
+    snapOnRelease: false
+cards:
+```
+
