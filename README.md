@@ -10,7 +10,7 @@
 * [Person Dashboard](dashboards/person-dashboard/)
 * [DNS AdGuard Dashboard](dashboards/dns-dashboard/)
 
-## [Examples/References](examples/readme.md)
+## Examples/References
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
 * [mushroom-chip-card examples](examples/mushroom-chip-card.md)
 * [air-purifier card (with mushroom cards)](examples/air-purifier/)
