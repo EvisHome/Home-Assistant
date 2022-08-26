@@ -13,17 +13,17 @@ chips:
   - type: template
     icon: mdi:washing-machine
     icon_color: orange
-    card_mod: null
-    style: |
-      @keyframes wobbling {
-        0% {
-          transform: rotate(-15deg);
+    card_mod:
+      style: |
+        @keyframes wobbling {
+          0% {
+            transform: rotate(-15deg);
+          }
+          100% {
+            transform: rotate(15deg);
+          }
         }
-        100% {
-          transform: rotate(15deg);
+        ha-card {
+          animation: wobbling 0.1s linear infinite alternate;
         }
-      }
-      ha-card {
-        animation: wobbling 0.1s linear infinite alternate;
-      }
 ```
