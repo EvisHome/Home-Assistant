@@ -1,4 +1,4 @@
-[< Table of contents](/readme.md)
+
 
 # CSS Tricks, animations etc. for reference
 
