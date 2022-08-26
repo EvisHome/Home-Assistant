@@ -7,7 +7,7 @@ I use the [ApexChart Card by RomRider ](https://github.com/RomRider/apexcharts-c
 
 Using card_mod and css to add and position a background image. The box-shadow adds an 60% shadow overlay on top of the image to make the graph more visible.
 
-See [apexchart-with-background.yaml](apexchart-with-background.yaml) for full YAML
+See [apexchart-with-background.yaml](apexcharts-with-background.yaml) for full YAML
 
 ```YAML
 type: custom:apexcharts-card
