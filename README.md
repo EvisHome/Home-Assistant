@@ -8,6 +8,7 @@
 * [Synology Dashboard](dashboards/synology-dashboard/)
 * [Nest Protect](dashboards/nest-protect/)
 * [Person Dashboard](dashboards/person-dashboard/)
+* [DNS AdGuard Dashboard](dashboards/dns-dashboard/)
 
 ## [Examples/References](examples/readme.md)
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
