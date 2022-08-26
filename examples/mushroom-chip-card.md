@@ -38,9 +38,13 @@ chips:
     icon_color: orange
     card_mod:
       style: |
+
+# Keyframes for animation
         @keyframes wobbling {
           0% { transform: rotate(-15deg); }
           100% { transform: rotate(15deg); }
+
+# Animating the chip
         }
         ha-card {
           animation: wobbling 0.1s linear infinite alternate;
@@ -91,7 +95,7 @@ chips:
     card_mod:
       style: |
         ha-card {
-          /* chip box shadow */
+# chip box shadow
           --chip-box-shadow: 0px 0px 0px 0px;
         }
 ```
@@ -104,7 +108,7 @@ chips:
     card_mod:
       style: |
         ha-card {
-          /* chip opacity */
+# chip opacity
           opacity: 25%;
         }
 ```
@@ -118,7 +122,7 @@ chips:
     card_mod:
       style: |
         ha-card {
-          /* chip background color & opacity */
+# chip background color & opacity
           --chip-background: rgba(255,155,155,0.5);
         }
 ```
@@ -132,9 +136,9 @@ chips:
     card_mod:
       style: |
         ha-card {
-          /* chip icon size */
+# chip icon size
           --chip-icon-size: 0.8em;
-          /* chip font size */
+# chip font size
           --chip-font-size: 0.5em;
         }
 ```
