@@ -2,7 +2,7 @@
 
 # Home Assistant Mushroom Card - Card Mod Tricks
 
-## TOC
+### TOC
 
 CHIP ANIMATIONS
 * [Wobbling Chip](#wobbling-chip)
