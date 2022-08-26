@@ -197,7 +197,7 @@ by using *entity* or *config.entity*
 ```YAML
       - type: template
         entity: sensor.bedroom_temperature
-        content: '{{ states(entity), state_attr(entity,''unit_of_measurement'') }}'
+        content: '{{ states(entity)|float|round(0), state_attr(entity,''unit_of_measurement'') }}'
         icon: mdi:thermometer
         icon_color: |
           {% set value = states(entity) | float %}
