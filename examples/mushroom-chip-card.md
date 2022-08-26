@@ -7,6 +7,10 @@ CHIP ANIMATIONS
 * [Wobbling Chip](#wobbling-chip)
 * [Rotating Chip](#rotating-chip)
 * [Blinking Chip](#blinking-chip)
+CHIP STYLING
+* [Chip Box Shadow](#chip-box-shadow)
+* [Chip Opacity](#chip-opacity)
+* [Chip Background Color & Background Opacity](#chip-background-color-&-opacity)
 
 ## MUSHROOM CHIPS CARD
 ```YAML
