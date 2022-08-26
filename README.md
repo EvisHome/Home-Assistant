@@ -4,6 +4,7 @@
 *Using (custom) integrations to build dashboards*
 * [Unifi Network Dashboard](dashboards/unifi-network-dashboard/)
 * [Unifi Access Points Dashboard](dashboards/unifi-ap-dashboard/)
+* [UnRAID Dashboard](dashboards/unraid/)
 * [Synology Dashboard](dashboards/synology-dashboard/)
 * [Nest Protect](dashboards/nest-protect/)
 
