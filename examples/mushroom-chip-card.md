@@ -12,7 +12,7 @@ CHIP ANIMATIONS
 CHIP STYLING
 * [Chip Box Shadow](#chip-box-shadow)
 * [Chip Opacity](#chip-opacity)
-* [Chip Background Color & Background Opacity](#chip-background-color--opacity))
+* [Chip Background Color & Background Opacity](#chip-background-color--opacity)
 
 ## MUSHROOM CHIPS CARD
 ```YAML
