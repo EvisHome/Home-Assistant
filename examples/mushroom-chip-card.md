@@ -16,7 +16,7 @@ CHIP STYLING
 MUSHROOM CHIPS CARD
 * [Applying Changes To All Chips](#mushroom-chip-card)
 
-REFERENCING ENTITY
+REFERENCING THE ENTITY
 * [Referencing the entity withing the cards](d#referencing-the-entity-withing-the-cards)
 
 ## MUSHROOM CHIPS CARD
