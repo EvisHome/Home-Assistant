@@ -1,3 +1,5 @@
+[< Table of contents](readme.md)
+
 # Home Assistant Mushroom Card - Card Mod Tricks
 
 ## MUSHROOM CHIPS CARD
