@@ -2,6 +2,12 @@
 
 # Home Assistant Mushroom Card - Card Mod Tricks
 
+## TOC
+
+* [Wobbling Chip](#wobbling-chip)
+* [Rotating Chip](#rotating-chip)
+* [Blinking Chip](#blinking-chip)
+
 ## MUSHROOM CHIPS CARD
 ```YAML
 type: custom:mushroom-chips-card
