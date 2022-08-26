@@ -89,6 +89,8 @@ chips:
 ```
 
 #### Chip Background Color & Opacity
+```YAML
+# Background color changed & background opacity set to 50%
   - type: template
     icon: mdi:lightbulb
     icon_color: orange
@@ -98,4 +100,6 @@ chips:
           /* chip background color & opacity */
           --chip-background: rgba(255,155,155,0.5);
         }
+```
+
 
