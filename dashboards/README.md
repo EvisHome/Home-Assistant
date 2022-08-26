@@ -2,7 +2,7 @@
 
 *Using (custom) integrations to build dashboards*
 
-* [Unifi Network Dashboard](home-assistant/dashboards/unifi-network-dashboard/)
+* [Unifi Network Dashboard](/home-assistant/dashboards/unifi-network-dashboard/)
 * [Unifi Access Points Dashboard](dashboards/unifi-ap-dashboard/)
 * [ESXi VM Dashboard](dashboards/esxi-vm-dashboard/)
 * [UnRAID Dashboard](dashboards/unraid/)
