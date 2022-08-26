@@ -6,6 +6,8 @@
 * [Build](#build)
   * [Convert 28BYJ 48 Stepper Motor to Bipolar]([#converting-28byj-stepper-motor-to-bipolar)
   * [Wiring Diarams](#wiring-diagrams)
+  * [ESPHome Code](#esphome-code)
+* [3D Printed Parts](#3d-printed-parts)
 
 ## Overview
 
@@ -51,3 +53,17 @@ Wiring for A4988 Stepper Driver
 
 Example of using two motors with two DRV8825 drivers
 ![Two motors](image-44.png)
+
+
+### ESPHome Code
+
+[esphome.yaml](esphome.yaml)
+
+## 3D Printed Parts
+
+* [Motor Mount and the Adapter](https://www.tinkercad.com/things/lNaTwFwwbym-horizontal-blinds-adapter)
+* [Motor Driver Enclosure](https://www.tinkercad.com/things/39l2595FxH0-horizontal-blinds-motor-driver)
+* [D1 Mini Enclosure](https://www.tinkercad.com/things/inkHXLinVQN-wemos-d1-mini-case)
+* [NodeMCU Enclosure](https://www.tinkercad.com/things/aECL7EiqNli-nodemcu-buck-converter-case)
+
+
