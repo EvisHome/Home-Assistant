@@ -1,4 +1,4 @@
-# Home Assistant Mushroom Card - Card Mod Tricks
+# Home Assistant Mushroom Card - Card Mods
 
 ### TOC
 
