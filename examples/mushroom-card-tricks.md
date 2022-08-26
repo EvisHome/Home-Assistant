@@ -119,9 +119,11 @@ chips:
 ```
 
 #### MUSHROOM CHIP CARD
-* change the all chip sizes withing the chip card
-* change chips spacing
-* change chip icon sizes
+
+Applying changes to all chips
+* chip sizes withing the chip card
+* chips spacing
+* chip icon sizes
 * chips border radius
 
 ```YAML
