@@ -1,10 +1,12 @@
 # Home Assistant Mushroom Card - Card Mod Tricks
 
-### Mushroom Chips Card
+## MUSHROOM CHIPS CARD
 ```YAML
 type: custom:mushroom-chips-card
 chips:
 ```
+
+## CHIP ANIMATIONS
 
 ### Wobbling Chip
 
