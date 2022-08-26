@@ -1,4 +1,4 @@
-# Home Assistant Mushroom Card - Card Mods
+# Mushroom Chip Card - Card Mods
 
 ### TOC
 
