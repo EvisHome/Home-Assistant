@@ -5,7 +5,7 @@
 * [Parts](#parts)
 * [Wiring Diarams](#wiring-diagrams)
 * [Build](#build)
-* [Convert 28BYJ Motor to Bipolar](#build)
+  * [Convert 28BYJ 48 Stepper Motor to Bipolar]([#converting-28byj-stepper-motor-to-bipolar))
 
 ## Overview
 
