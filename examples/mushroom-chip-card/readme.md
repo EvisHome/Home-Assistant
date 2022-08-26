@@ -1,6 +1,7 @@
 # Mushroom Chip Card - Card Mods
 
-[mushroom-cards](https://github.com/piitaya/lovelace-mushroom) by piitaya
+* [mushroom-cards](https://github.com/piitaya/lovelace-mushroom) by piitaya
+* [card-mod](https://github.com/thomasloven/lovelace-card-mod) by Thomas Lovén
 
 Storing some mods I was experimenting with here as examples/reference.
 
