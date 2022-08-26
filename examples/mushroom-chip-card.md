@@ -13,6 +13,7 @@ CHIP STYLING
 * [Chip Box Shadow](#chip-box-shadow)
 * [Chip Opacity](#chip-opacity)
 * [Chip Background Color & Background Opacity](#chip-background-color--opacity)
+* [Chip Icon & Text Size](#chip-icon--text-size)
 
 ## MUSHROOM CHIPS CARD
 ```YAML
