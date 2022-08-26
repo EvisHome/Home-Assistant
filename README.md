@@ -7,6 +7,7 @@
 * [UnRAID Dashboard](dashboards/unraid/)
 * [Synology Dashboard](dashboards/synology-dashboard/)
 * [Nest Protect](dashboards/nest-protect/)
+* [Person Dashboard](dashboards/person-dashboard/)
 
 ## [Examples/References](examples/readme.md)
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
