@@ -25,3 +25,20 @@ chips:
           animation: wobbling 0.1s linear infinite alternate;
         }
 ```
+
+#### Rotating Chip
+```YAML
+# Rotating Template Chip
+  - type: template
+    icon: mdi:fan
+    icon_color: green
+    card_mod:
+      style: |
+        @keyframes rotation {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        ha-card {
+          animation: rotation 1s linear infinite;
+        }
+```
