@@ -22,3 +22,7 @@ I am using an automation on Home Assistant start to set the theme to my custom t
       name: Evis Theme
   mode: single
 ```
+
+## Home Assistant Overview
+
+![HA Overview](/examples/HA-overview-dashboard-3.png)
