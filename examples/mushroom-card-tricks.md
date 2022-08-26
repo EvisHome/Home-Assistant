@@ -6,6 +6,7 @@ type: custom:mushroom-chips-card
 chips:
 ```
 
+
 ### CHIP ANIMATIONS
 
 #### Wobbling Chip
