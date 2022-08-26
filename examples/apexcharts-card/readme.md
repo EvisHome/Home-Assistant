@@ -1,5 +1,5 @@
 # ApexCharts Card
-I use the [ApexCharts Card by RomRider ](https://github.com/RomRider/apexcharts-card) quite a lot, I like it how it can be customized to almost what ever I need. Note that for [apexcharts-card](https://github.com/RomRider/apexcharts-card) there are some features/customizations that are not in the documents but can be used from the [apexcharts.js docs](https://apexcharts.com/docs/) by using the apex_config, this can need some experimenting though.
+I use the [ApexCharts Card by RomRider ](https://github.com/RomRider/apexcharts-card) quite a lot, I like it how it can be customized to almost what ever I need. Note that for [apexcharts-card](https://github.com/RomRider/apexcharts-card) there are some features/customizations that are not in the documents but can be used from the [apexcharts.js docs](https://apexcharts.com/docs/) by using the *apex_config*, this can need some experimenting though.
 
 ### TOC
 
