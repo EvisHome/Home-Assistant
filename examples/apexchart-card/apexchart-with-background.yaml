@@ -1,0 +1,72 @@
+type: custom:apexcharts-card
+card_mod:
+  style: |
+    ha-card {
+      padding-top: 10px;
+      background-image: url("/local/room_bedroom.jpg");
+      background-position: center;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    }
+graph_span: 24h
+show:
+  loading: false
+apex_config:
+  chart:
+    height: 220px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: true
+    itemMargin:
+      vertical: 10
+      horizontal: 10
+header:
+  show: false
+  show_states: true
+  colorize_states: true
+  standard_format: true
+all_series_config:
+  stroke_width: 2
+yaxis:
+  - id: temp
+    show: true
+    min: ~20
+    max: ~30
+    apex_config:
+      tickAmount: 5
+  - id: co2
+    opposite: true
+    show: false
+  - id: humidity
+    show: true
+    opposite: true
+    min: ~30
+    max: ~50
+    apex_config:
+      tickAmount: 5
+series:
+  - entity: sensor.netatmo_evis_station_temperature
+    yaxis_id: temp
+    type: area
+    opacity: 0.2
+    name: Temp
+    color: orange
+    show:
+      legend_value: false
+  - entity: sensor.netatmo_evis_station_co2
+    yaxis_id: co2
+    type: area
+    opacity: 0.2
+    name: CO2
+    color: violet
+    show:
+      legend_value: false
+  - entity: sensor.netatmo_evis_station_humidity
+    yaxis_id: humidity
+    type: area
+    opacity: 0.2
+    name: Humidity
+    color: skyblue
+    show:
+      legend_value: false
