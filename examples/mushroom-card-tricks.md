@@ -6,9 +6,9 @@ type: custom:mushroom-chips-card
 chips:
 ```
 
-## CHIP ANIMATIONS
+### CHIP ANIMATIONS
 
-### Wobbling Chip
+#### Wobbling Chip
 
 ```YAML
 # Wobbling Template Chip
