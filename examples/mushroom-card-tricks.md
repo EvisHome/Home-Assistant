@@ -142,6 +142,30 @@ card_mod:
     }
 ```
 
+## Referencing the entity withing the cards
+
+by using *entity* or *config.entity*
+
+```YAML
+  - type: template
+    entity: switch.power_socket
+    icon: mdi:eye
+    icon_color: |
+      {% if is_state(entity,'on') %}
+        green
+      {% else %}
+        gray
+      {% endif %}
+    card_mod: null
+    style: |
+      ha-card {
+        {% if is_state(config.entity,'on') %}
+          opacity: 100%;
+        {% else %}
+          opacity: 25%;
+        {% endif %}
+      }
+```
 
 
 
