@@ -67,3 +67,148 @@ parameters:
 cards:
 ```
 
+And then adding ApexCharts ..
+
+```YAML
+  - type: custom:apexcharts-card
+    style: |
+      ha-card {
+        padding-top: 10px;
+        background-image: url("/local/rooms/room_livingroom_3.jpg");
+        background-position: center;
+        background-size: 130%;
+        box-shadow: inset 0px 0px 0px 1000px rgba(0,0,0,.6);
+      }
+    graph_span: 24h
+    show:
+      loading: false
+    apex_config:
+      chart:
+        height: 160px
+      grid:
+        show: true
+        borderColor: rgba(255,255,255,0.2)
+      legend:
+        show: false
+    header:
+      show: true
+      show_states: true
+      colorize_states: true
+      standard_format: true
+    all_series_config:
+      stroke_width: 2
+    yaxis:
+      - id: temp
+        show: true
+        min: ~20
+        max: ~25
+        apex_config:
+          tickAmount: 5
+          labels:
+            show: true
+          title:
+            text: TEMP
+            style:
+              color: orange
+      - id: humidity
+        show: true
+        opposite: true
+        min: ~35
+        max: ~45
+        apex_config:
+          tickAmount: 5
+          labels:
+            show: true
+          title:
+            text: HUMIDITY
+            style:
+              color: skyblue
+    series:
+      - entity: sensor.airthings_wave_plus_temperature
+        yaxis_id: temp
+        type: area
+        opacity: 0.2
+        name: Temp
+        color: orange
+        show:
+          legend_value: false
+      - entity: sensor.airthings_wave_plus_humidity
+        yaxis_id: humidity
+        type: area
+        opacity: 0.2
+        name: Humidity
+        color: skyblue
+        show:
+          legend_value: true
+  - type: custom:apexcharts-card
+    style: |
+      ha-card {
+        padding-top: 10px;
+        background-image: url("/local/rooms/room_livingroom_3.jpg");
+        background-position: center;
+        background-size: 130%;
+        box-shadow: inset 0px 0px 0px 1000px rgba(0,0,0,.6);
+      }
+    graph_span: 24h
+    show:
+      loading: false
+    apex_config:
+      chart:
+        height: 160px
+      grid:
+        show: true
+        borderColor: rgba(255,255,255,0.2)
+      legend:
+        show: false
+    header:
+      show: true
+      show_states: true
+      colorize_states: true
+      standard_format: true
+    all_series_config:
+      stroke_width: 2
+    yaxis:
+      - id: co2
+        opposite: false
+        min: ~400
+        max: ~900
+        show: true
+        apex_config:
+          tickAmount: 5
+          labels:
+            show: true
+          title:
+            text: CO2
+            style:
+              color: violet
+      - id: voc
+        show: true
+        opposite: true
+        min: ~0
+        max: ~800
+        apex_config:
+          tickAmount: 5
+          labels:
+            show: true
+          title:
+            text: VOC
+            style:
+              color: orange
+    series:
+      - entity: sensor.airthings_wave_plus_co2
+        yaxis_id: co2
+        type: area
+        opacity: 0.2
+        name: CO2
+        color: violet
+        show:
+          legend_value: true
+      - entity: sensor.airthings_wave_plus_voc
+        yaxis_id: voc
+        type: area
+        opacity: 0.2
+        name: VOC
+        color: orange
+        show:
+          legend_value: false
+```
