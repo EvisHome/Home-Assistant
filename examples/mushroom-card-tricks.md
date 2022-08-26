@@ -11,9 +11,8 @@ chips:
 ```YAML
 # Wobbling Template Chip
   - type: template
-    entity: null
     icon: mdi:washing-machine
-    icon_color: green
+    icon_color: orange
     card_mod: null
     style: |
       @keyframes wobbling {
@@ -25,7 +24,6 @@ chips:
         }
       }
       ha-card {
-        --chip-box-shadow: 0px 0px;
         animation: wobbling 0.1s linear infinite alternate;
-        }
+      }
 ```
