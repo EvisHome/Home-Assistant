@@ -18,6 +18,9 @@ CHIP STYLING
 MUSHROOM CHIPS CARD
 * [Applying Changes To All Chips](#mushroom-chip-card)
 
+REFERENCING ENTITY
+* [Referencing the entity withing the cards](d#referencing-the-entity-withing-the-cards)
+
 ## MUSHROOM CHIPS CARD
 ```YAML
 type: custom:mushroom-chips-card
