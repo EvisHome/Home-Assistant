@@ -59,7 +59,7 @@ chips:
         }
 ```
 
-### Chip Wihtout Shadow
+### Chip Without Shadow
 
 #### Chip Box Shadow
 ```YAML
