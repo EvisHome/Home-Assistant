@@ -4,6 +4,10 @@
 
 Motorizing and automating horizontal window blinds tilt with a stepper motor and ESP board using ESPHome, to be controlled from Home Assistant, NodeRED, and with Philips Hue Dimmer switches. 3D printed parts are needed to at least mount the motor to the blinds, additionally, you can print enclosures for the parts.
 
+
+https://user-images.githubusercontent.com/98347572/186898839-479b3503-3003-47d2-b66b-1e4287295298.mp4
+
+
 ### Parts
 
 * ESP8266 (D1 Mini, and NodeMCU)
