@@ -2,4 +2,4 @@
 
 ## Mushroom Cards
 
-* mushroom-chip-card[mushroom-card-examples.md]
+* [mushroom-chip-card](mushroom-card-examples.md)
