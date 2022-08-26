@@ -16,6 +16,8 @@
 * [air-purifier card (with mushroom cards)](examples/air-purifier/)
 
 ## ESPHome Projects
+* [Presence](esphome/presence/)
+* Plant Irrigation (coming up)
 
 ## Themes
 * [evis-theme](themes/readme.md)
