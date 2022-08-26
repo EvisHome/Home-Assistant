@@ -1,5 +1,6 @@
 # Home-Assistant
 
+## Dashboards
 
 ## [Examples/References](examples/readme.md)
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
