@@ -13,3 +13,11 @@ Motorizing and automating horizontal window blinds tilt with a stepper motor and
 * 12V Power Supply
 * 3D Printed parts: enclosure for the ESP and buck converter, adapter to attach the blind's axel to the motor. Mounting to attach the motor to the window frame and enclosure for the stepper driver.
 * For wiring, I used an old cat6 ethernet cable
+
+
+### Wiring Diagrams
+
+Wiring for DRV8825 Stepper Driver
+
+
+Wiring for A4988 Stepper Driver
