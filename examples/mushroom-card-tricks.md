@@ -126,13 +126,6 @@ chips:
 
 ```YAML
 alignment: center
-style:
-  top: 116%
-  left: 50%
-  width: 100%
-  height: 100%
-  z-index: 80
-card_mod:
 card_mod:
   style: |
     ha-card {
