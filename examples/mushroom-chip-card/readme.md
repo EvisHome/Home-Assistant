@@ -5,6 +5,7 @@
 Storing some mods I was experimenting with here as examples/reference
 
 **NOTE!** Quoting the developer (piitay)
+
 *"Be careful with card mod. The structure of the card (name of the components, class, etc…) may change at any time. I can not guarantee you that your override will work with the future update."*
 
 ### TOC
