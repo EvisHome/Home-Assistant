@@ -3,14 +3,16 @@
 # Home Assistant Mushroom Card - Card Mod Tricks
 
 ## TOC
+
 CHIP ANIMATIONS
 * [Wobbling Chip](#wobbling-chip)
 * [Rotating Chip](#rotating-chip)
 * [Blinking Chip](#blinking-chip)
+
 CHIP STYLING
 * [Chip Box Shadow](#chip-box-shadow)
 * [Chip Opacity](#chip-opacity)
-* [Chip Background Color & Background Opacity](#chip-background-color-&-opacity)
+* [Chip Background Color & Background Opacity](Chip Box Shadow)
 
 ## MUSHROOM CHIPS CARD
 ```YAML
