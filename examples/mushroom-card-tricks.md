@@ -167,5 +167,37 @@ by using *entity* or *config.entity*
       }
 ```
 
+#### Hide Template Chip If Entity Value Not Withing The Limits
+* show sensor value & unit
+* change color of the icon based on temperature values
+
+```YAML
+      - type: template
+        entity: sensor.bedroom_temperature
+        content: '{{ states(entity), state_attr(entity,''unit_of_measurement'') }}'
+        icon: mdi:thermometer
+        icon_color: |
+          {% set value = states(entity) | float %}
+          {% if value > 27 %}
+            red
+          {% elif value > 25 %}
+            orange
+          {% elif value < 20 %}
+            blue
+          {% else %}
+            green
+          {% endif %}
+        card_mod: null
+        style: |
+          :host {
+            {% set value = states(config.entity) | float %}
+            {% if value < 20 or value > 22 %}
+              display: flex;
+            {% else %}
+              display: none;
+            {% endif %}
+          }
+```
+
 
 
