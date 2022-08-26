@@ -1,3 +1,3 @@
 ## Unifi Access Points (Dashboard)
 
-![Access Points](/examples/HA-AccessPoints.png)
+![Access Points](HA-AccessPoints.png)
