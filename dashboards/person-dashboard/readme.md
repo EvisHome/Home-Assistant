@@ -1,4 +1,4 @@
 
 ## Person view
 
-![Person View](/examples/person-view.png)
+![Person View](person-view.png)
