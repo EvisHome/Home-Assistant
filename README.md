@@ -19,7 +19,7 @@
 * [Presence](esphome/presence/)
 * Plant Irrigation (coming up)
 * Roller Blind
-* Horizontal Blinds (tilt)
+* [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 
 ## Themes
 * [evis-theme](themes/readme.md)
