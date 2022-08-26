@@ -6,7 +6,7 @@ type: custom:mushroom-chips-card
 chips:
 ```
 
-![image](animations.gif)
+![image](mushroom-chip-card-animations.gif)
 
 ### CHIP ANIMATIONS
 
