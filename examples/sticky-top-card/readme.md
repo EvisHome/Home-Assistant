@@ -4,6 +4,9 @@ I use this for all my room dashboard to show the room name and a button for quic
 
 ![](sticky-nav-top-bar.gif)
 
+The card itself
+![](sticky-card.png)
+
 Wrapped in a *stack-in-card*
 
 ```YAML
