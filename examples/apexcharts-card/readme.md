@@ -8,7 +8,7 @@ I use the [ApexCharts Card by RomRider ](https://github.com/RomRider/apexcharts-
 
 ## Simplified ApexCharts
 
-Few different simple versions, that still provide a bit info, using few features documented in ApexCharts.js
+Few different simple versions, that still provide a bit info, using few features documented in ApexCharts.js .. mix and match.
 
 ![](apexcharts-multiple.png)
 
