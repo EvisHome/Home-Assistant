@@ -33,6 +33,7 @@ Parts which I used for this project
 ## Build
 
 ## Enclosure
+![](ESP32 cases.png)
 
 ## ESPHome
 
