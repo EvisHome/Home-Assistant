@@ -124,7 +124,7 @@ uart:
   # baud rate for UART bus (required)
   baud_rate: 115200
   debug:
-  	# debug communication to both directions
+    # debug communication to both directions
     direction: BOTH
     # useful to debug all incoming communication
     dummy_receiver: true
@@ -136,7 +136,7 @@ uart:
 
 switch:
 
-	# Switch for Safe Mode
+    # Switch for Safe Mode
   - platform: safe_mode
     internal: true
     name: use_safe_mode
@@ -193,7 +193,7 @@ sensor:
 
 number:
 
-	## SENSING DISTANCE value for mmWave Radar
+    ## SENSING DISTANCE value for mmWave Radar
   - platform: template
     # name for the number (required)
     name: kitchen_distance
@@ -233,7 +233,7 @@ number:
       	# START the sensor again
       - uart.write: "sensorStart"
 
-	## LATENCY FOR TURNING mmWave OFF when no movement detected.
+    ## LATENCY FOR TURNING mmWave OFF when no movement detected.
   - platform: template
     name: kitchen_latency
     id: kitchen_latency
@@ -265,11 +265,11 @@ number:
       - uart.write: "sensorStart"   
 
 button:
-	# Restart the device
+    # Restart the device
   - platform: restart
     name: restart_kitchen_radar
 
-	# Reset mmWave sensor configuration parameters to Factory defaults
+    # Reset mmWave sensor configuration parameters to Factory defaults
   - platform: template
     name: "factory_reset_kitchen_dfrobot"
     id: "factory_reset_kitchen_dfrobot"
