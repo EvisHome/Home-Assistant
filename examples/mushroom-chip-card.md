@@ -1,4 +1,4 @@
-# Mushroom Chip Card - Card Mods
+# Moving Content!
 
 **--> [Moving here](https://github.com/EvisHome/Home-Assistant/tree/main/examples/mushroom-chip-card) <--**
 
