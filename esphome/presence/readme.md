@@ -33,6 +33,7 @@ When powering the ESP from USB, you get 5V out from the VIN pin, which I used to
 ![](usb-power.png)
 
 ## Build
+<p float="left"> <img src="build-1.jpg" width="24%" /> <img src="build-2.jpg" width="24%" /> <img src="build-3.jpg" width="24%" /> <img src="build-4.jpg" width="24%" /> </p> 
 
 ## Enclosure
 ![](ESP32_cases.png)
