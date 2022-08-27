@@ -214,23 +214,23 @@ number:
     unit_of_measurement: cm
     # Action to be performed when requested from frontend
     set_action:
-    	# STOP the sensor first
+    # STOP the sensor first
       - uart.write: "sensorStop"
-      	# Wait for 1 sec for the sensor to stop
+      # Wait for 1 sec for the sensor to stop
       - delay: 1s
-      	# Write the new sensing distance value to the sensor detRangeCfg
+      # Write the new sensing distance value to the sensor detRangeCfg
       - uart.write: !lambda
                       int cm = (int)ceil(x / 15.0);
                       std::string cms = "detRangeCfg -1 0 " + to_string(cm);
                       return std::vector<unsigned char>(cms.begin(), cms.end());
-        # Wait for 1 sec for the write
+      # Wait for 1 sec for the write
       - delay: 1s
-      	# When parameters are reconfigured through UART and not saved, this command (Fixed values) saves the new configuration parameters to the sensor Flash
-        # saveCfg par1 par2 par3 par4
+      # When parameters are reconfigured through UART and not saved, this command (Fixed values) saves the new configuration parameters to the sensor Flash
+      # saveCfg par1 par2 par3 par4
       - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
-      	# Wait for 1 sec for the write
+      # Wait for 1 sec for the write
       - delay: 1s
-      	# START the sensor again
+      # START the sensor again
       - uart.write: "sensorStart"
 
     ## LATENCY FOR TURNING mmWave OFF when no movement detected.
@@ -249,7 +249,7 @@ number:
     restore_value: true
     unit_of_measurement: ms
     set_action:
-    	# STOP the sensor first
+    # STOP the sensor first
       - uart.write: "sensorStop"
       - delay: 1s
       - uart.write: !lambda
@@ -257,11 +257,11 @@ number:
                       std::string mss = "outputLatency -1 0 " + to_string(ms);
                       return std::vector<unsigned char>(mss.begin(), mss.end());
       - delay: 1s
-      	# When parameters are reconfigured through UART and not saved, this command (Fixed values) saves the new configuration parameters to the sensor Flash
-        # saveCfg par1 par2 par3 par4
+      # When parameters are reconfigured through UART and not saved, this command (Fixed values) saves the new configuration parameters to the sensor Flash
+      # saveCfg par1 par2 par3 par4
       - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
       - delay: 1s
-      	# START the sensor again
+      # START the sensor again
       - uart.write: "sensorStart"   
 
 button:
@@ -274,12 +274,12 @@ button:
     name: "factory_reset_kitchen_dfrobot"
     id: "factory_reset_kitchen_dfrobot"
     on_press:
-    	# STOP the sensor first
+    # STOP the sensor first
       - uart.write: "sensorStop"
       - delay: 1s
-      	# reset command (fixed values)
+      # reset command (fixed values)
       - uart.write: "factoryReset 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
       - delay: 3s
-      	# START the sensor again
+      # START the sensor again
       - uart.write: "sensorStart"
 ```
