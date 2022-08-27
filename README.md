@@ -16,6 +16,7 @@
 * [mushroom-chip-card examples](examples/mushroom-chip-card/)
 * [air-purifier card (with mushroom cards)](examples/air-purifier/)
 * [apexcharts-card examples](examples/apexcharts-card)
+* [Sticky Top Card](examples/sticky-top-card/)
 
 ## ESPHome Projects
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
