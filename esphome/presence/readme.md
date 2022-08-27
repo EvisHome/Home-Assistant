@@ -29,6 +29,8 @@ Parts which I used for this project
 ![](diagram.png)
 
 ## USB Power
+When powering the ESP from USB, you get 5V out from the VIN pin, which I used to power the mmWave radar sensor.
+![](USB-power.png)
 
 ## Build
 
