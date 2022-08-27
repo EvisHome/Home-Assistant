@@ -19,7 +19,7 @@
 
 ## ESPHome Projects
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
-* [Presence](esphome/presence/)
+* [Room Presence](esphome/presence/)
 * Plant Irrigation (coming up)
 * Roller Blind
 
