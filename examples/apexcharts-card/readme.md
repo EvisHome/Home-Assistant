@@ -6,7 +6,7 @@ I use the [ApexCharts Card by RomRider ](https://github.com/RomRider/apexcharts-
 * [ApexCharts with background image](#apexcharts-with-background-image)
 * [Multiple ApexCharts In A Swipe Card](#multiple-apexcharts-in-a-swipe-card)
 
-## Simplified ApexCharts
+## ApexCharts
 
 Few different simple versions, that still provide a bit info, using few features documented in ApexCharts.js .. mix and match.
 
