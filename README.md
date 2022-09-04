@@ -21,6 +21,7 @@
 ## ESPHome Projects
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 * [Room Presence](esphome/presence/)
+* [Room Presence v2 / Presence Box](esphome/presence-box-2/)
 * Plant Irrigation
 * Roller Blind
 
