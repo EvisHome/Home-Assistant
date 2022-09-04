@@ -1,0 +1,167 @@
+esphome:
+  name: livingroom-presence
+
+esp32:
+  board: esp32dev
+
+
+# Enable logging
+logger:
+  #level: DEBUG
+
+# Enable Home Assistant API
+api:
+
+# Over The Air Updates
+ota:
+  password: !secret ota_password
+
+# Connect to Wi-Fi
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Livingroom-Presence"
+    password: !secret ap_password
+
+# Enable BLE tracker
+esp32_ble_tracker:
+
+# Bluetooh Proxy! =)
+bluetooth_proxy:
+
+captive_portal:
+
+# WEB SERVER FOR TESTING
+#web_server:
+#  port: 80
+#  version: 2
+#  include_internal: true
+#  auth:
+#    username: !secret web_user
+#    password: !secret web_pass
+
+http_request:
+  useragent: esphome/$name
+  timeout: 2s
+  
+uart:
+  id: uart_bus
+  tx_pin: GPIO25
+  rx_pin: GPIO26
+  baud_rate: 115200
+  debug:
+    direction: BOTH
+    dummy_receiver: true
+    after:
+      delimiter: "\n"
+    sequence:
+      - lambda: UARTDebug::log_string(direction, bytes);
+
+
+ble_client:
+  ## AIRTHINGS WAVE PLUS
+  - mac_address: A4:DA:32:46:D6:1A
+    id: airthings_plus_01
+
+switch:
+
+  - platform: safe_mode
+    internal: true
+    name: use_safe_mode
+
+binary_sensor:
+
+  ## MMWAVE SENSOR
+  - platform: gpio
+    name: livingroom_mmwave
+    pin:
+      number: GPIO27
+      mode: INPUT_PULLDOWN
+  
+  ## PIR SENSOR
+  - platform: gpio
+    name: livingroom_pir
+    id: livingroom_pir
+    #internal: true
+    pin:
+      number: GPIO18
+      mode: INPUT_PULLDOWN
+    filters:
+      - delayed_off: 3s
+  
+  ## BLE PRESENCE - JUKKA OURA
+  - platform: ble_presence
+    mac_address: 'a0:38:f8:30:92:9a'
+    name: "Jukka Oura Livingroom"
+
+
+sensor:
+
+  ## BLE RSSI - JUKKA OURA
+  - platform: ble_rssi
+    mac_address: 'a0:38:f8:30:92:9a'
+    name: "Jukka Oura RSSI Livingroom"
+
+number:
+  ## MMWAVE RADAR DISTANCE
+  - platform: template
+    name: livingroom_mmwave_distance
+    id: livingroom_mmwave_distance
+    min_value: 0
+    max_value: 1350
+    initial_value: 315
+    optimistic: true
+    step: 15
+    restore_value: true
+    unit_of_measurement: cm
+    set_action:
+      - uart.write: "sensorStop"
+      - delay: 1s
+      - uart.write: !lambda
+                      int cm = (int)ceil(x / 15.0);
+                      std::string cms = "detRangeCfg -1 0 " + to_string(cm);
+                      return std::vector<unsigned char>(cms.begin(), cms.end());
+      - delay: 1s
+      - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
+      - delay: 1s
+      - uart.write: "sensorStart"
+
+  ## MMWAVE RADAR LATENCY
+  - platform: template
+    name: livingroom_mmwave_latency
+    id: livingroom_mmwave_latency
+    min_value: 0
+    max_value: 65000
+    initial_value: 12500
+    optimistic: true
+    step: 25
+    restore_value: true
+    unit_of_measurement: ms
+    set_action:
+      - uart.write: "sensorStop"
+      - delay: 1s
+      - uart.write: !lambda
+                      int ms = (int)ceil(x / 25.0);
+                      std::string mss = "outputLatency -1 0 " + to_string(ms);
+                      return std::vector<unsigned char>(mss.begin(), mss.end());
+      - delay: 1s
+      - uart.write: "saveCfg 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
+      - delay: 1s
+      - uart.write: "sensorStart"   
+
+button:
+  - platform: restart
+    name: Restart livingroom_radar
+
+  - platform: template
+    name: "factory_reset_livingroom_dfrobot"
+    id: "factory_reset_livingroom_dfrobot"
+    on_press:
+      - uart.write: "sensorStop"
+      - delay: 1s
+      - uart.write: "factoryReset 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
+      - delay: 3s
+      - uart.write: "sensorStart"  
