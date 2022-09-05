@@ -26,7 +26,8 @@ MUSHROOM CHIPS CARD
 * [Applying Changes To All Chips](#mushroom-chip-card)
 
 REFERENCING THE ENTITY
-* [Referencing the entity withing the cards](d#referencing-the-entity-withing-the-cards)
+* [Referencing the entity withing the cards](#referencing-the-entity-withing-the-cards)
+* [Hide Template Chip (card_mod, css)](#hide-template-chip-conditionally)
 
 ## MUSHROOM CHIPS CARD
 ```YAML
@@ -199,7 +200,7 @@ by using *entity* or *config.entity*
       }
 ```
 
-#### Hide Template Chip If Entity Value Not Withing The Limits
+#### Hide Template Chip Conditionally
 * show sensor value & unit
 * change color of the icon based on temperature values
 
