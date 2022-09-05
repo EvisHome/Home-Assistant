@@ -1,5 +1,8 @@
+substitutions:
+  name: livingroom
+
 esphome:
-  name: livingroom-presence
+  name: ${name}-presence
 
 esp32:
   board: esp32dev
@@ -23,7 +26,7 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Livingroom-Presence"
+    ssid: "${name}-presence-box"
     password: !secret ap_password
 
 # Enable BLE tracker
@@ -76,15 +79,15 @@ binary_sensor:
 
   ## MMWAVE SENSOR
   - platform: gpio
-    name: livingroom_mmwave
+    name: ${name}_mmwave
     pin:
       number: GPIO27
       mode: INPUT_PULLDOWN
   
   ## PIR SENSOR
   - platform: gpio
-    name: livingroom_pir
-    id: livingroom_pir
+    name: ${name}_pir
+    id: ${name}_pir
     #internal: true
     pin:
       number: GPIO18
@@ -95,7 +98,7 @@ binary_sensor:
   ## BLE PRESENCE - JUKKA OURA
   - platform: ble_presence
     mac_address: 'a0:38:f8:30:92:9a'
-    name: "Jukka Oura Livingroom"
+    name: "Jukka Oura ${name}"
 
 
 sensor:
@@ -103,13 +106,13 @@ sensor:
   ## BLE RSSI - JUKKA OURA
   - platform: ble_rssi
     mac_address: 'a0:38:f8:30:92:9a'
-    name: "Jukka Oura RSSI Livingroom"
+    name: "Jukka Oura RSSI ${name}"
 
 number:
   ## MMWAVE RADAR DISTANCE
   - platform: template
-    name: livingroom_mmwave_distance
-    id: livingroom_mmwave_distance
+    name: ${name}_mmwave_distance
+    id: ${name}_mmwave_distance
     min_value: 0
     max_value: 1350
     initial_value: 315
@@ -131,8 +134,8 @@ number:
 
   ## MMWAVE RADAR LATENCY
   - platform: template
-    name: livingroom_mmwave_latency
-    id: livingroom_mmwave_latency
+    name: ${name}_mmwave_latency
+    id: ${name}_mmwave_latency
     min_value: 0
     max_value: 65000
     initial_value: 12500
@@ -157,8 +160,8 @@ button:
     name: Restart livingroom_radar
 
   - platform: template
-    name: "factory_reset_livingroom_dfrobot"
-    id: "factory_reset_livingroom_dfrobot"
+    name: "factory_reset_${name}_dfrobot"
+    id: "factory_reset_${name}_dfrobot"
     on_press:
       - uart.write: "sensorStop"
       - delay: 1s
