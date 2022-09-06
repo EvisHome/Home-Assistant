@@ -2,7 +2,7 @@ substitutions:
   name: livingroom
 
 esphome:
-  name: ${name}-presence
+  name: ${name}-presence-box
 
 esp32:
   board: esp32dev
@@ -26,18 +26,16 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "${name}-presence-box"
+    ssid: "${name}-presence"
     password: !secret ap_password
 
 # Enable BLE tracker
 esp32_ble_tracker:
 
-# Bluetooh Proxy! =)
-bluetooth_proxy:
+#bluetooth_proxy:
 
 captive_portal:
 
-# WEB SERVER FOR TESTING
 #web_server:
 #  port: 80
 #  version: 2
@@ -50,24 +48,32 @@ http_request:
   useragent: esphome/$name
   timeout: 2s
   
+
 uart:
   id: uart_bus
-  tx_pin: GPIO25
-  rx_pin: GPIO26
+  tx_pin: GPIO17
+  rx_pin: GPIO16
   baud_rate: 115200
-  debug:
-    direction: BOTH
-    dummy_receiver: true
-    after:
-      delimiter: "\n"
-    sequence:
-      - lambda: UARTDebug::log_string(direction, bytes);
+#  debug:
+#    direction: BOTH
+#    dummy_receiver: true
+#    after:
+#      delimiter: "\n"
+#    sequence:
+#      - lambda: UARTDebug::log_string(direction, bytes);
 
+# i2c for the TLS2561
+i2c:
+  sda: GPIO22
+  scl: GPIO23
+  scan: True
+  id: bus_a
 
-ble_client:
-  ## AIRTHINGS WAVE PLUS
-  - mac_address: A4:DA:32:46:D6:1A
-    id: airthings_plus_01
+# AIRTHINGS BLE Sensors
+#ble_client:
+#  ## AIRTHINGS WAVE PLUS
+#  - mac_address: A4:DA:32:46:D6:1A
+#    id: airthings_plus_01
 
 switch:
 
@@ -75,13 +81,43 @@ switch:
     internal: true
     name: use_safe_mode
 
+
+light:
+
+# ESP32 Blue Status LED
+  - platform: status_led
+    name: "Livingroom Box Status LED"
+    pin: GPIO2
+
+# RGB LED / uncomment to use
+#  - platform: rgb
+#    name: "Livingroom Box RGB LED"
+#    red: output_red
+#    green: output_green
+#    blue: output_blue
+
+# RGB LED OUTPUT
+#output:
+#  - platform: ledc
+#    id: output_red
+#    pin: GPIO18
+#    inverted: true
+#  - platform: ledc
+#    id: output_green
+#    pin: GPIO19
+#    inverted: true
+#  - platform: ledc
+#   id: output_blue
+#    pin: GPIO21
+#    inverted: true
+
 binary_sensor:
 
-  ## MMWAVE SENSOR
+  ## MMWAVE RADAR SENSOR
   - platform: gpio
     name: ${name}_mmwave
     pin:
-      number: GPIO27
+      number: GPIO4
       mode: INPUT_PULLDOWN
   
   ## PIR SENSOR
@@ -90,26 +126,66 @@ binary_sensor:
     id: ${name}_pir
     #internal: true
     pin:
-      number: GPIO18
+      number: GPIO32
       mode: INPUT_PULLDOWN
     filters:
       - delayed_off: 3s
   
-  ## BLE PRESENCE - JUKKA OURA
-  - platform: ble_presence
-    mac_address: 'a0:38:f8:30:92:9a'
-    name: "Jukka Oura ${name}"
+  ## BLE PRESENCE - TRACKING OURA RING
+  #- platform: ble_presence
+  #  mac_address: 'a0:38:f8:30:92:9a'
+  #  name: "My Oura ${name}"
 
 
 sensor:
 
-  ## BLE RSSI - JUKKA OURA
+    # TLS2561 LIGHT SENSOR
+  - platform: tsl2561
+    name: "${name} Ambient Light"
+    address: 0x39
+    update_interval: 10s
+
+  ## BLE RSSI - MY OURA
   - platform: ble_rssi
     mac_address: 'a0:38:f8:30:92:9a'
     name: "Jukka Oura RSSI ${name}"
 
+  ## AIRTHINGS WAVE PLUS
+  #- platform: airthings_wave_plus
+  #  ble_client_id: airthings_plus_01
+  #  update_interval: 10min
+  #  temperature:
+  #    name: "Airthings Wave Plus Temperature"
+  #  radon:
+  #    name: "Airthings Wave Plus Radon"
+  #  radon_long_term:
+  #    name: "Airthings Wave Plus Radon Long Term"
+  #  pressure:
+  #    name: "Airthings Wave Plus Pressure"
+  #  humidity:
+  #    name: "Airthings Wave Plus Humidity"
+  #  co2:
+  #    name: "Airthings Wave Plus CO2"
+  #  tvoc:
+  #    name: "Airthings Wave Plus VOC"
+      
+  ## SOIL MOISTURE SENSOR 01
+  #- platform: xiaomi_hhccjcy01
+  #  mac_address: "C4:7C:8D:6D:6A:98"
+  #  # name: flowercare
+  #  temperature:
+  #    name: "plant_one_temperature"
+  #  moisture:
+  #    name: "plant_one_moisture"
+  #  illuminance:
+  #    name: "plant_one_illuminance"
+  #  conductivity:
+  #    name: "plant_one_soil_conductivity"
+  #  battery_level:
+  #    name: "plant_one_battery_level"
+
 number:
-  ## MMWAVE RADAR DISTANCE
+  ## MMWAVE RADAR DISTANCE CONTROL
   - platform: template
     name: ${name}_mmwave_distance
     id: ${name}_mmwave_distance
@@ -132,7 +208,7 @@ number:
       - delay: 1s
       - uart.write: "sensorStart"
 
-  ## MMWAVE RADAR LATENCY
+  ## MMWAVE RADAR LATENCY CONTROL
   - platform: template
     name: ${name}_mmwave_latency
     id: ${name}_mmwave_latency
@@ -157,7 +233,7 @@ number:
 
 button:
   - platform: restart
-    name: Restart livingroom_radar
+    name: Restart ${name} radar
 
   - platform: template
     name: "factory_reset_${name}_dfrobot"
@@ -167,4 +243,4 @@ button:
       - delay: 1s
       - uart.write: "factoryReset 0x45670123 0xCDEF89AB 0x956128C6 0xDF54AC89"
       - delay: 3s
-      - uart.write: "sensorStart"  
+      - uart.write: "sensorStart"   
