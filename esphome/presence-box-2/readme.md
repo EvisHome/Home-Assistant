@@ -6,7 +6,7 @@ Upgrades to the previous version [here](/esphome/presence)
 
 ## TOC
 * [Diagram](#diagram)
-* [Parts9(#parts)
+* [Parts9](#parts)
 
 ## Parts
 
