@@ -2,7 +2,7 @@
 
 ![](presence-box.png)
 
-Updates to my previous version
+Updates to my previous version ()[/esphome/presence]
 
 
 
