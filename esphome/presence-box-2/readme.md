@@ -2,7 +2,7 @@
 
 ![](presence-box.png)
 
-Updates to my previous version [here](/esphome/presence)
+Upgrades to the previous version [here](/esphome/presence)
 
 ## TOC
 * [Diagram](#diagram)
