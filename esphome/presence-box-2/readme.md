@@ -12,3 +12,9 @@ Note! I don't have all the sensors in this currently in a same box, but the wiri
 
 ![](presence-box-diagram.png)
 
+
+
+## Under the hood
+
+
+![](under-the-hood.jpg)
