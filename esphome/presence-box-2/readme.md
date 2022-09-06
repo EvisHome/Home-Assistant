@@ -8,6 +8,7 @@ Upgrades to the previous version [here](/esphome/presence)
 * [Diagram](#diagram)
 * [Parts](#parts)
 * 3D Printable Enclosures
+* ESPHome code
 
 ## Parts
 
