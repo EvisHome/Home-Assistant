@@ -6,7 +6,8 @@ Upgrades to the previous version [here](/esphome/presence)
 
 ## TOC
 * [Diagram](#diagram)
-* [Parts9](#parts)
+* [Parts](#parts)
+* 3D Printable Enclosures
 
 ## Parts
 
