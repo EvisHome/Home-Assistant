@@ -4,8 +4,6 @@
 
 Updates to my previous version
 
-* Updates Enclosure
-* More Sensors
 
 
 ## Diagram
