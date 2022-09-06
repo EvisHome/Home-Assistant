@@ -1,5 +1,7 @@
 # Presence Box 2
 
+![](presence-box.png)
+
 Updates to my previous version
 
 * Updates Enclosure
