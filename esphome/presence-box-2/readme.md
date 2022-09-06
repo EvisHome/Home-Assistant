@@ -10,5 +10,5 @@ Updates to my previous version
 
 Note! I don't have all the sensors in this currently in a same box, but the wiring is the same although different sensors in different places.
 
-![](presence_box_diagram.png)
+![](presence-box-diagram.png)
 
