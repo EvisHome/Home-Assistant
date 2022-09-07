@@ -1,4 +1,5 @@
 substitutions:
+  # Room / ESP Device Name
   name: livingroom
 
 esphome:
