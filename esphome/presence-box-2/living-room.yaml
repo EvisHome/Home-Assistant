@@ -32,8 +32,12 @@ wifi:
 
 # Enable BLE tracker
 esp32_ble_tracker:
-
-#bluetooth_proxy:
+  #scan_parameters:
+  #  interval: 1100ms
+  #  window: 1100ms
+  #  active: true
+    
+bluetooth_proxy:
 
 captive_portal:
 
@@ -132,10 +136,10 @@ binary_sensor:
     filters:
       - delayed_off: 3s
   
-  ## BLE PRESENCE - TRACKING OURA RING
-  #- platform: ble_presence
-  #  mac_address: 'a0:38:f8:30:92:9a'
-  #  name: "My Oura ${name}"
+  ## BLE PRESENCE - TRACKING MY OURA RING
+  - platform: ble_presence
+    mac_address: 'a0:38:f8:30:92:9a'
+    name: "My Oura ${name}"
 
 
 sensor:
@@ -151,7 +155,7 @@ sensor:
     mac_address: 'a0:38:f8:30:92:9a'
     name: "Jukka Oura RSSI ${name}"
 
-  ## AIRTHINGS WAVE PLUS
+  ## AIRTHINGS WAVE PLUS # Uncomment to use)
   #- platform: airthings_wave_plus
   #  ble_client_id: airthings_plus_01
   #  update_interval: 10min
@@ -169,7 +173,9 @@ sensor:
   #    name: "Airthings Wave Plus CO2"
   #  tvoc:
   #    name: "Airthings Wave Plus VOC"
-      
+  
+  
+  ## REPLACED BY BLUETOOTH PROXY!!
   ## SOIL MOISTURE SENSOR 01
   #- platform: xiaomi_hhccjcy01
   #  mac_address: "C4:7C:8D:6D:6A:98"
