@@ -12,7 +12,7 @@ Upgrades to the previous version [here](/esphome/presence)
 
 ## Parts
 
-Notice that not all parts will fit simultaneously in to a one box.
+Notice that not all parts will fit simultaneously in to a one box. Links below are mostly affiliate links so I may or may not get some small commission on purhaces, if I do, I will be using those to do other similar projects/content.
 
 * [ESP32 DevKit](https://amzn.to/3Ry7VmC) (fits in to the box stands)
 * [AM312 PIR](https://amzn.to/3KYUb22) or [HC-SR501 PIR](https://amzn.to/3d7cIwp)
