@@ -7,7 +7,7 @@
 ## Parts
 * [Philips Hue Motion Sensor - Eye Lid](https://www.tinkercad.com/things/fWPtAOjGvGs-hue-motion-sensor-eye-lid)
 
-![](eye-lids-4.jpg)
+![](eye-lid-4.jpg)
 
 ![](hue-eye-lids.png)
 
