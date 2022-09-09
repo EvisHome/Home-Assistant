@@ -25,6 +25,9 @@
 * Plant Irrigation
 * Roller Blind
 
+## Other Projects
+* Philips Hue Wall Mount
+
 ## Themes
 *This needs some work ..*
 * [evis-theme](themes/readme.md)
