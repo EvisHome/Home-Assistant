@@ -9,3 +9,8 @@
 
 
 <p float="left"> <img src="small-mount-01.jpg" width="49%" /> <img src="small-mount-02.jpg" width="49%" /></p> 
+
+
+## Mount Options
+
+![](mounts.jpg)
