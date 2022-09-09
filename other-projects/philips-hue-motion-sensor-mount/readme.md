@@ -7,6 +7,7 @@
 ## Parts
 
 * [Philips Hue Motion Sensor](https://amzn.to/3eFKGZe)
+* [3D Printable Mounting Parts](https://www.tinkercad.com/things/9wCn1o8V80X-sensor-mounting-set)
 
 ## Mount Options
 
