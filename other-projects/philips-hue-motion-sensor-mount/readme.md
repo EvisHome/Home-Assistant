@@ -13,7 +13,7 @@
 
 ## Installation
 
-![](installation.png)
+![](installation2.png)
 
 ## Mount Options
 
