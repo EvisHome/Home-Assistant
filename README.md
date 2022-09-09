@@ -26,7 +26,7 @@
 * Roller Blind
 
 ## Other Projects
-* Philips Hue Wall Mount
+* [Philips Hue Motion Sensor - Wall Mount](https://github.com/EvisHome/Home-Assistant/tree/main/other-projects/philips-hue-motion-sensor-mount)
 
 ## Themes
 *This needs some work ..*
