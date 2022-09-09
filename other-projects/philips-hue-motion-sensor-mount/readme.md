@@ -11,4 +11,4 @@
 
 ## Mount Options
 
-![](mounts.jpg)
+![](mounting-set.jpg)
