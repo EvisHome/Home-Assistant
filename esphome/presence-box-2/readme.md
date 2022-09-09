@@ -21,7 +21,7 @@ Notice that not all parts will fit simultaneously in to a one box.
 * [AHT21 Temperature & Humidity Sensor](https://amzn.to/3B1unxy)
 * [CCS811 Air Quality Sensor (VOC & eCO2)](https://amzn.to/3DcLwXZ)
 * [5mm RGB LED](https://amzn.to/3QwpZMH) or [RGB SMD LED](https://amzn.to/3QxTkXb)
-* [OLED Display Module I2C SSD1306]([https://amzn.to/3QwocqQ)
+* [OLED Display Module I2C SSD1306](https://amzn.to/3QwocqQ)
 
 Optionally if powering from DC power supply, instead of USB
 
