@@ -8,7 +8,7 @@
 
 * [Philips Hue Motion Sensor](https://amzn.to/3eFKGZe)
 * [3D Printable Mounting Parts](https://www.tinkercad.com/things/9wCn1o8V80X-sensor-mounting-set)
-* 10-32 screw to attach the Hue Magnet to the adjustment ball
+* #6 - 32 UNC screw (9.5mm?) to attach the Hue Magnet to the adjustment ball
 * Screw(s) for attaching the mount to a wall/ceiling (4mm hole)
 
 ## Installation
