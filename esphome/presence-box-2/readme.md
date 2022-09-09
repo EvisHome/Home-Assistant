@@ -14,19 +14,19 @@ Upgrades to the previous version [here](/esphome/presence)
 
 Notice that not all parts will fit simultaneously in to a one box.
 
-* ESP32 DevKit v1 (fits in to the box stands)
-* [AM312 PIR or HC-SR501 PIR](https://www.amazon.de/-/en/gp/product/B08LBDYPYD/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+* [ESP32 DevKit](https://amzn.to/3Ry7VmC) (fits in to the box stands)
+* [AM312 PIR](https://amzn.to/3KYUb22) or [HC-SR501 PIR](https://amzn.to/3d7cIwp)
 * [DFROBOT SEN0395 mmWave Radar](https://www.mouser.fi/ProductDetail/426-SEN0395)
-* TLS2561 Light Sensor
-* AHT21 Temperature & Humidity Sensor
-* CCS811 Air Quality Sensor (VOC & eCO2)
-* 5mm RGB LED (common catode or anode) / RGB SMD LED
-* [OLED Display Module I2C SSD1306](https://www.amazon.de/-/en/gp/product/B07BDFXFRK/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
+* [TLS2561 Light Sensor](https://amzn.to/3RTi0uu)
+* [AHT21 Temperature & Humidity Sensor](https://amzn.to/3B1unxy)
+* [CCS811 Air Quality Sensor (VOC & eCO2)](https://amzn.to/3DcLwXZ)
+* [5mm RGB LED](https://amzn.to/3QwpZMH) or [RGB SMD LED](https://amzn.to/3QxTkXb)
+* [OLED Display Module I2C SSD1306]([https://amzn.to/3QwocqQ)
 
 Optionally if powering from DC power supply, instead of USB
 
-* DC plug (can be used for power instead of USB)
-* Buck Converter (for voltage adjusting)
+* [DC connectors](https://amzn.to/3Bt9GvW)
+* [MP1584EN Step Down Converter](https://amzn.to/3B1uZ6k)
 
 ## Diagram
 
