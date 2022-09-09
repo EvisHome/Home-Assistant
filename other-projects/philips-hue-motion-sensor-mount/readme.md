@@ -11,6 +11,10 @@
 * M3 10mm or M3 12mm screw to attach the Hue Magnet to the adjustment ball
 * Screw(s) for attaching the mount to a wall/ceiling (4mm hole)
 
+## Installation
+
+![](installation.png)
+
 ## Mount Options
 
 ![](mounting-set.jpg)
