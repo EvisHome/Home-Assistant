@@ -33,7 +33,7 @@ Optionally if powering from DC power supply, instead of USB
 
 Note! I don't have all the sensors in this currently in a same box, but the wiring is the same although different sensors in different places.
 
-![](presence-box-diagram-1.png)
+![](presence-box-diagram-2.png)
 
 
 
