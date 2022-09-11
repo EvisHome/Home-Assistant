@@ -20,7 +20,7 @@ Notice that not all parts will fit simultaneously in to a one box. Links below a
 * [TLS2561 Light Sensor](https://amzn.to/3RTi0uu)
 * [AHT21 Temperature & Humidity Sensor](https://amzn.to/3B1unxy)
 * [CCS811 Air Quality Sensor (VOC & eCO2)](https://amzn.to/3DcLwXZ)
-* [5mm RGB LED](https://amzn.to/3QwpZMH)
+* [5mm RGB LED (focused)](https://amzn.to/3QwpZMH) / [5mm RGB LED (diffused)](https://amzn.to/3qvJVF6)
 * [OLED Display Module I2C SSD1306](https://amzn.to/3QwocqQ)
 * [M3 Screws? - testing ..](https://amzn.to/3x9pdyv)
 
