@@ -35,6 +35,7 @@ Note! I don't have all the sensors in this currently in a same box, but the wiri
 
 ![](presence-box-diagram-2.png)
 
+![](presence-box-sensors.jpg)
 
 
 ## Under the hood
