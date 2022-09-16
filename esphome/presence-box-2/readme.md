@@ -2,8 +2,9 @@
 
 ![](presence-box.png)
 
-Upgrades to the previous version [here](/esphome/presence)
+# Overview
 
+This an upgrade to my previous version [here](/esphome/presence). This version includes more sensors, that can be included in the box.
 ## TOC
 * [Diagram](#diagram)
 * [Parts](#parts)
