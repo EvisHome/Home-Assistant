@@ -42,4 +42,4 @@ Note! I don't have all the sensors in this currently in a same box, but the wiri
 
 ![](under-the-hood.jpg)
 
-<p float="left"> <img src="inside-01.jpg" width="24%" /> <img src="inside-02.jpg" width="24%" /> <img src="inside-03.jpeg" width="24%" /> <img src="inside-04.jpg" width="24%" /> </p> 
+<p float="left"> <img src="inside-01.jpg" width="24.5%" /> <img src="inside-02.jpg" width="24.5%" /> <img src="inside-03.jpeg" width="24.5%" /> <img src="inside-04.jpg" width="24.5%" /> </p> 
