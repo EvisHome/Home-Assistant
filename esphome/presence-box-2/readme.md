@@ -40,5 +40,6 @@ Note! I don't have all the sensors in this currently in a same box, but the wiri
 
 ## Under the hood
 
+<p float="left"> <img src="build-1.jpg" width="24%" /> <img src="build-2.jpg" width="24%" /> <img src="build-3.jpg" width="24%" /> <img src="build-4.jpg" width="24%" /> </p> 
 
 ![](under-the-hood.jpg)
