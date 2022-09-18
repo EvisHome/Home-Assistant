@@ -10,8 +10,7 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 
 ![](settings-overview.png)
 
-NOTE:
-When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.
+*NOTE: When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.*
 
 **Set Box Dimensions**
 
