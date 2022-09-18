@@ -19,6 +19,7 @@
 * [Sticky Top Card](examples/sticky-top-card/)
 
 ## ESPHome Projects
+* [Project Box Creator](esphome/project-box-creator)
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 * [Room Presence](esphome/presence/)
 * [Room Presence v2 / Presence Box](esphome/presence-box-2/)
@@ -26,7 +27,6 @@
 * Roller Blind
 
 ## Other Projects
-* [Project Box Creator](esphome/project-box-creator)
 * [Philips Hue Motion Sensor - Wall Mount](https://github.com/EvisHome/Home-Assistant/tree/main/other-projects/philips-hue-motion-sensor-mount)
 * [Philips Hue Motion Sensor - Eye Lid](https://github.com/EvisHome/Home-Assistant/tree/main/other-projects/philips-hue-motion-sensor-eye-lid)
 
