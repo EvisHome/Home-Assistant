@@ -10,7 +10,7 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 
 ![](settings-overview.png)
 
-*Set Box Dimensions*
+**Set Box Dimensions**
 
 * Box Width
 * Box Length
@@ -19,7 +19,7 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 * Corner Radius
 * Snap Length
 
-*Enable Board Mounts*
+**Enable Board Mounts**
 
 There are 3 different positions for the mount kit, you can enable each individually, all, or none.
 
