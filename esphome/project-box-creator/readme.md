@@ -8,6 +8,8 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 
 ## Box Creation Options
 
+![](settings-overview.png)
+
 *Set Box Dimensions*
 
 * Box Width
