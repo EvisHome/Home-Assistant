@@ -9,6 +9,7 @@
 * [Box Dimensions](#box-dimensions)
 * [Board Mount Settings](#board-mount-settings)
 * [Air Vent Settings](#air-vent-settings)
+* [Box Mount Kit Settings](#box-mount-kit-settings)
 
 ## Overview
 
