@@ -24,9 +24,9 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 
 ## Box Creation Options
 
-Before you do anything else you want to set the TinkerCad Codeblocks speed setting to Max (on the top/right corner side) or else you will be waiting FOREVER the box to generate.
+NOTE 1: *Before you do anything else you want to set the TinkerCad Codeblocks speed setting to Max (on the top/right corner side) or else you will be waiting FOREVER the box to generate.*
 
-*NOTE: When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.* Although I tried to set comment boxes around the "canvas" so that it centers the variables, when first opened.
+NOTE 2: *When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.* Although I have tried to set comment boxes around the "canvas" so that it centers the variables when first opened.
 
 ![](all-box-settings.png)
 
