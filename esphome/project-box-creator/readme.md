@@ -9,13 +9,16 @@ Some generated (and some post modified) examples below
 
 ## TOC
 
+Project Box Creator
+
 * [Overview](#overview)
 * [Box Creation Options](#box-creation-options)
 * [Box Dimensions](#box-dimensions)
 * [Board Mount Settings](#board-mount-settings)
 * [Air Vent Settings](#air-vent-settings)
 * [Box Mount Kit Settings](#box-mount-kit-settings)
-Wall Mounting
+
+Mount Kit
 * [Wall Mount Options](#wall-mount-options)
 * [Wall Mount Instructions](#wall-mount-instructions)
 
@@ -79,7 +82,7 @@ There are 3 different positions for the mount kit, you can enable each individua
 
 To use the mount kit you need an M3 screw or a #6-32 screw (standard computer case screw), and what ever wall screws you may need.
 
-## Wall Mounting
+## Mount Kit
 
 ### Wall Mount Options
 
