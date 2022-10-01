@@ -15,6 +15,9 @@ Some generated (and some post modified) examples below
 * [Board Mount Settings](#board-mount-settings)
 * [Air Vent Settings](#air-vent-settings)
 * [Box Mount Kit Settings](#box-mount-kit-settings)
+Wall Mounting
+* [Wall Mount Options](#wall-mount-options)
+* [Wall Mount Instructions](#wall-mount-instructions)
 
 ## Overview
 
@@ -76,6 +79,12 @@ There are 3 different positions for the mount kit, you can enable each individua
 
 To use the mount kit you need an M3 screw or a #6-32 screw (standard computer case screw), and what ever wall screws you may need.
 
+## Wall Mounting
+
+### Wall Mount Options
+
 ![](mounting-options.png)
+
+### Wall Mount Instructions
 
 ![](wall-mounting.png)
