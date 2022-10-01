@@ -62,7 +62,9 @@ Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you d
 
 *Note: If your Lid Mount Feet appear to be outside of the Lid inner wall, then you won't be able close the lid (small overlapping with the wall is probably is still fine), and need to make the box a bit bigger.*
 
-### USB Cord Hole (For ESP devices)
+### USB Cord Hole
+
+(For ESP devices)
 
 In most cases you will want to add the cord hole(s) separately, modifying the shape. But I anywa included this for my own convinience, having tested it with ESP32 DevKit V1 and ESP8266 NodeMCU V3, so use with care, or atleast test with other shapes that you have it in a correct place.
 
