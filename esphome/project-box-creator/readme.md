@@ -12,12 +12,10 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 
 ![](all-box-settings.png)
 
-### Basic Settings
+### Box Dimensions
 ![](settings-overview.png)
 
-**Set Box Dimensions**
-
-The box dimensions are the outside dimensions, if you need to specifically fit something inside, reduce the wall width from both sides, both ends, and from top and bottom to get the internal volume, measure accordingly.
+The box dimensions are the external dimensions, if you need to specifically fit something inside, calculate the internal volume you need. Reduce the wall width from both sides, both ends, and from top and bottom to get the internal volume, measure accordingly.
 
 
 **All dimensions are in millimeters (mm)**
