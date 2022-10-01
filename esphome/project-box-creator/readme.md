@@ -3,7 +3,7 @@
 * [Project Box Creator (TinkerCad)](https://www.tinkercad.com/codeblocks/4ruEYPK78RS)
 * [Mount Kit (TinkerCad)](https://www.tinkercad.com/things/9wCn1o8V80X) | [Mount Kit (Printables)](https://www.printables.com/model/277210-mount-kit)
 
-Some generated (and some post modified) examples below
+Some generated examples (some are post modified in TinkerCad)
 
 ![](box-examples.jpg)
 
