@@ -28,7 +28,9 @@ The box dimensions are the outside dimensions, if you need to specifically fit s
 * Corner Radius
 * Snap Length (snap-in mechanism length on the sides)
 
-**Enable Board Mounts**
+**Board Mount Settings**
+
+![](mount-settings.png)
 
 There are 3 different positions for the mount kit, you can enable each individually, all, or none.
 
