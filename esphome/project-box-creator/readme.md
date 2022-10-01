@@ -6,6 +6,7 @@
 ## TOC
 
 * [Overview](#overview)
+* [Box Creation Options](#box-creation-options)
 * [Box Dimensions](#box-dimensions)
 * [Board Mount Settings](#board-mount-settings)
 * [Air Vent Settings](#air-vent-settings)
