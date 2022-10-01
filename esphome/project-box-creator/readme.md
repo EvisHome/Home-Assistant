@@ -37,6 +37,11 @@ Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you d
 
 *Note: If your Lid Mount Feet appear to be outside of the Lid inner wall, then you won't be able close the lid (small overlapping with the wall is probably is still fine), and need to make the box a bit bigger.*
 
+### Air Vent Settings
+
+If you don't want any holes in the box side walls, just leave this to 0 (disabled)
+* Enable Side Vents
+
 ### Box Mount Kit Settings
 
 There are 3 different positions for the mount kit, you can enable each individually, all, or none.
