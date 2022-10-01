@@ -66,11 +66,11 @@ Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you d
 
 (For ESP devices)
 
-In most cases you will want to add the cord hole(s) separately, modifying the shape. But I anywa included this for my own convinience, having tested it with ESP32 DevKit V1 and ESP8266 NodeMCU V3, so use with care, or atleast test with other shapes that you have it in a correct place.
+In most cases you will want to add the cord hole(s) separately, modifying the shape. I anyway included this more for my own convinience, having tested it only with ESP32 DevKit V1 and ESP8266 NodeMCU V3, so use with care, or atleast check/test with shapes before printing.
 
 Ideally when you have the board mount feet enabled, you want the USB cord hole to power your board. Depending how you are placing you board you might want to "inverted the hole placement".
 
-There is currently a problem with the inverted USB hole, not being placed correctly in all cases .. I think, I've nailed it down the board thickness and some calculations not done correctly .. anyway, working to fixing it.
+There is currently a problem with the inverted USB hole, not being placed correctly in all cases .. working to fixing it.
 
 ![](usb-holes.png)
 
