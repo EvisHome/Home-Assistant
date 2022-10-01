@@ -15,6 +15,7 @@ Project Box Creator
 * [Box Creation Options](#box-creation-options)
 * [Box Dimensions](#box-dimensions)
 * [Board Mount Settings](#board-mount-settings)
+* [USB Cord Hole](#usb-cord-hole)
 * [Air Vent Settings](#air-vent-settings)
 * [Box Mount Kit Settings](#box-mount-kit-settings)
 
@@ -60,6 +61,16 @@ Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you d
 ![](mount-settings.png)
 
 *Note: If your Lid Mount Feet appear to be outside of the Lid inner wall, then you won't be able close the lid (small overlapping with the wall is probably is still fine), and need to make the box a bit bigger.*
+
+### USB Cord Hole (For ESP devices)
+
+In most cases you will want to add the cord hole(s) separately, modifying the shape. But I anywa included this for my own convinience, having tested it with ESP32 DevKit V1 and ESP8266 NodeMCU V3, so use with care, or atleast test with other shapes that you have it in a correct place.
+
+Ideally when you have the board mount feet enabled, you want the USB cord hole to power your board. Depending how you are placing you board you might want to "inverted the hole placement".
+
+There is currently a problem with the inverted USB hole, not being placed correctly in all cases .. I think, I've nailed it down the board thickness and some calculations not done correctly .. anyway, working to fixing it.
+
+![](usb-holes.png)
 
 ### Air Vent Settings
 
