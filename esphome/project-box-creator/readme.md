@@ -3,7 +3,14 @@
 * [Project Box Creator (TinkerCad)](https://www.tinkercad.com/codeblocks/4ruEYPK78RS-project-box-creator)
 * [Mount Kit (TinkerCad)](https://www.tinkercad.com/things/9wCn1o8V80X-sensor-mounting-set) | [Mount Kit (Printables)](https://www.printables.com/model/277210-mount-kit)
 
-### Overview
+## TOC
+
+* [Overview](#overview)
+* [Box Dimensions](#box-dimensions)
+* [Board Mount Settings](#board-mount-settings)
+* [Air Vent Settings](#air-vent-settings)
+
+## Overview
 
 I wanted to make it as easy as possible to start experimenting with new 3D printable project boxes. I thought I'd parametrize my previous designs with TinkerCad Codeblocks, and for my needs it works really well.
 
