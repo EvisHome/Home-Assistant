@@ -8,16 +8,17 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 
 ## Box Creation Options
 
+*NOTE: When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.*
+
+![](all-settings.png)
+
 ### Basic Settings
 ![](settings-overview.png)
-
-*NOTE: When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.*
 
 **Set Box Dimensions**
 
 The box dimensions are the outside dimensions, if you need to specifically fit something inside, reduce the wall width from both sides, both ends, and from top and bottom to get the internal volume, measure accordingly.
 
-![](basic-settings.png)
 
 **All dimensions are in millimeters (mm)**
 
