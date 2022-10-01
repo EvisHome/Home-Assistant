@@ -21,12 +21,12 @@ The box dimensions are the outside dimensions, if you need to specifically fit s
 
 **All dimensions are in millimeters (mm)**
 
-* Box Width
-* Box Length
-* Box Height
+* Box Width (*external width*)
+* Box Length (*external length*)
+* Box Height (*external height*)
 * Wall Width
 * Corner Radius
-* Snap Length (snap-in mechanism length on the sides)
+* Snap Length (*snap-in mechanism length on the sides*)
 
 ### Board Mount Settings
 
