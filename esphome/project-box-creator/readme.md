@@ -1,6 +1,6 @@
 # Project Box Creator
 
-https://www.tinkercad.com/codeblocks/4ruEYPK78RS-project-box-creator
+[Project Box Creater (TinkerCad)](https://www.tinkercad.com/codeblocks/4ruEYPK78RS-project-box-creator)
 
 ### Overview
 
@@ -10,7 +10,7 @@ My wall mount kit works also pretty well with the boxes, naturally depends on yo
 
 ## Box Creation Options
 
-*NOTE: When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.*
+*NOTE: When you open the TinkerCad Codeblocks, you may need to scroll to the top to actually see the correct variables that you can changes.* Although I tried to set comment boxes around the "canvas" so that it centers the variables, when first opened.
 
 ![](all-box-settings.png)
 
