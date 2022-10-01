@@ -19,7 +19,7 @@
 * [Sticky Top Card](examples/sticky-top-card/)
 
 ## ESPHome Projects
-* [Project Box Creator](esphome/project-box-creator)
+* [Project Box Creator](esphome/project-box-creator/readme.md)
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 * [Room Presence](esphome/presence/)
 * [Room Presence v2 / Presence Box](esphome/presence-box-2/)
