@@ -29,7 +29,7 @@ The box dimensions are the external dimensions, if you need to specifically fit 
 
 ### Board Mount Settings
 
-Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you don't need the board mounting just leave leave the "board mount variables" to 0
+Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you don't need the board mounting just leave leave the "board mount variables" to 0 (disabled)
 * Enable Board Mount Feet
 * Enable Lid Mount Feet
 
@@ -39,7 +39,7 @@ Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you d
 
 ### Air Vent Settings
 
-If you don't want any holes in the box side walls, just leave this setting to 0 (disabled)
+Optional settings for having air vents on the sides of the box. If you don't want any holes in the box side walls, just leave this setting to 0 (disabled)
 * Enable Side Vents
 
 Leaving the *Side Vent Margin* and *Side Vent Angle* both to 0 at the same time, will overlap with the snap-in mechanism, and probably end up affecting it, so check that you have enough margin from the edges of the box.
