@@ -77,3 +77,5 @@ There are 3 different positions for the mount kit, you can enable each individua
 To use the mount kit you need an M3 screw or a #6-32 screw (standard computer case screw), and what ever wall screws you may need.
 
 ![](mounting-options.png)
+
+![](wall-mounting.png)
