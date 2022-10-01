@@ -7,6 +7,12 @@ Some generated examples (some are post modified in TinkerCad)
 
 ![](box-examples.jpg)
 
+The separate Box base and Lid codeblocks are still available here, but I won't be updating those anymore.
+
+[Project Box Lid Creator](https://www.tinkercad.com/codeblocks/gjlQFVI1M6F)
+[Projects Box Base Creator](https://www.tinkercad.com/codeblocks/9GnrfRpp1H1)
+
+
 ## TOC
 
 Project Box Creator
