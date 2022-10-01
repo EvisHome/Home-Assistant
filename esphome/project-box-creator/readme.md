@@ -42,6 +42,8 @@ Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you d
 If you don't want any holes in the box side walls, just leave this setting to 0 (disabled)
 * Enable Side Vents
 
+Leaving the *Side Vent Margin* and *Side Vent Angle* both to 0 at the same time, will overlap with the snap-in mechanism, and probably end up affecting it, so check that you have enough margin from the edges of the box. The air are centered to the box height with the Lid on.
+
 <p float="left"> <img src="side-vent-settings.png" width="55.5%" /> <img src="side-vents.png" width="43.5%" /> </p> 
 
 ### Box Mount Kit Settings
