@@ -1,6 +1,6 @@
 # Project Box Creator
 
-[Project Box Creater (TinkerCad)](https://www.tinkercad.com/codeblocks/4ruEYPK78RS-project-box-creator)
+[Project Box Creator (TinkerCad)](https://www.tinkercad.com/codeblocks/4ruEYPK78RS-project-box-creator)
 
 ### Overview
 
