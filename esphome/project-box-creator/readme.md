@@ -44,7 +44,7 @@ If you don't want any holes in the box side walls, just leave this setting to 0 
 
 Leaving the *Side Vent Margin* and *Side Vent Angle* both to 0 at the same time, will overlap with the snap-in mechanism, and probably end up affecting it, so check that you have enough margin from the edges of the box.
 
-Depending on the box dimensions the sides will automatically be filled with as many full vents as can be fitted in to the box lenght. 
+Depending on the *Box Length*, *Side Vent Spacing* and the *Side Vent Angle* the box sides will automatically be fitted with as many vents as possible ("within safety margins") :).
 
 The Vents are centered to the box height with the Lid on, so they may look offcenter with just the base.
 
