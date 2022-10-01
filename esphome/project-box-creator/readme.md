@@ -39,8 +39,10 @@ Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you d
 
 ### Air Vent Settings
 
-If you don't want any holes in the box side walls, just leave this to 0 (disabled)
+If you don't want any holes in the box side walls, just leave this setting to 0 (disabled)
 * Enable Side Vents
+
+<p float="left"> <img src="side-vents.png" width="49.5%" /> <img src="side-vent-settings.png" width="49.5%" /> </p> 
 
 ### Box Mount Kit Settings
 
