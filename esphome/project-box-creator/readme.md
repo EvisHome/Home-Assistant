@@ -3,6 +3,10 @@
 * [Project Box Creator (TinkerCad)](https://www.tinkercad.com/codeblocks/4ruEYPK78RS-project-box-creator)
 * [Mount Kit (TinkerCad)](https://www.tinkercad.com/things/9wCn1o8V80X-sensor-mounting-set) | [Mount Kit (Printables)](https://www.printables.com/model/277210-mount-kit)
 
+Some examples below
+
+![](box-examples.jpg)
+
 ## TOC
 
 * [Overview](#overview)
