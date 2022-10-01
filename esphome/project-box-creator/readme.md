@@ -64,10 +64,8 @@ The Vents are centered to the box height with the Lid on, so they may look offce
 
 ### Box Mount Kit Settings
 
-![](mount-kit-settings.png)
-
 There are 3 different positions for the mount kit, you can enable each individually, all, or none. Depending on the box placement, you may get a better ranges with some of the options.
 
-* Wall Mount Kit Hole - Top
-* Wall Mount Kit Hole - Center
-* Wall Mount Kit Hole - Bottom
+![](mount-kit-settings.png)
+
+
