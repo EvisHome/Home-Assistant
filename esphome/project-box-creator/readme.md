@@ -29,7 +29,13 @@ The box dimensions are the external dimensions, if you need to specifically fit 
 
 ### Board Mount Settings
 
+Optional settings for mounting a boards like ESP32s, Raspberry Pis etc. If you don't need the board mounting just leave leave the "board mount variables" to 0
+* Enable Board Mount Feet
+* Enable Lid Mount Feet
+
 ![](mount-settings.png)
+
+*Note: If your Lid Mount Feet appear to be outside of the Lid inner wall, then you won't be able close the lid (small overlapping with the wall is probably is still fine), and need to make the box a bit bigger.*
 
 ### Box Mount Kit Settings
 
