@@ -1,0 +1,121 @@
+type: custom:apexcharts-card
+graph_span: 48h
+span:
+  start: hour
+  offset: '-40h'
+update_interval: 10min
+now:
+  show: true
+  label: Now
+apex_config:
+  title:
+    text: Energy Consumption Hourly (kWh) | Spot Price (c/kWh)
+    align: center
+    offsetY: 10
+    style:
+      fontSize: 13px
+      fontFamily: Verdana
+      fontWeight: normal
+  xaxis:
+    labels:
+      hideOverlappingLabels: false
+  chart:
+    height: 400px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: false
+  dataLabels:
+    enabled: true
+    position: top
+    offsetY: -8
+    background:
+      enabled: false
+    style:
+      fontSize: 10px
+  stroke:
+    dashArray:
+      - 0
+      - 0
+      - 4
+      - 4
+yaxis:
+  - id: cost
+    max: ~40
+    min: 0
+    decimals: 2
+    apex_config:
+      tickAmount: 4
+      labels:
+        show: true
+      title:
+        text: c/kWh
+        style:
+          fontSize: 12px
+          fontFamily: verdana
+  - id: power
+    opposite: true
+    max: ~2
+    min: 0
+    decimals: 1
+    apex_config:
+      tickAmount: 5
+      labels:
+        show: true
+      title:
+        text: kWh
+        style:
+          fontSize: 12px
+          fontFamily: verdana
+series:
+  - entity: sensor.all_energy_devices_energy_hourly
+    name: Total Energy
+    color: orange
+    type: column
+    yaxis_id: power
+    stroke_width: 1
+    opacity: 0.5
+    float_precision: 3
+    unit: kWh
+    group_by:
+      duration: 1h
+      func: max
+    show:
+      datalabels: true
+  - entity: sensor.nordpool_kwh_fi_eur_3_10_024
+    name: Spot Price
+    color: red
+    type: area
+    yaxis_id: cost
+    float_precision: 4
+    stroke_width: 2
+    opacity: 0
+    group_by:
+      duration: 1h
+      func: max
+    fill_raw: 'null'
+    extend_to: false
+    show:
+      datalabels: false
+  - entity: sensor.nordpool_kwh_fi_eur_3_10_024
+    name: Spot Price Today
+    color: red
+    type: line
+    yaxis_id: cost
+    float_precision: 4
+    stroke_width: 2
+    opacity: 0.7
+    fill_raw: 'null'
+    extend_to: false
+    group_by:
+      duration: 1h
+      func: max
+    show:
+      datalabels: false
+    data_generator: |
+      return (entity.attributes.raw_today.map((start, index) => {
+        return [new Date(start["start"]).getTime(), entity.attributes.raw_today[index]["value"]];
+      })).concat(entity.attributes.raw_tomorrow.map((start, index) => {
+        return [new Date(start["start"]).getTime(), entity.attributes.raw_tomorrow[index]["value"]];
+      }));
