@@ -13,6 +13,7 @@ Some items we listed that we thought might make the biggest savings:
 * reduce the amount of dished -> no need to run the dishwasher so often
 * turn off devices when not in use (fully off, not just standby mode)
 * precense guided lights ([Room Presence](https://github.com/EvisHome/Home-Assistant/blob/main/esphome/presence) & [Presence Box 2](Presence Box 2)
+* I have also started to automate turning on/off some rack devices during night or when we are away
 
 ## Custom Integrations & Cards
 
@@ -22,3 +23,12 @@ Some items we listed that we thought might make the biggest savings:
 ## Helpers
 
 I created few helper entities to help calculate the costs.
+
+* input_number.energy_base_fee (monthly base fee in euros)
+* input_number.energy_fixed_fee (this is the fixed c/kWh fee that adjusts every 3 months)
+* input_number.energy_tax (energy tax in c/kWh)
+* input_number.energy_transfer_base_fee (monthly energy transfer base fee)
+* input_number.energy_transfer_fee (transfer fee in c/kWh)
+* input_number.energy_spot_price_base_fee (spot price base fee in c/kWh, this added to the spot price)
+
+## Additional Sensors
