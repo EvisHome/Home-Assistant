@@ -10,6 +10,7 @@
 * [Nest Protect](dashboards/nest-protect/)
 * [Person Dashboard](dashboards/person-dashboard/)
 * [DNS AdGuard Dashboard](dashboards/dns-dashboard/)
+* [Energy Dashboard](/dashboards/energy/readme.md)
 
 ## Examples/References
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
