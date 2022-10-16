@@ -40,4 +40,10 @@ Created few sensors which calculate the costs shown in the charts
 * sensor.total_energy_cost_monthly = total_energy_price * total monthly energy consumption
 * sensor.total_energy_spot_price = energy spot price + energy_spot_price_base_fee + energy_tax + energy_transfer_fee
 
+## The Dashboard / View
 
+I used nested Grids to place the apexcharts-cards in their places.
+
+## Charts
+
+### Energy Consumption Hourly (kWh) & Spot Price (c/kWh)
