@@ -47,6 +47,7 @@ I used nested Grids to place the apexcharts-cards in their places.
 ## Charts
 
 ### Energy Consumption Hourly (kWh) & Spot Price (c/kWh)
+This chart shows the hourly consumption (currently from all the outlets, but once I have the shelly 3EM I'll change it the data to that.) Also shows the Nordpool spot price history and pulls todays and tomorrows prices from the integration when available.
 [energy-consumption-hourly.yaml](energy-consumption-hourly.yaml)
 ![](energy-consumption-hourly.png)
 
