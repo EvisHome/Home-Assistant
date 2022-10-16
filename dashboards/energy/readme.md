@@ -55,3 +55,7 @@ This chart shows the hourly consumption (currently from all the outlets, but onc
 ### Spot Price (c/kWh)
 
 Shows the Nordpool integration spot price for today and tomorrow. The tomorrow values can be empty at times, depending when the prices are available, for it seems they update around 14:00.
+
+* [spot-price-chart.yaml](spot-price-chart.yaml)
+![](spot-price.png)
+
