@@ -1,0 +1,164 @@
+## For testing Brush Chart for Hourly/daily Energy Consumption
+
+type: custom:apexcharts-card
+experimental:
+  color_threshold: true
+  brush: true
+update_interval: 15min
+graph_span: 14d
+span:
+  start: day
+  offset: '-13d12h'
+now:
+  show: true
+  label: Now
+apex_config:
+  title:
+    text: Energy Consumption (kWh) | Spot Price (c/kWh)
+    align: center
+    offsetY: 10
+    style:
+      fontSize: 13px
+      fontFamily: Verdana
+      fontWeight: normal
+  chart:
+    height: 400px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: true
+  dataLabels:
+    enabled: true
+    position: top
+    offsetY: -8
+    background:
+      enabled: false
+    style:
+      fontSize: 10px
+# BRUSH SETTINGS
+brush:
+  selection_span: 40h
+  apex_config:
+    chart:
+      height: 300px
+    dataLabels:
+      enabled: true
+      position: top
+      offsetY: -8
+      background:
+        enabled: false
+      style:
+        fontSize: 10px
+    markers:
+      size: 4
+    # Legend for brush needed to be enabled
+    legend:
+      show: true
+series:
+  - entity: sensor.nordpool_kwh_fi_eur_3_10_024 # from the nordpool integration
+    name: Spot Price
+    color: red
+    type: line
+    fill_raw: zero
+    opacity: 0.3
+    yaxis_id: cost
+    float_precision: 2
+    stroke_width: 2
+    group_by:
+      duration: 1h
+      func: max
+    show:
+      datalabels: false
+      in_brush: false
+      in_chart: true
+      legend_value: false
+    # GETTING TODAY & TOMORROW DATA TO ONE ENTITY
+    data_generator: |
+      return (entity.attributes.raw_today.map((start, index) => {
+        return [new Date(start["start"]).getTime(), entity.attributes.raw_today[index]["value"]];
+      })).concat(entity.attributes.raw_tomorrow.map((start, index) => {
+        return [new Date(start["start"]).getTime(), entity.attributes.raw_tomorrow[index]["value"]];
+      }));
+  - entity: sensor.all_energy_devices_energy_hourly
+    name: Total Energy
+    color: orange
+    type: column
+    yaxis_id: power
+    stroke_width: 1
+    opacity: 0.5
+    float_precision: 1
+    unit: kWh
+    group_by:
+      duration: 1h
+      func: max
+    show:
+      datalabels: true
+      in_brush: false
+      in_chart: true
+      legend_value: false
+  - entity: sensor.all_energy_devices_energy_daily
+    name: Energy (kWh)
+    color: skyblue
+    stroke_width: 1
+    opacity: 0.5
+    type: column
+    yaxis_id: power
+    float_precision: 2 # doesn't seem to work in Brush; used transform
+    unit: kWh
+    group_by:
+      duration: 1d
+      func: max
+    transform: return (parseFloat(x)).toFixed(2); # showing only 2 decimals
+    show:
+      in_brush: true
+      in_chart: false
+  - entity: sensor.all_energy_devices_energy_daily
+    name: Daily Cost (€)
+    color: lightgreen
+    stroke_width: 2
+    extend_to: false
+    type: line
+    yaxis_id: cost
+    float_precision: 2 # doesn't seem to work in Brush; used transform
+    unit: €
+    transform: >-
+      return (parseFloat(x) *
+      (parseFloat(hass.states['sensor.energy_fixed_price'].state) /
+      100)).toFixed(2); 
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+      datalabels: true
+      in_brush: true
+      in_chart: false
+yaxis:
+  - id: cost
+    max: ~40
+    min: 0
+    decimals: 2
+    apex_config:
+      tickAmount: 4
+      labels:
+        show: true
+      title:
+        text: c/kWh
+        style:
+          fontSize: 12px
+          fontFamily: verdana
+  - id: power
+    opposite: true
+    max: ~2
+    min: 0
+    decimals: 1
+    apex_config:
+      tickAmount: 5
+      labels:
+        show: true
+      title:
+        text: kWh
+        style:
+          fontSize: 12px
+          fontFamily: verdana
