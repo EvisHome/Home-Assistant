@@ -61,3 +61,12 @@ Shows the Nordpool integration spot price for today and tomorrow. The tomorrow v
 
 ![](spot-price.png)
 
+### Monitored Appliances Daily (kWh)
+
+### Energy Brush Chart
+
+I am not using this one at the moment, but I tried to combine some of the charts in to this brush chart, so that it would be easier to browse through some days of history. It does work, but the usage was so laggy for me that, I dropped it for now.
+
+* [energy-brush-chart.yaml](energy-brush-chart.yaml)
+
+![](Brush Test-1.mp4)
