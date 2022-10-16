@@ -32,3 +32,12 @@ I created few helper entities to help calculate the costs.
 * input_number.energy_spot_price_base_fee (spot price base fee in c/kWh, this added to the spot price)
 
 ## Additional Sensors
+
+Created few sensors which calculate the costs shown in the charts
+
+* sensor.total_energy_price = energy_fixed_fee + energy_tax + energy_transfer_fee
+* sensor.total_energy_cost_daily = total_energy_price * total daily energy consumption
+* sensor.total_energy_cost_monthly = total_energy_price * total monthly energy consumption
+* sensor.total_energy_spot_price = energy spot price + energy_spot_price_base_fee + energy_tax + energy_transfer_fee
+
+
