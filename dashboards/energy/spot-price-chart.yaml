@@ -1,0 +1,71 @@
+square: false
+columns: 1
+type: grid
+cards:
+  - type: custom:apexcharts-card
+    graph_span: 2d
+    span:
+      start: day
+    update_interval: 30min
+    apex_config:
+      title:
+        text: Spot Price (c/kWh)
+        align: center
+        offsetY: 10
+        style:
+          fontSize: 13px
+          fontFamily: Verdana
+          fontWeight: normal
+      chart:
+        height: 455px
+      grid:
+        show: true
+        borderColor: rgba(255,255,255,0.2)
+      legend:
+        show: false
+      stroke:
+        width: 2
+        dashArray:
+          - 4
+          - 0
+          - 4
+    header:
+      show: false
+      show_states: false
+      colorize_states: true
+    now:
+      show: true
+      label: Now
+    series:
+      - entity: sensor.energy_fixed_price
+        name: Fixed Price
+        color: skyblue
+        type: area
+        opacity: 0.1
+        yaxis_id: cost
+        fill_raw: last
+        extend_to: end
+        float_precision: 3
+      - entity: sensor.nordpool_kwh_fi_eur_3_10_024
+        name: Spot Price
+        color: red
+        type: line
+        opacity: 0.8
+        yaxis_id: cost
+        fill_raw: 'null'
+        extend_to: now
+        float_precision: 3
+        data_generator: |
+          return (entity.attributes.raw_today.map((start, index) => {
+            return [new Date(start["start"]).getTime(), entity.attributes.raw_today[index]["value"]];
+          })).concat(entity.attributes.raw_tomorrow.map((start, index) => {
+            return [new Date(start["start"]).getTime(), entity.attributes.raw_tomorrow[index]["value"]];
+          }));
+    yaxis:
+      - id: cost
+        opposite: true
+        max: ~50
+        min: 0
+        decimals: 3
+        apex_config:
+          tickAmount: 5
