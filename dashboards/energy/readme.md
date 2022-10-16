@@ -47,3 +47,6 @@ I used nested Grids to place the apexcharts-cards in their places.
 ## Charts
 
 ### Energy Consumption Hourly (kWh) & Spot Price (c/kWh)
+[energy-consumption-hourly.yaml](energy-consumption-hourly.yaml)
+![](energy-consumption-hourly.png)
+
