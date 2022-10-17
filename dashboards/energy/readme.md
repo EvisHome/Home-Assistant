@@ -32,7 +32,7 @@ Easiest way to install, is to follow the HACS installation option. After install
 
 ### PowerCalc integration
 
-PowerCalc is a great way to create virtual power (W) and energy (kWh) sensors for lights and power plugs, and also utility sensors (measuring hourly, daily, monthly, yearly consumption). By default it creates quite many new sensors. (there is a great video of it [here](https://www.youtube.com/watch?v=tR1x-cxwK-8) by BeardedTinker. I recommend you watch the video. It can be a bit of work to get it as you like, a but I found it worth while, to get the monitoring just the way I wanted. I went first with the default settings, but later on I ended up redoing everything, removing individual light utility sensors and made some nested groupings instead, following this kind of nesting logic.
+PowerCalc is a great way to create virtual power (W) and energy (kWh) sensors for lights and power plugs, and also utility sensors (measuring hourly, daily, monthly, yearly consumption). By default it creates quite many new sensors. (there is a [great video of it by BeardedTinker](https://www.youtube.com/watch?v=tR1x-cxwK-8). I recommend you watch the video. It can be a bit of work to get it as you like, a but I found it worth while, to get the monitoring just the way I wanted. I went first with the default settings, but later on I ended up redoing everything, removing individual light utility sensors and made some nested groupings instead, following this kind of nesting logic.
 
 * All Devices
 * -- All Outlets
