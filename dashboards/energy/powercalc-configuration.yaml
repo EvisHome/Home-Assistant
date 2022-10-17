@@ -1,0 +1,198 @@
+sensor:
+
+  - platform: powercalc
+    utility_meter_types:
+      - hourly
+      - daily
+      - weekly
+      - monthly
+    create_group: All Energy Devices
+    entities:
+      - create_group: All Outlets
+        utility_meter_types:
+          - hourly
+          - daily
+          - weekly
+          - monthly
+        entities:
+          - create_group: Office Outlets PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: switch.office_desk_outlet
+                power_sensor_id: sensor.office_desk_outlet_power
+                energy_sensor_id: sensor.office_desk_outlet_energy
+              - entity_id: switch.office_door_outlet
+                power_sensor_id: sensor.office_door_outlet_power
+                energy_sensor_id: sensor.office_door_outlet_energy
+          - create_group: Elias Outlets PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: switch.elias_window_outlet
+                power_sensor_id: sensor.elias_window_outlet_power
+                energy_sensor_id: sensor.elias_window_outlet_energy
+          - create_group: Anton Outlets PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: switch.anton_window_outlet
+                power_sensor_id: sensor.anton_window_outlet_power
+                energy_sensor_id: sensor.anton_window_outlet_energy
+          - create_group: Living Room Outlets PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: switch.living_room_media_outlet
+                power_sensor_id: sensor.living_room_media_outlet_power
+                energy_sensor_id: sensor.living_room_media_outlet_energy
+              - entity_id: switch.living_room_desk_outlet_channel_1
+                power_sensor_id: sensor.living_room_desk_outlet_channel_1_power
+                energy_sensor_id: sensor.living_room_desk_outlet_channel_1_energy
+          - create_group: Bathroom Outlets PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: switch.washing_machine_plug
+                power_sensor_id: sensor.washing_machine_plug_power
+          - create_group: Kitchen Outlets PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: switch.fridge_power_plug
+                power_sensor_id: sensor.fridge_power_plug_power
+              - entity_id: switch.kitchen_microwave_power_plug
+                power_sensor_id: sensor.kitchen_microwave_power_plug_power
+              - entity_id: switch.kitchen_coffee_machine_outlet
+                power_sensor_id: sensor.kitchen_coffee_machine_outlet_power
+                energy_sensor_id: sensor.kitchen_coffee_machine_outlet_energy
+              - entity_id: switch.kitchen_dishwasher_outlet
+                power_sensor_id: sensor.kitchen_dishwasher_outlet_power
+                energy_sensor_id: sensor.kitchen_dishwasher_outlet_energy
+              - entity_id: switch.kitchen_lamp_outlets_left
+                power_sensor_id: sensor.kitchen_lamp_outlets_left_power
+                energy_sensor_id: sensor.kitchen_lamp_outlets_left_energy
+              - entity_id: switch.kitchen_lamp_outlets_right
+                power_sensor_id: sensor.kitchen_lamp_outlets_right_power
+                energy_sensor_id: sensor.kitchen_lamp_outlets_right_energy
+      - create_group: All Lights
+        utility_meter_types:
+          - hourly
+          - daily
+          - weekly
+          - monthly
+        entities:
+          - create_group: Bedroom Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.bedroom_bed_light
+              - entity_id: light.bedroom_ceiling_light_1
+              - entity_id: light.bedroom_ceiling_light_2
+              - entity_id: light.bedroom_ceiling_light_3
+          - create_group: Elias Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.elias_ceiling_light_1
+              - entity_id: light.elias_ceiling_light_2
+          - create_group: Anton Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.anton_ceiling_light
+              - entity_id: light.anton_window_light
+          - create_group: Office Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.office_monitor_light_1
+              - entity_id: light.office_monitor_light_2
+          - create_group: Living Room Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.living_room_ceiling_light
+              - entity_id: light.floor_light
+          - create_group: Kitchen Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.kitchen_ceiling_1
+              - entity_id: light.kitchen_ceiling_2
+              - entity_id: light.kitchen_ceiling_3
+              - entity_id: light.kitchen_sink
+          - create_group: Hallway Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.hallway_ceiling_light_1
+              - entity_id: light.hallway_ceiling_light_2
+              - entity_id: light.stairs_light
+              - entity_id: light.lobby_ceiling_light
+          - create_group: Alisa Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.alisa_bed_light
+              - entity_id: light.alisa_ceiling_light
+          - create_group: Bathroom Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.bathroom_lightstrip
+              - entity_id: light.bathroom_ceiling
+              - entity_id: light.sauna_light
+          - create_group: Toilet Lights PM
+            utility_meter_types:
+              - hourly
+              - daily
+              - weekly
+              - monthly
+            entities:
+              - entity_id: light.toilet_light
