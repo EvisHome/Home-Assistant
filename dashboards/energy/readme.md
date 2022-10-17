@@ -34,15 +34,15 @@ Easiest way to install, is to follow the HACS installation option. After install
 
 PowerCalc is a great way to create virtual power (W) and energy (kWh) sensors for lights and power plugs, and also utility sensors (measuring hourly, daily, monthly, yearly consumption). By default it creates quite many new sensors. (there is a great video of it [here](https://www.youtube.com/watch?v=tR1x-cxwK-8) by BeardedTinker. I recommend you watch the video. I went first with the default settings, but later on I ended up redoing everything, removing individual light utility sensors and made some nested groupings instead, following this kind of nesting logic. It can be a bit of work to get it as you like, a but I found it worth while, to get the monitoring just the way I wanted.
 
-- All Devices
---- All Outlets
------- Room 1 outlets
------- Room 2 outlets
------- ...
---- All Lights
------- Room 1 lights
------- Room 2 lights
------- ...
+* All Devices
+* -- All Outlets
+* ---- Room 1 outlets
+* ---- Room 2 outlets
+* ---- ...
+* -- All Lights
+* ---- Room 1 lights
+* ---- Room 2 lights
+* ---- ...
 
 Here is my [PowerCalc sensor configuration YAML](powercalc-configuration.yaml). It's still a LOT of additional entities, I may still adjust later on, but for now I just wanted to see all the data I can to see what is possible and what to use.
 
