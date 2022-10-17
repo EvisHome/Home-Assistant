@@ -65,7 +65,7 @@ Shows the Nordpool integration spot price for today and tomorrow. The tomorrow v
 
 ### Energy Brush Chart
 
-This is an alternative for few of the other charts, I am still not sure if I'll include it in to my dashboard, due to some slowness at times.
+This is combining the Energy Consumption Hourly, Energy Daily and Spot Price charts in to one brush chart, allowing to narrow down or extend the chart time span. I am still not sure if I'll include it in to my dashboard, due to some slowness at times.
 
 * [energy-brush-chart.yaml](energy-brush-chart.yaml)
 
