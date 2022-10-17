@@ -69,4 +69,4 @@ I am not using this one at the moment, but I tried to combine some of the charts
 
 * [energy-brush-chart.yaml](energy-brush-chart.yaml)
 
-
+![](energy-brush-chart.gif)
