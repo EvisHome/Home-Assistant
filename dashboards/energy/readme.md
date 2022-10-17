@@ -21,6 +21,16 @@ Some items we listed that we thought might make the biggest savings:
 * [PowerCalc (virtual power & utility sensors)](https://github.com/bramstroker/homeassistant-powercalc)
 * [Apexcharts-card](https://github.com/RomRider/apexcharts-card)
 
+### Nordpool Setup
+
+Easiest way to install, is to follow the HACS option. After installation i set the senso using WebUI.
+1. Go the Home Assistant Settings
+2. Go to Devices & Settings and to the Integrations Tab
+3. Click add integration and search for Nordpool and setup the sensor (NOTE: I used prices in Cents, so some of the graph calculations maybe setup according to cents, if you have something else you may need to adjust the calculations)
+
+![](nordpool-sensor.png)
+
+
 ## Helpers
 
 I created few helper entities to help calculate the costs.
