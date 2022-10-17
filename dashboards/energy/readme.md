@@ -1,4 +1,4 @@
-# Energy Dashboard
+# Energy Dashboard (WIP)
 
 ![energy dashboard](energy-dashboard.png)
 
@@ -18,6 +18,7 @@ Some items we listed that we thought might make the biggest savings:
 ## Custom Integrations & Cards
 
 * [Nordpool custom component for Home Assistant](https://github.com/custom-components/nordpool)
+* [PowerCalc (virtual power & utility sensors)](https://github.com/bramstroker/homeassistant-powercalc)
 * [Apexcharts-card](https://github.com/RomRider/apexcharts-card)
 
 ## Helpers
