@@ -32,7 +32,7 @@ Easiest way to install, is to follow the HACS installation option. After install
 
 ### PowerCalc integration
 
-PowerCalc is a great way to create virtual power (W) and energy (kWh) sensors for lights and power plugs, and also utility sensors (measuring hourly, daily, monthly, yearly consumption). By default it creates quite many new sensors. (there is a great video of it [here](https://www.youtube.com/watch?v=tR1x-cxwK-8) by BeardedTinker. I recommend you watch the video. I went first with the default settings, but later on I ended up redoing everything, removing individual light utility sensors and made some nested groupings instead, following this kind of nesting logic. It can be a bit of work to get it as you like, a but I found it worth while, to get the monitoring just the way I wanted.
+PowerCalc is a great way to create virtual power (W) and energy (kWh) sensors for lights and power plugs, and also utility sensors (measuring hourly, daily, monthly, yearly consumption). By default it creates quite many new sensors. (there is a great video of it [here](https://www.youtube.com/watch?v=tR1x-cxwK-8) by BeardedTinker. I recommend you watch the video. It can be a bit of work to get it as you like, a but I found it worth while, to get the monitoring just the way I wanted. I went first with the default settings, but later on I ended up redoing everything, removing individual light utility sensors and made some nested groupings instead, following this kind of nesting logic.
 
 * All Devices
 * -- All Outlets
@@ -44,9 +44,9 @@ PowerCalc is a great way to create virtual power (W) and energy (kWh) sensors fo
 * ---- Room 2 lights
 * ---- ...
 
-Here is my [PowerCalc sensor configuration YAML](powercalc-configuration.yaml). It's still a LOT of additional entities, I may still adjust later on, but for now I just wanted to see all the data I can to see what is possible and what to use.
+Here is my grouping and [PowerCalc sensor configuration YAML](powercalc-configuration.yaml). It's still a LOT of additional entities, I may still adjust it later on, but for now I just wanted to see the data, so I can to see what is possible and what to use.
 
-Not all my lights are Smart lights, but the ones that are not are controlled by smart switches, so I know when they are on or off, and for this PowerCalc lets you still create virtual sensors, all you need to know is how much power (W) the bulbs/lights use. These normal light sensors I created through the PowerCalc integration WebUI.
+Not all my lights are Smart lights, but the ones that are not, are still controlled by smart switches, so I know when they are on or off. PowerCalc lets you still create virtual sensors for normal lights also, all you need to know is how much power (W) the bulbs/lights use when powered on. These normal light sensors I created through the PowerCalc integration WebUI.
 
 
 ## Helpers
