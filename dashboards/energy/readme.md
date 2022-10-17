@@ -30,6 +30,14 @@ Easiest way to install, is to follow the HACS installation option. After install
 
 ![](nordpool-sensor.png)
 
+### PowerCalc integration
+
+PowerCalc is a great way to create virtual power (W) and energy (kWh) sensors for lights and power plugs, and also utility sensors (measuring hourly, daily, monthly, yearly consumption). By default it creates quite many new sensors. (there is a great video of it [here](https://www.youtube.com/watch?v=tR1x-cxwK-8) by BeardedTinker. Intially I went with the default settings, but later on I ended up removing individual light utility sensors and made some groupings instead.
+
+Here is my [PowerCalc sensor configuration YAML](powercalc-configuration.yaml). It's still a LOT of additional entities, I may still adjust later on, but for now I just wanted to see all the data I can to see what is possible and what to use.
+
+Not all my lights are Smart lights, but the ones that are not are controlled by smart switches, so I know when they are on or off, and for this PowerCalc lets you still create virtual sensors, all you need to know is how much power (W) the bulbs/lights use. These normal light sensors I created through the integration WebUI.
+
 
 ## Helpers
 
