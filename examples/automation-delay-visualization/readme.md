@@ -13,4 +13,8 @@ For each automation to visualize, I used 3 helpers
 
 ## Visualization
 
-For the visualization I used [timer-bar-card](https://github.com/rianadon/timer-bar-card) with a grid and mushroom-entity cards which show the input_boolean and input_number helpers.
+![](automation-visualization-2.gif)
+
+For the visualization I used [timer-bar-card](https://github.com/rianadon/timer-bar-card) with a grid and mushroom entity cards which show the input_boolean and input_number helpers.
+
+
