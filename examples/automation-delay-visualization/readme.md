@@ -11,7 +11,7 @@ For each automation to visualize, I used 3 helpers
 * input_number - in secconds to define the delay, when to turn off the device, after no presence in the room.
 * timer - timer is used to visualize the delay.
 
-## Visualization
+## Dashboard Visualization
 
 ![](automation-visualization-2.gif)
 
@@ -64,3 +64,6 @@ cards:
 
 ```
 
+## Automation (Node-RED)
+
+![](automation-timer.png)
