@@ -1,6 +1,7 @@
 # Automation Delay Visualization
 
 While adding some presence based automation and parametrization for them, like delays for turning off devices and lights, for testing purposes I wanted to see some visualization how the delay progresses. But I ended up liking so much that I fine tuned it to be part of my dashboards.
+![](automation-visualization.gif)
 
 ## Helpers
 
