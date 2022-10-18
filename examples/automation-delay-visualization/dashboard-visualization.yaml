@@ -1,0 +1,43 @@
+type: custom:stack-in-card
+mode: vertical
+cards:
+  - type: grid
+    square: false
+    columns: 2
+    cards:
+      - type: custom:mushroom-entity-card
+        entity: input_boolean.office_automation_presense_lights
+        name: Presence Lights
+        icon: mdi:robot
+        card_mod:
+          style: |
+            ha-card {
+              z-index: 5;
+            }
+      - type: custom:mushroom-entity-card
+        entity: input_number.office_automation_presence_lights_delay
+        name: Lights Off Delay
+        card_mod:
+          style: |
+            ha-card {
+              z-index: 5;
+            }
+  - type: custom:timer-bar-card
+    entities:
+      - timer.office_automation_presence_lights_timer
+    invert: true
+    bar_height: 2px
+    bar_foreground: orange
+    bar_background: '#111'
+    layout: full_row
+    text_width: 0px
+    bar_width: 80%
+    card_mod:
+      style: |
+        ha-card {
+          height: 4px;
+          margin-top: -40px;
+          margin-bottom: -25px;
+          padding: 0px;
+          z-index: 1;
+        }
