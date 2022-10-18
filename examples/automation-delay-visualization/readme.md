@@ -68,7 +68,7 @@ cards:
 
 ![](automation-timer.png)
 
-Here is the JSON in compact  and below as formatted
+Here is the JSON in compact [node-red-automation-compact.json](node-red-automation-compact.json) and below as formatted
 
 ```JSON
 [
