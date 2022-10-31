@@ -104,6 +104,6 @@ This is combining the Energy Consumption Hourly, Energy Daily and Spot Price cha
 
 ![](monitored-appliances-daily.png)
 
-Stacked daily energy consumption iew on appliances of interest. This is to give a more insight on how much energy is consumed by different appliances and devices. My rack with network devices, multiple chained PoE devices and servers is actually consuming way more than I'd like. To save atleast some energy, I have started to automatically turning some devices on and off based on time of day and presence. I am also moving some "essential" services to lower power devices, like my NUCs and Pi4s. Office Desktop PC is now also going to sleep faster if no presece in the the office.
+Stacked daily energy consumption view on appliances of interest. This is to give a more insight on how much energy is consumed by different appliances and devices. My rack with network devices, multiple chained PoE devices and servers is actually consuming way more than I'd like. To save atleast some energy, I have started to automatically turning some devices on and off based on time of day and presence. I am also moving some "essential" services to lower power devices, like my NUCs and Pi4s. Office Desktop PC is now also going to sleep faster if no presece in the the office.
 
 * [monitored-appliances-daily.yaml](monitored-appliances-daily.yaml)
