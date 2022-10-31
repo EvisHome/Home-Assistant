@@ -1,0 +1,210 @@
+type: custom:apexcharts-card
+# this stacks the entities per day
+stacked: true
+graph_span: 14d
+span:
+  start: day
+  offset: '-13d'
+update_interval: 10min
+apex_config:
+  fill:
+    opacity: 0.5
+  title:
+    text: Monitored Appliances Daily (kWh)
+    align: center
+    offsetY: 10
+    style:
+      fontSize: 13px
+      fontFamily: Verdana
+      fontWeight: normal
+  markers:
+    size: 5
+  xaxis:
+    position: bottom
+    labels:
+      format: ddd
+  chart:
+    height: 455px
+  grid:
+    show: true
+    borderColor: rgba(255,255,255,0.2)
+  legend:
+    show: true
+    itemMargin:
+      vertical: 10
+      horizontal: 10
+  tooltip:
+    style:
+      fontSize: 15px
+  stroke:
+    dashArray: 0
+    width: 1
+header:
+  show: false
+  show_states: true
+  colorize_states: true
+yaxis:
+  - id: power
+    opposite: true
+    max: ~20
+    min: 0
+    decimals: 2
+    apex_config:
+      tickAmount: 5
+      labels:
+        show: true
+      title:
+        style:
+          fontSize: 12px
+          fontFamily: verdana
+# List of the monitored entites
+series:
+  - entity: sensor.all_lights_energy_daily
+    name: All Lights
+    type: column
+    color: '#FF9100'
+    # opacity of the column fill
+    opacity: 0.5
+    # use power yaxis
+    yaxis_id: power
+    # decimals to show
+    float_precision: 2
+    # Using the "statistics state" for longer history
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      # show maximum value
+      func: max
+    show:
+      # don't show value in legend
+      legend_value: false
+  - entity: sensor.fridge_power_plug_energy_daily
+    name: Fridge
+    color: '#87ECFF'
+    opacity: 0.5
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.kitchen_coffee_machine_outlet_energy_daily
+    name: Coffee Machine
+    color: '#864925'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.kitchen_dishwasher_outlet_energy_daily
+    name: Dishwasher
+    color: '#009AFF'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.washing_machine_plug_energy_daily
+    name: Washing Machine
+    color: '#155A7C'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.kitchen_microwave_power_plug_energy_daily
+    name: Microwave
+    color: '#FF8A8A'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.kitchen_lamp_outlets_left_energy_daily
+    name: Kitchen Appliances
+    color: '#FF0000'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.office_desk_outlet_energy_daily
+    name: Office PC
+    color: '#000000'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.office_door_outlet_energy_daily
+    name: Rack
+    color: '#4B4B4B'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.living_room_media_outlet_energy_daily
+    name: TV / Media
+    color: '#95EB8F'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    statistics:
+      type: state
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
+  - entity: sensor.gaming_devices_daily
+    name: Gaming
+    color: '#156523'
+    type: column
+    yaxis_id: power
+    float_precision: 2
+    group_by:
+      duration: 1d
+      func: max
+    show:
+      legend_value: false
