@@ -33,6 +33,7 @@ cards:
           style: |
             ha-card {
               z-index: 5;
+              border: 0px;
             }
       - type: custom:mushroom-entity-card
         entity: input_number.office_automation_presence_lights_delay
@@ -41,6 +42,7 @@ cards:
           style: |
             ha-card {
               z-index: 5;
+              border: 0px;
             }
   - type: custom:timer-bar-card
     entities:
@@ -60,6 +62,7 @@ cards:
           margin-bottom: -25px;
           padding: 0px;
           z-index: 1;
+          border: 0px;
         }
 
 ```
