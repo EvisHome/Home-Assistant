@@ -1,6 +1,6 @@
 # Energy Dashboard (WIP)
 
-![energy dashboard](energy-dashboard.png)
+![energy dashboard](energy-dashboard.gif)
 
 ## Overview
 
