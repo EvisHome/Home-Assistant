@@ -1,71 +1,120 @@
-square: false
-columns: 1
-type: grid
-cards:
-  - type: custom:apexcharts-card
-    graph_span: 2d
-    span:
-      start: day
-    update_interval: 30min
-    apex_config:
-      title:
-        text: Spot Price (c/kWh)
-        align: center
-        offsetY: 10
-        style:
-          fontSize: 13px
-          fontFamily: Verdana
-          fontWeight: normal
-      chart:
-        height: 455px
-      grid:
-        show: true
-        borderColor: rgba(255,255,255,0.2)
-      legend:
-        show: false
-      stroke:
-        width: 2
-        dashArray:
-          - 4
-          - 0
-          - 4
-    header:
-      show: false
-      show_states: false
-      colorize_states: true
-    now:
+type: custom:config-template-card
+variables:
+  PRICEAVERAGE: states['sensor.nordpool_kwh_eur_without_tax'].attributes['average']
+  PRICEMEAN: states['sensor.nordpool_kwh_eur_without_tax'].attributes['mean']
+entities:
+  - sensor.nordpool_kwh_eur_without_tax
+card:
+  type: custom:apexcharts-card
+  graph_span: 2d
+  span:
+    start: day
+  apex_config:
+    chart:
+      height: 200px
+    title:
+      text: Price 48H (c/kWh)
+      align: center
+      offsetY: 10
+      style:
+        fontSize: 13px
+        fontFamily: Verdana
+        fontWeight: normal
+    grid:
       show: true
-      label: Now
-    series:
-      - entity: sensor.energy_fixed_price
-        name: Fixed Price
-        color: skyblue
-        type: area
-        opacity: 0.1
-        yaxis_id: cost
-        fill_raw: last
-        extend_to: end
-        float_precision: 3
-      - entity: sensor.nordpool_kwh_fi_eur_3_10_024
-        name: Spot Price
-        color: red
-        type: line
-        opacity: 0.8
-        yaxis_id: cost
-        fill_raw: 'null'
-        extend_to: now
-        float_precision: 3
-        data_generator: |
-          return (entity.attributes.raw_today.map((start, index) => {
-            return [new Date(start["start"]).getTime(), entity.attributes.raw_today[index]["value"]];
-          })).concat(entity.attributes.raw_tomorrow.map((start, index) => {
-            return [new Date(start["start"]).getTime(), entity.attributes.raw_tomorrow[index]["value"]];
-          }));
-    yaxis:
-      - id: cost
-        opposite: true
-        max: ~50
-        min: 0
-        decimals: 3
-        apex_config:
-          tickAmount: 5
+      borderColor: rgba(255,255,255,0.2)
+    xaxis:
+      position: bottom
+      labels:
+        format: H
+        hideOverlappingLabels: true
+        offsetX: 0
+      axisTicks:
+        offsetX: 0
+    legend:
+      show: false
+      itemMargin:
+        vertical: 10
+        horizontal: 10
+    tooltip:
+      enabled: false
+      style:
+        fontSize: 14px
+  show:
+    last_updated: true
+  experimental:
+    color_threshold: true
+  header:
+    show_states: true
+    colorize_states: true
+  now:
+    show: true
+  yaxis:
+    - id: cost
+      opposite: true
+      min: 0
+      decimals: 1
+      apex_config:
+        tickAmount: 3
+        labels:
+          show: true
+    - id: power
+      opposite: false
+      min: 0
+      decimals: 1
+      apex_config:
+        tickAmount: 3
+        labels:
+          show: false
+  series:
+    - entity: sensor.nordpool_kwh_eur_without_tax
+      name: Price
+      yaxis_id: cost
+      type: column
+      opacity: 0.9
+      stroke_width: 0
+      show:
+        extremas: true
+        in_header: raw
+        header_color_threshold: true
+      data_generator: |
+        return entity.attributes.raw_today.map((start, index) => {
+          return [new Date(start["start"]).getTime(), entity.attributes.raw_today[index]["value"]];
+        });
+      color_threshold:
+        - value: 1
+          color: lightgreen
+        - value: ${PRICEAVERAGE * 0.83}
+          color: orange
+        - value: ${PRICEAVERAGE * 1.17}
+          color: darkred
+    - entity: sensor.nordpool_kwh_eur_without_tax
+      name: Price
+      yaxis_id: cost
+      show:
+        extremas: true
+        in_header: raw
+        header_color_threshold: true
+      type: column
+      opacity: 0.7
+      data_generator: |
+        return entity.attributes.raw_tomorrow.map((start, index) => {
+          return [new Date(start["start"]).getTime(), entity.attributes.raw_tomorrow[index]["value"]];
+        });
+    - entity: sensor.home_total_energy_hourly
+      name: Total Energy
+      color: '#1EB9C7'
+      type: area
+      opacity: 0.4
+      stroke_width: 2
+      yaxis_id: power
+      float_precision: 2
+      extend_to: false
+      unit: kWh
+      group_by:
+        duration: 1h
+        func: max
+      show:
+        extremas: false
+        legend_value: false
+        datalabels: false
