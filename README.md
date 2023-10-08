@@ -14,6 +14,7 @@
 
 ## Examples/References
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
+* Declutter Room / Area Card Template
 * [automation delay visualization](examples/automation-delay-visualization/readme.md)
 * [mushroom-chip-card examples](examples/mushroom-chip-card/)
 * [air-purifier card (with mushroom cards)](examples/air-purifier/)
@@ -25,8 +26,7 @@
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 * [Room Presence](esphome/presence/)
 * [Room Presence v2 / Presence Box](esphome/presence-box-2/)
-* Plant Irrigation
-* Roller Blind
+
 
 ## Other Projects
 * [Philips Hue Motion Sensor - Wall Mount](https://github.com/EvisHome/Home-Assistant/tree/main/other-projects/philips-hue-motion-sensor-mount)
