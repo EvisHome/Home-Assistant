@@ -39,470 +39,16 @@ decluttering_templates:
     card:
       type: picture-elements
       elements:
-        - type: custom:mushroom-chips-card
-          chips:
-            - type: template
-              entity: input_boolean.[[entity_name]]_occupancy
-              content: ''
-              icon: mdi:account-circle
-              icon_color: |
-                {% if is_state(config.entity,'on') %}
-                  green
-                {% else %}
-                  gray
-                {% endif %}
-              card_mod: null
-              style: |
-                :host {
-                  {% set value = states(config.entity) %}
-                  {% if value == 'unknown' or value == 'unavailable' %}
-                    display: none;
-                  {% else %}
-                    display: flex;
-                  {% endif %}
-                }
-                ha-card {
-                  --chip-box-shadow: 0px 0px;
-                  --chip-background: rgba(0,0,0,0);
-                  --chip-border-width: 0;
-                }
-          alignment: left
-          style:
-            top: 42%
-            left: 50%
-            width: 100%
-            height: 100%
-            z-index: 8
-          card_mod:
-            style: |
-              ha-card {
-                --chip-height: 45px;
-                --chip-border-radius: 45px;
-                --chip-border-width: 0;
-              }
-        - type: custom:mushroom-chips-card
-          chips:
-            - type: template
-              entity: '[[temperature_sensor]]'
-              icon: mdi:thermometer
-              icon_color: |
-                {% set value = states(entity) | float %}
-                {% if value > 27 %}
-                  red
-                {% elif value > 24 %}
-                  orange
-                {% elif value < 20 %}
-                  blue
-                {% else %}
-                  green
-                {% endif %}
-              card_mod: null
-              style: |
-                ha-icon {
-                  font-color: rgba(0,0,0,1);
-                }
-                :host {
-                  {% set value = states(config.entity) %}
-                  {% if value == 'unknown' or value == 'unavailable' %}
-                    display: none;
-                  {% else %}
-                    {% set value = value | float %}
-                    {% if value < 20 or value > 25 %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                    border: none;
-                  {% endif %}
-                }
-                @keyframes blink {
-                  50% { opacity: 0; }
-                }
-                ha-card {
-                  animation: blink 1s ease infinite;
-                }
-            - type: template
-              entity: '[[humidity_sensor]]'
-              icon: mdi:water-percent
-              icon_color: |
-                {% set value = states(entity) | float %}
-                {% if value > 55 %}
-                  blue
-                {% elif value < 20 %}
-                  orange
-                {% else %}
-                  green
-                {% endif %}
-              card_mod: null
-              style: |
-                :host {
-                  {% set value = states(config.entity) %}
-                  {% if value == 'unknown' or value == 'unavailable' %}
-                    display: none;
-                  {% else %}
-                    {% set value = value | float %}
-                    {% if value < 20 or value > 55 %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                    border: none;
-                  {% endif %}
-                }
-                @keyframes blink {
-                  50% { opacity: 0; }
-                }
-                ha-card {
-                  animation: blink 1s ease infinite;
-                }
-            - type: template
-              entity: '[[co2_sensor]]'
-              icon: mdi:molecule-co2
-              icon_color: |
-                {% set value = states(entity) | float %}
-                {% if value > 1500 %}
-                  red
-                {% elif value > 1200 %}
-                  orange
-                {% elif value > 800 %}
-                  yellow
-                {% else %}
-                  green
-                {% endif %}
-              card_mod: null
-              style: |
-                :host {
-                  {% set value = states(config.entity) %}
-                  {% if value == 'unknown' or value == 'unavailable' %}
-                    display: none;
-                  {% else %}
-                    {% set value = value | float %}
-                    {% if value > 800 %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                    border: none;
-                  {% endif %}
-                }
-                @keyframes blink {
-                  50% { opacity: 0; }
-                }
-                ha-card {
-                  animation: blink 1s ease infinite;
-                }
-            - type: template
-              entity: '[[voc_sensor]]'
-              icon: mdi:cloud
-              icon_color: |
-                {% set value = states(entity) | float %}
-                {% if value > 1500 %}
-                  red
-                {% elif value > 250 %}
-                  orange
-                {% else %}
-                  green
-                {% endif %}
-              card_mod: null
-              style: |
-                :host {
-                  {% set value = states(config.entity) %}
-                  {% if value == 'unknown' or value == 'unavailable' %}
-                    display: none;
-                  {% else %}
-                    {% set value = value | float %}
-                    {% if value > 250 %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                    border: none;
-                  {% endif %}
-                }
-                @keyframes blink {
-                  50% { opacity: 0; }
-                }
-                ha-card {
-                  animation: blink 1s ease infinite;
-                }
-            - type: template
-              entity: '[[pm25_sensor]]'
-              icon: mdi:blur
-              icon_color: |
-                {% set value = states(entity) | float %}
-                {% if value > 1500 %}
-                  red
-                {% elif value > 250 %}
-                  orange
-                {% else %}
-                  green
-                {% endif %}
-              card_mod: null
-              style: |
-                :host {
-                  {% set value = states(config.entity) %}
-                  {% if value == 'unknown' or value == 'unavailable' %}
-                    display: none;
-                  {% else %}
-                    {% set value = value | float %}
-                    {% if value > 250 %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                    border: none;
-                  {% endif %}
-                }
-                @keyframes blink {
-                  50% { opacity: 0; }
-                }
-                ha-card {
-                  animation: blink 1s ease infinite;
-                }
-            - type: template
-              entity: '[[radon_sensor]]'
-              icon: mdi:radioactive
-              icon_color: |
-                {% set value = states(entity) | float %}
-                {% if value > 250 %}
-                  red
-                {% elif value > 150 %}
-                  orange
-                {% else %}
-                  green
-                {% endif %}
-              card_mod: null
-              style: |
-                :host {
-                  {% set value = states(config.entity) %}
-                  {% if value == 'unknown' or value == 'unavailable' %}
-                    display: none;
-                  {% else %}
-                    {% set value = value | float %}
-                    {% if value > 250 %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                    border: none;
-                  {% endif %}
-                }
-                @keyframes blink {
-                  50% { opacity: 0; }
-                }
-                ha-card {
-                  animation: blink 1s ease infinite;
-                }
-          alignment: center
-          style:
-            top: 82%
-            left: 50%
-            width: 100%
-            height: 100%
-            z-index: 7
-          card_mod:
-            style: |
-              ha-card {
-                --chip-height: 32px;
-                --chip-border-radius: 45px;
-                --chip-padding: 0px 4px 0px 4px;
-                --chip-spacing: 4px;
-                --chip-icon-size: 0.8em;
-                --chip-font-size: 0.35em;
-                --chip-background: rgba(0,0,0,0.5);
-                --chip-box-shadow: 0px 0px;
-                --chip-border-width: 0;
-              }
-        - type: custom:mushroom-chips-card
-          chips:
-            - type: template
-              entity: '[[device_1]]'
-              icon: '[[icon_1]]'
-              icon_color: |
-                {% if is_state(entity,'[[state_1]]') %}
-                  green
-                {% else %}
-                  gray
-                {% endif %}
-              card_mod:
-                style: |
-                  @keyframes blink {
-                    50% { opacity: 0; }
-                  }
-                  :host {
-                    {% if is_state(config.entity,'[[state_1]]') %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                  }
-                  ha-card {
-                    animation: [[animation_1]] 1s ease infinite;
-                    --chip-box-shadow: 0px 0px;
-                    --chip-background: rgba(0,0,0,0.7);
-                    --chip-border-width: 0;
-                  }
-            - type: template
-              entity: '[[device_2]]'
-              icon: '[[icon_2]]'
-              icon_color: |
-                {% if is_state(entity,'[[state_2]]') %}
-                  green
-                {% else %}
-                  gray
-                {% endif %}
-              card_mod:
-                style: |
-                  @keyframes blink {
-                    50% { opacity: 0; }
-                  }
-                  :host {
-                    {% if is_state(config.entity,'[[state_2]]') %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                  }
-                  ha-card {
-                    animation: [[animation_2]] 1s ease infinite;
-                    --chip-box-shadow: 0px 0px;
-                    --chip-background: rgba(0,0,0,0.7);
-                    --chip-border-width: 0;
-                  }
-            - type: template
-              entity: '[[device_3]]'
-              icon: '[[icon_3]]'
-              icon_color: |
-                {% if is_state(entity,'[[state_3]]') %}
-                  green
-                {% else %}
-                  gray
-                {% endif %}
-              card_mod:
-                style: |
-                  @keyframes blink {
-                    50% { opacity: 0; }
-                  }
-                  :host {
-                    {% if is_state(config.entity,'[[state_3]]') %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                  }
-                  ha-card {
-                    animation: [[animation_3]] 1s ease infinite;
-                    --chip-box-shadow: 0px 0px;
-                    --chip-background: rgba(0,0,0,0.7);
-                    --chip-border-width: 0;
-                  }
-            - type: template
-              entity: '[[device_4]]'
-              icon: '[[icon_4]]'
-              icon_color: |
-                {% if is_state(entity,'[[state_4]]') %}
-                  green
-                {% else %}
-                  gray
-                {% endif %}
-              card_mod:
-                style: |
-                  @keyframes blink {
-                    50% { opacity: 0; }
-                  }
-                  :host {
-                    {% if is_state(config.entity,'[[state_4]]') %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                  }
-                  ha-card {
-                    animation: [[animation_4]] 1s ease infinite;
-                    --chip-box-shadow: 0px 0px;
-                    --chip-background: rgba(0,0,0,0.7);
-                    --chip-border-width: 0;
-                  }
-            - type: template
-              entity: '[[device_5]]'
-              icon: '[[icon_5]]'
-              icon_color: |
-                {% if is_state(entity,'[[state_5]]') %}
-                  green
-                {% else %}
-                  gray
-                {% endif %}
-              card_mod:
-                style: |
-                  @keyframes blink {
-                    50% { opacity: 0; }
-                  }
-                  :host {
-                    {% if is_state(config.entity,'[[state_5]]') %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                  }
-                  ha-card {
-                    animation: [[animation_5]] 1s ease infinite;
-                    --chip-box-shadow: 0px 0px;
-                    --chip-background: rgba(0,0,0,0.7);
-                    --chip-border-width: 0;
-                  }
-            - type: template
-              entity: '[[device_6]]'
-              icon: '[[icon_6]]'
-              icon_color: |
-                {% if is_state(entity,'[[state_6]]') %}
-                  green
-                {% else %}
-                  gray
-                {% endif %}
-              card_mod:
-                style: |
-                  @keyframes blink {
-                    50% { opacity: 0; }
-                  }
-                  :host {
-                    {% if is_state(config.entity,'[[state_6]]') %}
-                      display: flex;
-                    {% else %}
-                      display: none;
-                    {% endif %}
-                  }
-                  ha-card {
-                    animation: [[animation_6]] 1s ease infinite;
-                    --chip-box-shadow: 0px 0px;
-                    --chip-background: rgba(0,0,0,0.7);
-                    --chip-border-width: 0;
-                  }
-          alignment: center
-          style:
-            top: 120%
-            left: 50%
-            width: 100%
-            height: 100%
-            z-index: 7
-          card_mod:
-            style: |
-              ha-card {
-                --chip-height: 30px;
-                --chip-icon-size: 0.55em;
-                --chip-border-radius: 0px;
-                --chip-spacing: 1px;
-                --chip-background: rgba(0,0,0,0.6);
-                --chip-box-shadow: 0px 0px;
-                --chip-border-width: 0;
-              }
         - type: custom:button-card
           entity: light.[[entity_name]]_lights
           show_name: false
           show_icon: false
           tap_action:
             action: navigate
-            navigation_path: /lovelace/[[entity_name]]
+            navigation_path: /dashboard-dev/declutter/#[[entity_name]]
           hold_action:
+            action: toggle
+          double_tap_action:
             action: toggle
           style:
             top: 50%
@@ -519,27 +65,282 @@ decluttering_templates:
         - type: custom:button-card
           name: '[[display_name]]'
           style:
-            top: 0%
+            top: 50%
             left: 50%
-            width: 102%
-            height: 0px
+            width: 100%
+            height: 100%
             z-index: 7
+            container-type: inline-size
           styles:
+            card:
+              - border-radius: 0px
+              - border: 0px
+              - height: 29%
+              - background-color: rgb(0,0,0,0.5)
+              - box-shadow: 0px 0px 2px rgb(255,255,255,0)
+              - font-size: 6cqw
             name:
-              - font-family: verdana
-              - font-size: 11px
+              - font-family: arial
               - font-weight: bold
               - text-transform: uppercase
               - justify-self: center
               - padding-left: 0px
               - color: rgb(255, 255, 255, 1)
-              - text-shadow: 0px 0px 4px rgb(0,0,0,5)
+              - text-shadow: 0px 0px 4px rgb(0,0,0,1)
+        - type: custom:button-card
+          entity: input_boolean.[[entity_name]]_occupancy
+          icon: mdi:account-circle
+          show_name: false
+          show_icon: true
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+          style:
+            top: 50%
+            left: 50%
+            width: 140%
+            height: 115%
+            z-index: 8
+          styles:
             card:
               - border-radius: 0px
-              - border: 0px
-              - height: 30px
-              - background-color: rgb(0,0,0,0.3)
-              - box-shadow: 0px 0px 2px rgb(255,255,255,0)
+              - height: 100%
+              - background-color: rgb(0,0,0,0)
+              - box-shadow: 0px 0px
+            icon:
+              - display: none
+              - height: 19%
+              - top: 0%
+              - left: 0%
+          state:
+            - value: 'on'
+              styles:
+                icon:
+                  - color: lightgreen
+                  - display: box
+            - value: 'off'
+              styles:
+                icon:
+                  - color: gray
+                  - display: box
+        - type: custom:button-card
+          entity: '[[temperature_sensor]]'
+          icon: mdi:account-circle
+          show_name: false
+          show_icon: true
+          show_state: true
+          tap_action:
+            action: none
+          hold_action:
+            action: none
+          style:
+            top: 50%
+            left: 50%
+            width: 100%
+            height: 100%
+            z-index: 8
+            container-type: inline-size
+          styles:
+            name:
+              - display: none
+            card:
+              - border-radius: 0px
+              - height: 100%
+              - background-color: rgb(0,0,0,0)
+              - box-shadow: 0px 0px
+            icon:
+              - display: none
+              - height: 19%
+            state:
+              - position: absolute
+              - top: 7%
+              - right: 3%
+              - font-size: 5.5cqw
+              - font-weight: bold
+        - type: custom:mushroom-chips-card
+          chips:
+            - type: template
+              entity: '[[device_1]]'
+              icon: '[[device_icon_1]]'
+              icon_color: |
+                {% if is_state(entity,'[[device_state_1]]') %}
+                  [[device_color_1]]
+                {% else %}
+                  gray
+                {% endif %}
+              card_mod:
+                style: |
+                  @keyframes blink {
+                    50% { opacity: 0; }
+                  }
+                  :host {
+                    {% if is_state(config.entity,'[[device_state_1]]') %}
+                      display: flex;
+                    {% else %}
+                      display: none;
+                    {% endif %}
+                  }
+                  ha-card {
+                    animation: [[device_animation_1]] 1s ease infinite;
+                    --chip-box-shadow: 0px 0px;
+                    --chip-background: rgba(0,0,0,0.8);
+                    --chip-border-width: 0;
+                  }
+            - type: template
+              entity: '[[device_2]]'
+              icon: '[[device_icon_2]]'
+              icon_color: |
+                {% if is_state(entity,'[[device_state_2]]') %}
+                  [[device_color_2]]
+                {% else %}
+                  gray
+                {% endif %}
+              card_mod:
+                style: |
+                  @keyframes blink {
+                    50% { opacity: 0; }
+                  }
+                  :host {
+                    {% if is_state(config.entity,'[[device_state_2]]') %}
+                      display: flex;
+                    {% else %}
+                      display: none;
+                    {% endif %}
+                  }
+                  ha-card {
+                    animation: [[device_animation_2]] 1s ease infinite;
+                    --chip-box-shadow: 0px 0px;
+                    --chip-background: rgba(0,0,0,0.8);
+                    --chip-border-width: 0;
+                  }
+            - type: template
+              entity: '[[device_3]]'
+              icon: '[[device_icon_3]]'
+              icon_color: |
+                {% if is_state(entity,'[[device_state_3]]') %}
+                  [[device_color_3]]
+                {% else %}
+                  gray
+                {% endif %}
+              card_mod:
+                style: |
+                  @keyframes blink {
+                    50% { opacity: 0; }
+                  }
+                  :host {
+                    {% if is_state(config.entity,'[[device_state_3]]') %}
+                      display: flex;
+                    {% else %}
+                      display: none;
+                    {% endif %}
+                  }
+                  ha-card {
+                    animation: [[device_animation_3]] 1s ease infinite;
+                    --chip-box-shadow: 0px 0px;
+                    --chip-background: rgba(0,0,0,0.8);
+                    --chip-border-width: 0;
+                  }
+            - type: template
+              entity: '[[device_4]]'
+              icon: '[[device_icon_4]]'
+              icon_color: |
+                {% if is_state(entity,'[[device_state_4]]') %}
+                  [[device_color_4]]
+                {% else %}
+                  gray
+                {% endif %}
+              card_mod:
+                style: |
+                  @keyframes blink {
+                    50% { opacity: 0; }
+                  }
+                  :host {
+                    {% if is_state(config.entity,'[[device_state_4]]') %}
+                      display: flex;
+                    {% else %}
+                      display: none;
+                    {% endif %}
+                  }
+                  ha-card {
+                    animation: [[device_animation_4]] 1s ease infinite;
+                    --chip-box-shadow: 0px 0px;
+                    --chip-background: rgba(0,0,0,0.8);
+                    --chip-border-width: 0;
+                  }
+            - type: template
+              entity: '[[device_5]]'
+              icon: '[[device_icon_5]]'
+              icon_color: |
+                {% if is_state(entity,'[[device_state_5]]') %}
+                  [[device_color_5]]
+                {% else %}
+                  gray
+                {% endif %}
+              card_mod:
+                style: |
+                  @keyframes blink {
+                    50% { opacity: 0; }
+                  }
+                  :host {
+                    {% if is_state(config.entity,'[[device_state_5]]') %}
+                      display: flex;
+                    {% else %}
+                      display: none;
+                    {% endif %}
+                  }
+                  ha-card {
+                    animation: [[device_animation_5]] 1s ease infinite;
+                    --chip-box-shadow: 0px 0px;
+                    --chip-background: rgba(0,0,0,0.8);
+                    --chip-border-width: 0;
+                  }
+            - type: template
+              entity: '[[device_6]]'
+              icon: '[[device_icon_6]]'
+              icon_color: |
+                {% if is_state(entity,'[[device_state_6]]') %}
+                  [[device_color_6]]
+                {% else %}
+                  gray
+                {% endif %}
+              card_mod:
+                style: |
+                  @keyframes blink {
+                    50% { opacity: 0; }
+                  }
+                  :host {
+                    {% if is_state(config.entity,'[[device_state_6]]') %}
+                      display: flex;
+                    {% else %}
+                      display: none;
+                    {% endif %}
+                  }
+                  ha-card {
+                    animation: [[device_animation_6]] 1s ease infinite;
+                    --chip-box-shadow: 0px 0px;
+                    --chip-background: rgba(0,0,0,0.8);
+                    --chip-border-width: 0;
+                  }
+          alignment: center
+          style:
+            top: 115%
+            left: 50%
+            width: 100%
+            height: 100%
+            z-index: 7
+            container-type: inline-size
+          card_mod:
+            style: |
+              ha-card {
+                --chip-height: 14cqw;
+                --chip-icon-size: 8cqw;
+                --chip-border-radius: 0px;
+                --chip-spacing: 1px;
+                --chip-background: rgba(0,0,0,0);
+                --chip-box-shadow: 0px 0px;
+                --chip-border-width: 0;
+              }
       entity: light.[[entity_name]]_lights
       image: local/rooms/room_[[entity_name]].jpg
       state_filter:
