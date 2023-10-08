@@ -2,35 +2,43 @@
 
 ``` YAML
 type: custom:decluttering-card
-template: room_card
+template: area_card
 variables:
   - entity_name: office
   - display_name: OFFICE
   - temperature_sensor: sensor.bedroom_temperature
-  - co2_sensor: sensor.bedroom_co2
-  - humidity_sensor: sensor.bedroom_humidity
+  - sensor_1: sensor.bedroom_co2
+  - sensor_1_state: 'on'
+  - sensor_1_icon: mdi:molecule-co2
+  - sensor_1_color: red
+  - sensor_1_animation: none
   - device_1: switch.office_pc_power
-  - icon_1: mdi:desktop-classic
-  - state_1: 'on'
-  - animation_1: none
-  - device_2: switch.unraid_power_toggle
-  - icon_2: mdi:server
-  - state_2: 'on'
-  - device_3: switch.td_ds1_2
-  - icon_3: mdi:nas
-  - state_3: 'on'
-  - device_4: media_player.bedroom_echo
-  - icon_4: mdi:speaker
-  - state_4: playing
-  - animation_4: blink
-  - device_5: media_player.bedroom_display_2
-  - icon_5: mdi:speaker
-  - state_5: playing
-  - animation_5: blink
-  - device_6: sensor.ender_5_pro_current_state
-  - icon_6: mdi:printer-3d
-  - state_6: Printing
-  - animation_6: blink
+  - device_1_color: green
+  - device_1_icon: mdi:desktop-classic
+  - device_1_state: 'on'
+  - device_1_animation: none
+  - device_2: switch.office_pc_power
+  - device_2_icon: mdi:server
+  - device_2_state: 'on'
+  - device_2_animation: blink
+  - device_3: switch.office_pc_power
+  - device_3_icon: mdi:nas
+  - device_3_state: 'on'
+  - device_4: switch.office_pc_power
+  - device_4_color: blue
+  - device_4_icon: mdi:speaker
+  - device_4_state: 'on'
+  - device_4_animation: blink
+  - device_5: switch.office_pc_power
+  - device_5_color: blue
+  - device_5_icon: mdi:speaker
+  - device_5_state: 'on'
+  - device_5_animation: blink
+  - device_6: switch.office_pc_power
+  - device_6_color: orange
+  - device_6_icon: mdi:printer-3d
+  - device_6_state: 'on'
+  - device_6_animation: blink
 ```
 
 ``` YAML
