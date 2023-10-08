@@ -1,0 +1,32 @@
+```
+type: custom:decluttering-card
+template: room_card
+variables:
+  - entity_name: office
+  - display_name: OFFICE
+  - temperature_sensor: sensor.bedroom_temperature
+  - co2_sensor: sensor.bedroom_co2
+  - humidity_sensor: sensor.bedroom_humidity
+  - device_1: switch.office_pc_power
+  - icon_1: mdi:desktop-classic
+  - state_1: 'on'
+  - animation_1: none
+  - device_2: switch.unraid_power_toggle
+  - icon_2: mdi:server
+  - state_2: 'on'
+  - device_3: switch.td_ds1_2
+  - icon_3: mdi:nas
+  - state_3: 'on'
+  - device_4: media_player.bedroom_echo
+  - icon_4: mdi:speaker
+  - state_4: playing
+  - animation_4: blink
+  - device_5: media_player.bedroom_display_2
+  - icon_5: mdi:speaker
+  - state_5: playing
+  - animation_5: blink
+  - device_6: sensor.ender_5_pro_current_state
+  - icon_6: mdi:printer-3d
+  - state_6: Printing
+  - animation_6: blink
+  ```
