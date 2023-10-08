@@ -35,7 +35,7 @@ variables:
 
 ``` YAML
 decluttering_templates:
-  room_card:
+  area_card:
     card:
       type: picture-elements
       elements:
