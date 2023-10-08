@@ -162,10 +162,10 @@ decluttering_templates:
           chips:
             - type: template
               entity: '[[device_1]]'
-              icon: '[[device_icon_1]]'
+              icon: '[[device_1_icon]]'
               icon_color: |
-                {% if is_state(entity,'[[device_state_1]]') %}
-                  [[device_color_1]]
+                {% if is_state(entity,'[[device_1_state]]') %}
+                  [[device_1_color]]
                 {% else %}
                   gray
                 {% endif %}
@@ -175,24 +175,24 @@ decluttering_templates:
                     50% { opacity: 0; }
                   }
                   :host {
-                    {% if is_state(config.entity,'[[device_state_1]]') %}
+                    {% if is_state(config.entity,'[[device_1_state]]') %}
                       display: flex;
                     {% else %}
                       display: none;
                     {% endif %}
                   }
                   ha-card {
-                    animation: [[device_animation_1]] 1s ease infinite;
+                    animation: [[device_1_animation]] 1s ease infinite;
                     --chip-box-shadow: 0px 0px;
                     --chip-background: rgba(0,0,0,0.8);
                     --chip-border-width: 0;
                   }
             - type: template
               entity: '[[device_2]]'
-              icon: '[[device_icon_2]]'
+              icon: '[[device_2_icon]]'
               icon_color: |
-                {% if is_state(entity,'[[device_state_2]]') %}
-                  [[device_color_2]]
+                {% if is_state(entity,'[[device_2_state]]') %}
+                  [[device_2_color]]
                 {% else %}
                   gray
                 {% endif %}
@@ -202,24 +202,24 @@ decluttering_templates:
                     50% { opacity: 0; }
                   }
                   :host {
-                    {% if is_state(config.entity,'[[device_state_2]]') %}
+                    {% if is_state(config.entity,'[[device_2_state]]') %}
                       display: flex;
                     {% else %}
                       display: none;
                     {% endif %}
                   }
                   ha-card {
-                    animation: [[device_animation_2]] 1s ease infinite;
+                    animation: [[device_2_animation]] 1s ease infinite;
                     --chip-box-shadow: 0px 0px;
                     --chip-background: rgba(0,0,0,0.8);
                     --chip-border-width: 0;
                   }
             - type: template
               entity: '[[device_3]]'
-              icon: '[[device_icon_3]]'
+              icon: '[[device_3_icon]]'
               icon_color: |
-                {% if is_state(entity,'[[device_state_3]]') %}
-                  [[device_color_3]]
+                {% if is_state(entity,'[[device_3_state]]') %}
+                  [[device_3_color]]
                 {% else %}
                   gray
                 {% endif %}
@@ -229,24 +229,24 @@ decluttering_templates:
                     50% { opacity: 0; }
                   }
                   :host {
-                    {% if is_state(config.entity,'[[device_state_3]]') %}
+                    {% if is_state(config.entity,'[[device_3_state]]') %}
                       display: flex;
                     {% else %}
                       display: none;
                     {% endif %}
                   }
                   ha-card {
-                    animation: [[device_animation_3]] 1s ease infinite;
+                    animation: [[device_3_animation]] 1s ease infinite;
                     --chip-box-shadow: 0px 0px;
                     --chip-background: rgba(0,0,0,0.8);
                     --chip-border-width: 0;
                   }
             - type: template
               entity: '[[device_4]]'
-              icon: '[[device_icon_4]]'
+              icon: '[[device_4_icon]]'
               icon_color: |
-                {% if is_state(entity,'[[device_state_4]]') %}
-                  [[device_color_4]]
+                {% if is_state(entity,'[[device_4_state]]') %}
+                  [[device_4_color]]
                 {% else %}
                   gray
                 {% endif %}
@@ -256,24 +256,24 @@ decluttering_templates:
                     50% { opacity: 0; }
                   }
                   :host {
-                    {% if is_state(config.entity,'[[device_state_4]]') %}
+                    {% if is_state(config.entity,'[[device_4_state]]') %}
                       display: flex;
                     {% else %}
                       display: none;
                     {% endif %}
                   }
                   ha-card {
-                    animation: [[device_animation_4]] 1s ease infinite;
+                    animation: [[device_4_animation]] 1s ease infinite;
                     --chip-box-shadow: 0px 0px;
                     --chip-background: rgba(0,0,0,0.8);
                     --chip-border-width: 0;
                   }
             - type: template
               entity: '[[device_5]]'
-              icon: '[[device_icon_5]]'
+              icon: '[[device_5_icon]]'
               icon_color: |
-                {% if is_state(entity,'[[device_state_5]]') %}
-                  [[device_color_5]]
+                {% if is_state(entity,'[[device_5_state]]') %}
+                  [[device_5_color]]
                 {% else %}
                   gray
                 {% endif %}
@@ -283,24 +283,24 @@ decluttering_templates:
                     50% { opacity: 0; }
                   }
                   :host {
-                    {% if is_state(config.entity,'[[device_state_5]]') %}
+                    {% if is_state(config.entity,'[[device_5_state]]') %}
                       display: flex;
                     {% else %}
                       display: none;
                     {% endif %}
                   }
                   ha-card {
-                    animation: [[device_animation_5]] 1s ease infinite;
+                    animation: [[device_5_animation]] 1s ease infinite;
                     --chip-box-shadow: 0px 0px;
                     --chip-background: rgba(0,0,0,0.8);
                     --chip-border-width: 0;
                   }
             - type: template
               entity: '[[device_6]]'
-              icon: '[[device_icon_6]]'
+              icon: '[[device_6_icon]]'
               icon_color: |
-                {% if is_state(entity,'[[device_state_6]]') %}
-                  [[device_color_6]]
+                {% if is_state(entity,'[[device_6_state]]') %}
+                  [[device_6_color]]
                 {% else %}
                   gray
                 {% endif %}
@@ -310,21 +310,21 @@ decluttering_templates:
                     50% { opacity: 0; }
                   }
                   :host {
-                    {% if is_state(config.entity,'[[device_state_6]]') %}
+                    {% if is_state(config.entity,'[[device_6_state]]') %}
                       display: flex;
                     {% else %}
                       display: none;
                     {% endif %}
                   }
                   ha-card {
-                    animation: [[device_animation_6]] 1s ease infinite;
+                    animation: [[device_6_animation]] 1s ease infinite;
                     --chip-box-shadow: 0px 0px;
                     --chip-background: rgba(0,0,0,0.8);
                     --chip-border-width: 0;
                   }
           alignment: center
           style:
-            top: 115%
+            top: 120%
             left: 50%
             width: 100%
             height: 100%
@@ -333,10 +333,10 @@ decluttering_templates:
           card_mod:
             style: |
               ha-card {
-                --chip-height: 14cqw;
-                --chip-icon-size: 8cqw;
-                --chip-border-radius: 0px;
-                --chip-spacing: 1px;
+                --chip-height: 12cqw;
+                --chip-icon-size: 6cqw;
+                --chip-border-radius: 5px;
+                --chip-spacing: 2px;
                 --chip-background: rgba(0,0,0,0);
                 --chip-box-shadow: 0px 0px;
                 --chip-border-width: 0;
