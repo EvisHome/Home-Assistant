@@ -1,5 +1,7 @@
 ## Declutter Room Template Card
 
+* custom:button-card
+
 ``` YAML
 type: custom:decluttering-card
 template: area_card
