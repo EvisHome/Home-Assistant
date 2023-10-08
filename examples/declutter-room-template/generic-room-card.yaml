@@ -1,4 +1,4 @@
-```
+
 type: custom:decluttering-card
 template: room_card
 variables:
@@ -29,4 +29,3 @@ variables:
   - icon_6: mdi:printer-3d
   - state_6: Printing
   - animation_6: blink
-  ```
