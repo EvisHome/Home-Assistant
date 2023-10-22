@@ -8,6 +8,7 @@ Custom Cards Used:
 - [apexcharts-card](https://github.com/RomRider/apexcharts-card)
 
 ## Template Sensors ##
+*remember to check and chage to your own nordpool sensor marked with X_XX_XXX*
 ```YAML
 - platform: template
   sensors:
@@ -17,20 +18,18 @@ Custom Cards Used:
       unit_of_measurement: "c"
       friendly_name_template: "Nordpool Today Average High Limit"
       value_template: >
-        {{ state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float * 0.15 + state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float }}
+        {{ state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float * 0.15 + state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float }}
 
     nordpool_today_mean_lo_limit:
       unit_of_measurement: "c"
       friendly_name_template: "Nordpool Today Average Low Limit"
       value_template: >
-        {{ state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float - (0.15 * state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float) }}
+        {{ state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float - (0.15 * state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float) }}
 ```
 
 
 ## The ApexCharts Card inside a Config-Template-Card
-
 *remember to check and chage to your own nordpool sensor marked with X_XX_XXX*
-
 ```YAML
 type: custom:config-template-card
 variables:
