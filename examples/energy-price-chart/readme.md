@@ -35,7 +35,6 @@ Custom Cards Used:
 ```YAML
 type: custom:config-template-card
 variables:
-  PRICEAVERAGE: states['sensor.nordpool_kwh_fi_eur_X_XX_XXX'].attributes['average']
   PRICEMEAN: states['sensor.nordpool_kwh_fi_eur_X_XX_XXX'].attributes['mean']
   PRICEHIGH: states['sensor.nordpool_today_mean_hi_limit'].state
   PRICELOW: states['sensor.nordpool_today_mean_lo_limit'].state
