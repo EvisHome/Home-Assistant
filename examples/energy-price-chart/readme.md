@@ -1,11 +1,11 @@
 # Energy Price Chart Card
 
 Integrations used:
-- Nord Pool
+- [NordPool](https://github.com/custom-components/nordpool)
 
 Custom Cards Used:
-- config-template-card
-- apexcharts-card
+- [config-template-card](https://github.com/iantrich/config-template-card)
+- [apexcharts-card](https://github.com/RomRider/apexcharts-card)
 
 ## Template Sensors ##
 ```YAML
