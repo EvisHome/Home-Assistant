@@ -1,3 +1,4 @@
+```YAML
 type: custom:config-template-card
 variables:
   PRICEAVERAGE: states['sensor.nordpool_kwh_fi_eur_3_10_024'].attributes['average']
@@ -127,4 +128,4 @@ card:
       show:
         legend_value: false
         datalabels: false
-
+```
