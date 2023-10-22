@@ -1,5 +1,12 @@
 # Energy Price Chart Card
 
+Integrations used:
+- Nord Pool
+
+Custom Cards Used:
+- config-template-card
+- apexcharts-card
+
 ## The ApexCharts Card inside a Config-Template-Card
 
 *remember to check and chage to your own nordpool sensor marked with X_XX_XXX*
@@ -126,7 +133,7 @@ card:
       yaxis_id: energy
       stroke_width: 2
       float_precision: 1
-      extend_to: false
+      extend_to: false # needed to fix the price series column width in certain times
       unit: kWh
       group_by:
         duration: 1hour
