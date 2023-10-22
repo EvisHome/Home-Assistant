@@ -1,3 +1,6 @@
+
+The ApexCharts Card inside a Config-Template-Card
+
 ```YAML
 type: custom:config-template-card
 variables:
