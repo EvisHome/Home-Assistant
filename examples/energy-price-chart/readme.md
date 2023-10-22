@@ -1,6 +1,6 @@
 # Energy Price Chart Card
 
-![](energy-price-chart.png)
+![](energy-price-today.png)
 
 Integrations used:
 - [NordPool](https://github.com/custom-components/nordpool)
