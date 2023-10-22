@@ -7,6 +7,26 @@ Custom Cards Used:
 - config-template-card
 - apexcharts-card
 
+## Template Sensors ##
+```YAML
+- platform: template
+  sensors:
+
+
+    nordpool_today_mean_hi_limit:
+      unit_of_measurement: "c"
+      friendly_name_template: "Nordpool Today Average High Limit"
+      value_template: >
+        {{ state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float * 0.15 + state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float }}
+
+    nordpool_today_mean_lo_limit:
+      unit_of_measurement: "c"
+      friendly_name_template: "Nordpool Today Average Low Limit"
+      value_template: >
+        {{ state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float - (0.15 * state_attr('sensor.nordpool_kwh_fi_eur_3_10_024', 'mean')|float) }}
+```
+
+
 ## The ApexCharts Card inside a Config-Template-Card
 
 *remember to check and chage to your own nordpool sensor marked with X_XX_XXX*
