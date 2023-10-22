@@ -9,6 +9,9 @@ Custom Cards Used:
 - [config-template-card](https://github.com/iantrich/config-template-card)
 - [apexcharts-card](https://github.com/RomRider/apexcharts-card)
 
+Note: Home Total Energy usages comes from my Shelly 3EM
+- sensor.home_total_energy_hourly
+
 ## Template Sensors ##
 *remember to check and chage to your own nordpool sensor marked with X_XX_XXX*
 ```YAML
@@ -153,7 +156,7 @@ card:
       yaxis_id: energy
       stroke_width: 2
       float_precision: 1
-      extend_to: false
+      extend_to: false # needed to fix the price column width at certain times.
       unit: kWh
       group_by:
         duration: 1hour
