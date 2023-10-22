@@ -1,11 +1,14 @@
+# Energy Price Chart Card
 
-The ApexCharts Card inside a Config-Template-Card
+## The ApexCharts Card inside a Config-Template-Card
+
+*remember to check and chage to your own nordpool sensor marked with X_XX_XXX*
 
 ```YAML
 type: custom:config-template-card
 variables:
-  PRICEAVERAGE: states['sensor.nordpool_kwh_fi_eur_3_10_024'].attributes['average']
-  PRICEMEAN: states['sensor.nordpool_kwh_fi_eur_3_10_024'].attributes['mean']
+  PRICEAVERAGE: states['sensor.nordpool_kwh_fi_eur_X_XX_XXX'].attributes['average']
+  PRICEMEAN: states['sensor.nordpool_kwh_fi_eur_X_XX_XXX'].attributes['mean']
   PRICEHIGH: states['sensor.nordpool_today_mean_hi_limit'].state
   PRICELOW: states['sensor.nordpool_today_mean_lo_limit'].state
 entities:
