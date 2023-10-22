@@ -94,7 +94,7 @@ card:
       opposite: true
       decimals: 1
       apex_config:
-        tickAmount: 4
+        tickAmount: 3
         labels:
           show: true
         title:
@@ -107,11 +107,11 @@ card:
             fontFamily: verdana
             color: orange
     - id: energy
-      max: ~2
+      max: ~3
       min: 0
       decimals: 1
       apex_config:
-        tickAmount: 4
+        tickAmount: 3
         labels:
           show: true
         title:
@@ -124,7 +124,7 @@ card:
             fontSize: 10px
             fontFamily: verdana
   series:
-    - entity: sensor.nordpool_kwh_fi_eur_3_10_024
+    - entity: sensor.nordpool_kwh_fi_eur_X_XX_XXX
       name: Price
       yaxis_id: cost
       type: column
@@ -153,7 +153,7 @@ card:
       yaxis_id: energy
       stroke_width: 2
       float_precision: 1
-      extend_to: false # needed to fix the price series column width in certain times
+      extend_to: false
       unit: kWh
       group_by:
         duration: 1hour
