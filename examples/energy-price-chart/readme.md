@@ -38,7 +38,7 @@ variables:
   PRICEHIGH: states['sensor.nordpool_today_mean_hi_limit'].state
   PRICELOW: states['sensor.nordpool_today_mean_lo_limit'].state
 entities:
-  - sensor.nordpool_kwh_eur_without_tax
+  - sensor.nordpool_kwh_fi_eur_X_XX_XXX
 card:
   type: custom:apexcharts-card
   graph_span: 1d
