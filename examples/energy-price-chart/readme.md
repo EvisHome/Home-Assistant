@@ -53,7 +53,7 @@ card:
       dashArray: 4
     chart:
       height: 180px
-      width: 120%
+      width: 120% # reduce value, if the chart clips on your screen
       offsetX: -30
     title:
       text: Energy Price Today
