@@ -27,6 +27,8 @@
 * [Room Presence](esphome/presence/)
 * [Room Presence v2 / Presence Box](esphome/presence-box-2/)
 
+## WLED Projects
+* [Virtual Fireplace]()
 
 ## Other Projects
 * [Philips Hue Motion Sensor - Wall Mount](https://github.com/EvisHome/Home-Assistant/tree/main/other-projects/philips-hue-motion-sensor-mount)
