@@ -1,6 +1,6 @@
 ## ESXi DASHBOARD
 
-*This might not work properly anymore?* I have moved to Proxmox myself, and haven't maintained this for a while.
+### *This might not work properly anymore? I have moved to Proxmox myself, and haven't maintained this for a while.*
 
 Monitor and control your ESXi host and virtual machines. I wanted to have a single page overview of my home ESXi installation, to monitor and have notifications/alerts and some automations like taking snapshots.
 
