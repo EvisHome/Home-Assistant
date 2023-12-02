@@ -1,4 +1,4 @@
-# Energy Dashboard (WIP)
+# Energy Dashboard (Not updating this one, might be broken?)
 
 ![energy dashboard](energy-dashboard.gif)
 
