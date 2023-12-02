@@ -12,6 +12,9 @@
 * [DNS AdGuard Dashboard](dashboards/dns-dashboard/)
 * [Energy Dashboard](/dashboards/energy/readme.md)
 
+## Home Assistant "Cards"
+* Todays Energy Price and Usage
+
 ## Examples/References
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
 * Declutter Room / Area Card Template
