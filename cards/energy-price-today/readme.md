@@ -102,6 +102,7 @@ card:
     show: true
   yaxis:
     - id: cost
+      #min: 0 # Uncomment this for have cost Y-axis to start from 0
       opposite: true
       decimals: 1
       apex_config:
