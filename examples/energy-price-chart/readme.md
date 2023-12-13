@@ -23,13 +23,13 @@ Note: Home Total Energy usages comes from my Shelly 3EM
       unit_of_measurement: "c"
       friendly_name_template: "Nordpool Today Average High Limit"
       value_template: >
-        {{ state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float * 0.15 + state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float }}
+        {{ state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float(0) * 0.15 + state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float(0) }}
 
     nordpool_today_mean_lo_limit:
       unit_of_measurement: "c"
       friendly_name_template: "Nordpool Today Average Low Limit"
       value_template: >
-        {{ state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float - (0.15 * state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float) }}
+        {{ state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float(0) - (0.15 * state_attr('sensor.nordpool_kwh_fi_eur_X_XX_XXX', 'mean')|float(0)) }}
 ```
 
 
