@@ -2,8 +2,8 @@
 
 Requires
 
-Proxmox VE integration
-https://github.com/thomasloven/lovelace-card-mod
+* [Proxmox VE integration](https://www.home-assistant.io/integrations/proxmoxve/)
+* [lovelace-card-mod](https://github.com/thomasloven/lovelace-card-mod)
 
 * custom:mushroom-title-card
 * custom:auto-entities
