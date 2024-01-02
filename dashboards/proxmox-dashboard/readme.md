@@ -1,4 +1,4 @@
-# Proxmos dashboard
+# Proxmox dashboard
 
 Requires
 
