@@ -12,8 +12,11 @@ Requires
 * custom:mushroom-template-card
 * custom:uptime-card
 
-
 *Note: this YAML Does't include controls popup*
+
+![proxmox vms](proxmox-vm-cards.png)
+
+You may need to change the auto-entity filter or some of the "replace strings" depending how your entities are named. I tried to used the standard naming from the Proxmox integration
 
 ``` YAML
 type: vertical-stack
