@@ -1,5 +1,18 @@
 # Proxmos dashboard
 
+Requires
+
+Proxmox VE integration
+https://github.com/thomasloven/lovelace-card-mod
+
+* custom:mushroom-title-card
+* custom:auto-entities
+* custom:button-card
+* custom:mini-graph-card
+* custom:mushroom-template-card
+* custom:uptime-card
+
+*YAML Does't include controls popup*
 
 ``` YAML
 type: vertical-stack
