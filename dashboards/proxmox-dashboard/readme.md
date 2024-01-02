@@ -12,7 +12,8 @@ Requires
 * custom:mushroom-template-card
 * custom:uptime-card
 
-*YAML Does't include controls popup*
+
+*Note: this YAML Does't include controls popup*
 
 ``` YAML
 type: vertical-stack
