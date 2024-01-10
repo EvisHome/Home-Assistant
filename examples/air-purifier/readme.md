@@ -162,29 +162,29 @@ cards:
           action: more-info
         double_tap_action:
           action: none
-        card_mod: null
-        style: |
-          :host { display:
-            {% set filter = states(config.entity) | int
-          %}
-            {% if filter > 168 %}
-              inline;
-            {% else %}
-              inline;
-            {% endif %}
-          }
-          @keyframes blink {
-            50% { opacity: 0; }
-          }
-          ha-card {
-            --mush-chip-border-radius: 0px;
-            {% set filter = states(config.entity) |
-            int %}
-            {% if filter == 0 %}
-            animation: blinks 1s ease infinite;
-            {% endif %}
-            border-radius: 0px;
-          }
+        card_mod:
+          style: |
+            :host { display:
+              {% set filter = states(config.entity) | int
+            %}
+              {% if filter > 168 %}
+                inline;
+              {% else %}
+                inline;
+              {% endif %}
+            }
+            @keyframes blink {
+              50% { opacity: 0; }
+            }
+            ha-card {
+              --mush-chip-border-radius: 0px;
+              {% set filter = states(config.entity) |
+              int %}
+              {% if filter == 0 %}
+              animation: blinks 1s ease infinite;
+              {% endif %}
+              border-radius: 0px;
+            }
 ```
 
 4. The Fourth Row is a Grid of 1 column
