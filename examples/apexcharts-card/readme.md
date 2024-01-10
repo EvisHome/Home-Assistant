@@ -78,14 +78,15 @@ And then adding ApexCharts ..
 
 ```YAML
   - type: custom:apexcharts-card
-    style: |
-      ha-card {
-        padding-top: 10px;
-        background-image: url("/local/rooms/room_livingroom_3.jpg");
-        background-position: center;
-        background-size: 130%;
-        box-shadow: inset 0px 0px 0px 1000px rgba(0,0,0,.6);
-      }
+    card_mod:
+      style: |
+        ha-card {
+          padding-top: 10px;
+          background-image: url("/local/rooms/room_livingroom_3.jpg");
+          background-position: center;
+          background-size: 130%;
+          box-shadow: inset 0px 0px 0px 1000px rgba(0,0,0,.6);
+        }
     graph_span: 24h
     show:
       loading: false
@@ -148,14 +149,15 @@ And then adding ApexCharts ..
         show:
           legend_value: true
   - type: custom:apexcharts-card
-    style: |
-      ha-card {
-        padding-top: 10px;
-        background-image: url("/local/rooms/room_livingroom_3.jpg");
-        background-position: center;
-        background-size: 130%;
-        box-shadow: inset 0px 0px 0px 1000px rgba(0,0,0,.6);
-      }
+    card_mod:
+      style: |
+        ha-card {
+          padding-top: 10px;
+          background-image: url("/local/rooms/room_livingroom_3.jpg");
+          background-position: center;
+          background-size: 130%;
+          box-shadow: inset 0px 0px 0px 1000px rgba(0,0,0,.6);
+        }
     graph_span: 24h
     show:
       loading: false
