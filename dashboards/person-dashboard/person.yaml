@@ -333,13 +333,14 @@ elements:
         - padding-bottom: 8px
         - background-color: rgba(0,0,0,0)
         - box-shadow: 0px 0px 2px rgb(0,0,0,0)
-style: |
-  ha-card {
-    box-shadow: 0px 0px 0px rgb(0,0,0,0);
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    margin-bottom: -8px;
-    padding-bottom: 20px;
-  }
+card_mod:
+  style: |
+    ha-card {
+      box-shadow: 0px 0px 0px rgb(0,0,0,0);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      margin-bottom: -8px;
+      padding-bottom: 20px;
+    }
