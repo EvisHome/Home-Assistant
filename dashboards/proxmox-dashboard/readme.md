@@ -155,11 +155,12 @@ cards:
                   icon: mdi:vector-combine
                   show_name: false
                   show_state: false
-                  style: |
-                    ha-card {
-                      box-shadow: none;
-                      border: 0px;
-                    }
+                  card_mod:
+                    style: |
+                      ha-card {
+                        box-shadow: none;
+                        border: 0px;
+                      }
                   styles:
                     card:
                       - width: 90px
