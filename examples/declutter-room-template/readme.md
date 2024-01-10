@@ -356,12 +356,13 @@ decluttering_templates:
       state_filter:
         'on': brightness(100%) saturate(1.2)
         'off': brightness(40%) grayscale(100%) contrast(150%)
-      style: |
-        ha-card {
-          border-top-left-radius: 8px;
-          border-top-right-radius: 8px;
-          border-bottom-left-radius: 8px;
-          border-bottom-right-radius: 8px;
-          z-index:0
-        }
+      card_mod:
+        style: |
+          ha-card {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            z-index:0
+          }
 ```
