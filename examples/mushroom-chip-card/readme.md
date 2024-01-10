@@ -189,15 +189,15 @@ by using *entity* or *config.entity*
       {% else %}
         gray
       {% endif %}
-    card_mod: null
-    style: |
-      ha-card {
-        {% if is_state(config.entity,'on') %}
-          opacity: 100%;
-        {% else %}
-          opacity: 25%;
-        {% endif %}
-      }
+    card_mod:
+      style: |
+        ha-card {
+          {% if is_state(config.entity,'on') %}
+            opacity: 100%;
+          {% else %}
+            opacity: 25%;
+          {% endif %}
+        }
 ```
 
 #### Hide Template Chip Conditionally
@@ -220,16 +220,16 @@ by using *entity* or *config.entity*
           {% else %}
             green
           {% endif %}
-        card_mod: null
-        style: |
-          :host {
-            {% set value = states(config.entity) | float %}
-            {% if value < 20 or value > 22 %}
-              display: flex;
-            {% else %}
-              display: none;
-            {% endif %}
-          }
+        card_mod:
+          style: |
+            :host {
+              {% set value = states(config.entity) | float %}
+              {% if value < 20 or value > 22 %}
+                display: flex;
+              {% else %}
+                display: none;
+              {% endif %}
+            }
 ```
 
 
