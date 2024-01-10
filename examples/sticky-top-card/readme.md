@@ -53,19 +53,19 @@ Next is a *mushroom-chips-card* as a home navigation button
           navigation_path: home
         hold_action:
           action: none
-        card_mod: null
-        style: |
-          :host {
-            margin-top: 0px;
-            padding-top: 0px;
-            position: absolute;
-            top: -54px;
-            left: 12px;
-            z-index: 999;
-            --chip-height: 45px;
-            --chip-background: #333;
-            --chip-border-radius: 30px;
-          }
+        card_mod:
+          style: |
+            :host {
+              margin-top: 0px;
+              padding-top: 0px;
+              position: absolute;
+              top: -54px;
+              left: 12px;
+              z-index: 999;
+              --chip-height: 45px;
+              --chip-background: #333;
+              --chip-border-radius: 30px;
+            }
 ```
 
 and for the *stack-in-card*, making it sticky and some styling
