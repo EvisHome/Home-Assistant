@@ -1,13 +1,26 @@
 New Area Card
 
+Required
+- entity naming for **area lights**
+  - light.[area_name]_lights
+
+- **helpers**
+  - select.[area_name]_presence | presence | idle | absence
+
 Change
+- HOLD CLICK, toggles area lights
 - area presence is shown as a border-color (green), and recent occupancy with time-out as (orange)
+- can be used with **streamline_templates** as well, as declutter_card is not maintained anymore.
+
 
 ```YAML
+//streamline_templates:
+decluttering_templates:
   area_card:
     card:
       type: picture-elements
       elements:
+        // OVERLAY CARD, HOLD CLICK TOGGLES THE AREA LIGHTS
         - type: custom:button-card
           entity: light.[[entity_name]]_lights
           show_name: false
@@ -33,6 +46,7 @@ Change
               - box-shadow: 0px 0px
           card_mod:
             style: |
+              // AREA PRESENCE INDICATOR
               ha-card {
                 {% if is_state('select.[[entity_name]]_presence','presence') %}
                   border: 3px solid rgba(36, 255, 0, 0.8);
