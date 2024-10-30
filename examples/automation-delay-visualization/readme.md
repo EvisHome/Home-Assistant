@@ -47,6 +47,7 @@ cards:
   - type: custom:timer-bar-card
     entities:
       - timer.office_automation_presence_lights_timer
+    sync_issues: ignore
     invert: true
     bar_height: 2px
     bar_foreground: orange
