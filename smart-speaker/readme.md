@@ -14,6 +14,10 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 * [Installing OS](#Installing-OS)
 * [Setting Up The Wyoming Satellite](#Setting-Up-The-Wyoming-Satellite)
 * [Checking The Audio Devices](#Checking-The-Audio-Devices)
+* [Home Assistant Discovery](#Home-Assistant-Discovery)
+* [Audio Enhancements](#Audio-Enhancements)
+* [Local Wake Word Detection](#Local-Wake-Word-Detection)
+* [LED service](#LED-service)
 
 <br>
 
@@ -179,7 +183,7 @@ script/run \
 
 <br>
 
-## Home Assistant | Discovery
+## Home Assistant Discovery
 
 After a while you should see the the satellite as *Discovered (Wyoming Protocol)*, you can clikc *Configure* and *Submit*, choose the area for your satellite and click *Finish*.
 
@@ -297,7 +301,7 @@ RestartSec=1
 WantedBy=default.target
 ```
 
-## Update the Satellite Service
+### Update the Satellite Service
 
 ```
 sudo systemctl edit --force --full wyoming-satellite.service
