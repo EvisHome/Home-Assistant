@@ -43,6 +43,9 @@ When asking if you'd like to apply customization settings, choose "Edit Settings
 * Configure the wireless LAN
 * Under the Services tab, enable SSH and use password authentication
 
+*if SSH is not working for some reason, then this can be fixed, by adding a file in to the boot (bootfs).
+Add a file called **ssh** into the bootfs directory. And restart the Pi, now SSH with the created username and password should work.*
+
 <br>
 
 ## Setting up the Pi (Satellite)
@@ -85,4 +88,70 @@ Reboot the Satellite
 ```
 sudo reboot
 ```
+
+<br>
+
+Reconnect to the satellite with SSH and continue
+```
+cd wyoming-satellite/
+python3 -m venv .venv
+.venv/bin/pip3 install --upgrade pip
+.venv/bin/pip3 install --upgrade wheel setuptools
+.venv/bin/pip3 install \
+  -f 'https://synesthesiam.github.io/prebuilt-apps/' \
+  -r requirements.txt \
+  -r requirements_audio_enhancement.txt \
+  -r requirements_vad.txt
+```
+Test if the installation was succesful
+```
+script/run --help
+```
+
+<br>
+
+## Audio Devices
+
+### List your available microphones
+```
+arecord -L
+```
+With ReSpeaker 2MIC Hat you should see
+```
+plughw:CARD=seeed2micvoicec,DEV=0
+    seeed-2mic-voicecard, bcm2835-i2s-wm8960-hifi wm8960-hifi-0
+    Hardware device with all software conversions
+```
+![image](https://github.com/user-attachments/assets/56ae517d-21ed-45e9-afa3-82fd295acbcb)
+
+Record a 5 second sample
+```
+arecord -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t wav -d 5 test.wav
+```
+
+<br>
+
+### List your speakers
+```
+aplay -L
+```
+With ReSpeaker 2MIC Hat you should see
+```
+plughw:CARD=seeed2micvoicec,DEV=0
+    seeed-2mic-voicecard, bcm2835-i2s-wm8960-hifi wm8960-hifi-0
+    Hardware device with all software conversions
+```
+![image](https://github.com/user-attachments/assets/6cd08e11-b900-427b-8125-5d9e8d0cd8bc)
+
+<br>
+
+Play back your recorded sample WAV:
+```
+aplay -D plughw:CARD=seeed2micvoicec,DEV=0 test.wav
+```
+You should be hearing the sample you recorded.
+**Make note of your microphone and speaker devices, those will be needed for running the satellite**
+
+## Running the Satellite
+
 
