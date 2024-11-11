@@ -10,7 +10,7 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 * [Build](#Build)
 * [Installing OS](#Installing-OS)
 * [Setting Up The Wyoming Satellite](#Setting-Up-The-Wyoming-Satellite)
-* [Audio Devices](#Audio-Devices)
+* [Checking The Audio Devices](#Checking-The-Audio-Devices)
 
 ### **Parts used**
 * Raspberry Pi Zero 2 W
@@ -117,7 +117,7 @@ script/run --help
 
 <br>
 
-## Audio Devices
+## Checking The Audio Devices
 
 ### List your available microphones
 ```
