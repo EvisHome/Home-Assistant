@@ -170,12 +170,12 @@ You should be hearing the sample you recorded.
 
 ## Running the Satellite
 
-In the directory *wyoming-satellite* run the the following
+In the directory *wyoming-satellite* run the the following. Change the name to you area or room.
 
 ```
 script/run \
   --debug \
-  --name 'my satellite' \
+  --name 'office satellite' \
   --uri 'tcp://0.0.0.0:10700' \
   --mic-command 'arecord -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t raw' \
   --snd-command 'aplay -D plughw:CARD=seeed2micvoicec,DEV=0 -r 22050 -c 1 -f S16_LE -t raw'
