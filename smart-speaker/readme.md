@@ -4,6 +4,11 @@ Building a speaker which can control the Home Assistant smart home in my local l
 
 This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will need a working Home Assistant installation.
 
+## TOC
+
+[Parts Used](/#parts_used)
+[Build](/#build)
+[Installing OS](/#Installing_OS)
 
 ### **Parts used**
 * Raspberry Pi Zero 2 W
@@ -25,7 +30,7 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 
 <br>
 
-## BUILD
+## Build
 
 Putting the parts together is quite easy. If you use the Adafruit speaker, tiny bit of soldering is needed.
 
@@ -35,8 +40,8 @@ Putting the parts together is quite easy. If you use the Adafruit speaker, tiny 
 
 <br>
 
-## Installing OS - Raspberry Pi OS Lite (64bit)
-Using the Raspnerry Pi Imager to install the OS
+## Installing OS
+Using the Raspnerry Pi Imager to install the OS, Raspberry Pi OS Lite (64bit)
 
 When asking if you'd like to apply customization settings, choose "Edit Settings" and:
 * Set a username/password
