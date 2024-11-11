@@ -9,7 +9,7 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 ## TOC
 
 * [Parts Used](#Parts-Used)
-* [Software used](#Software-used)
+* [Software Used](#Software-Used)
 * [Building The Speaker](#Build)
 * [Installing OS](#Installing-OS)
 * [Setting Up The Wyoming Satellite](#Setting-Up-The-Wyoming-Satellite)
@@ -28,7 +28,7 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 * Micro SD card to USB adapter (for installing the Raspberry Pi OS inthe the micro SD card)
 * *Optional: M2.5 Hex Spacers* (to support the ReSpeaker Hat)
 
-### **Software used**
+### **Software Used**
 * [Raspberry Pi Imager](https://www.raspberrypi.com/software/)
 * Raspberry Pi OS Lite (64bit)
 * [PuTTy](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjHh-Wo_9OJAxUbIxAIHVVVFhQQFnoECAoQAQ&url=https%3A%2F%2Fwww.putty.org%2F&usg=AOvVaw0iOGrunharr0YuZtN9wsn1&opi=89978449) (for SSH to the Pi)
