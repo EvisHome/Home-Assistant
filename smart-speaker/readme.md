@@ -48,7 +48,7 @@ Add a file called **ssh** into the bootfs directory. And restart the Pi, now SSH
 
 <br>
 
-## Setting up the Pi (Satellite)
+## Setting up the Wyoming Satellite
 
 1. Insert the SD card in to the Pi (if you haven't already).
 2. attach the MicrUSB power cord to the microUSB port in Pi marked as "power". Optionally you can also power it through the ReSpeaker Hat's microUSB power port.
