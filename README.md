@@ -30,6 +30,9 @@
 * [Room Presence](esphome/presence/)
 * [Room Presence v2 / Presence Box](esphome/presence-box-2/)
 
+## Smart Speaker
+* [DIY Smart Speaker (Pi Zero 2w & Respeaker 2mic hat + OpenAI with Nabu Casa)](smart-speaker/readme.md)
+
 ## WLED Projects
 * [Virtual Fireplace](wled/virtual-fireplace/readme.md)
 
