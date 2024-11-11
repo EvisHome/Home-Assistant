@@ -221,9 +221,164 @@ To check the logs in real-time
 ```
 journalctl -u wyoming-satellite.service -f
 ```
-When neede the service can be disabled and stopped with
+When needed the service can be disabled and stopped with
 ```
 sudo systemctl disable --now wyoming-satellite.service
 ```
 
 ## Audio Enhancements
+Using Automatic gain control and noise suppression
+```
+script/run \
+  ... \
+  --mic-auto-gain 5 \
+  --mic-noise-suppression 2
+```
+
+```
+  --mic-volume-multiplier X
+```
+
+```
+  --snd-volume-multiplier 0.25
+```
+
+## Local Wake Word Detection
+
+Install dependencies
+
+```
+sudo apt-get update
+```
+```
+sudo apt-get install --no-install-recommends  \
+  libopenblas-dev
+```
+
+In your *home* directory clone the repository and run
+```
+git clone https://github.com/rhasspy/wyoming-openwakeword.git
+```
+```
+cd wyoming-openwakeword
+script/setup
+```
+
+Create a systemd service for open wake word
+```
+sudo systemctl edit --force --full wyoming-openwakeword.service
+```
+
+Replace the /home/evis directories with your home directories
+```
+[Unit]
+Description=Wyoming openWakeWord
+
+[Service]
+Type=simple
+ExecStart=/home/evis/wyoming-openwakeword/script/run --uri 'tcp://127.0.0.1:10400'
+WorkingDirectory=/home/evis/wyoming-openwakeword
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target
+```
+
+## Update the Satellite Service
+
+```
+sudo systemctl edit --force --full wyoming-satellite.service
+```
+
+update the parts below
+
+```
+[Unit]
+...
+Requires=wyoming-openwakeword.service
+
+[Service]
+...
+ExecStart=/home/pi/wyoming-satellite/script/run ... --wake-uri 'tcp://127.0.0.1:10400' --wake-word-name 'ok_nabu'
+...
+
+[Install]
+...
+```
+
+Reload the Satellite Service and restart it
+```
+sudo systemctl daemon-reload
+```
+```
+sudo systemctl restart wyoming-satellite.service
+```
+
+You should see the open wake word service automatically loaded
+
+```
+sudo systemctl status wyoming-satellite.service wyoming-openwakeword.service
+```
+
+Both services should read "active (running)" and show up as green color
+
+Testing this now by saying (I have an entity called office lights in Home Assistant)
+
+*ok, nabu. turn off office lights*
+
+Use journal to check the logs of services for errors
+
+```
+sudo systemctl status wyoming-satellite.service wyoming-openwakeword.service
+```
+
+If you make changes remember to run 
+```
+sudo systemctl daemon-reload
+```
+
+## LED service
+
+The ReSpeaker 2MIC hat has some LEDs included, and this will change the color of the LEDs depending on the stallite state.
+
+From your home directory, run
+
+```
+cd wyoming-satellite/examples
+python3 -m venv --system-site-packages .venv
+.venv/bin/pip3 install --upgrade pip
+.venv/bin/pip3 install --upgrade wheel setuptools
+.venv/bin/pip3 install 'wyoming==1.5.2'
+```
+
+```
+sudo apt-get install python3-spidev python3-gpiozero
+```
+
+Test the service
+```
+.venv/bin/python3 2mic_service.py --help
+```
+
+Create a new systemd service for the LEDs
+```
+sudo systemctl edit --force --full 2mic_leds.service
+```
+
+insert
+
+```
+[Unit]
+Description=2Mic LEDs
+
+[Service]
+Type=simple
+ExecStart=/home/evis/wyoming-satellite/examples/.venv/bin/python3 2mic_service.py --uri 'tcp://127.0.0.1:10500'
+WorkingDirectory=/home/evis/wyoming-satellite/examples
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target
+```
