@@ -23,6 +23,8 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 * [Home Assistant](https://www.home-assistant.io/) (with [Nabu Casa](https://www.nabucasa.com/) subscription for STT & TTS)
 * [OpenAI](https://platform.openai.com/) (with subscription/paid model)
 
+<br>
+
 ## BUILD
 
 Putting the parts together is quite easy. If you use the Adafruit speaker, tiny bit of soldering is needed.
@@ -31,11 +33,56 @@ Putting the parts together is quite easy. If you use the Adafruit speaker, tiny 
 2. Attach the ReSpeaker Hat on to the Raspberry Pi
 3. Attach the JST cable to the ReSpeaker 2-pin port
 
-## Raspberry Pi OS Lite (64bit)
+<br>
 
-## Setting up the Pi
+## Installing OS - Raspberry Pi OS Lite (64bit)
+Using the Raspnerry Pi Imager to install the OS
+
+When asking if you'd like to apply customization settings, choose "Edit Settings" and:
+* Set a username/password
+* Configure the wireless LAN
+* Under the Services tab, enable SSH and use password authentication
+
+<br>
+
+## Setting up the Pi (Satellite)
 
 1. Insert the SD card in to the Pi (if you haven't already).
 2. attach the MicrUSB power cord to the microUSB port in Pi marked as "power". Optionally you can also power it through the ReSpeaker Hat's microUSB power port.
 3. Starting the Pi first time might make it restart few times, but once it is up and running you should find out it's IP address so that you can login through SSH.
 4. Once you have the IP address launch **PuTTy**
+
+<br>
+
+Install system dependencies:
+```
+sudo apt-get update
+```
+```
+sudo apt-get install --no-install-recommends  \
+  git \
+  python3-venv
+```
+
+<br>
+
+Clone the **wyoming-satellite** repository
+```
+git clone https://github.com/rhasspy/wyoming-satellite.git
+```
+
+<br>
+
+Recompile and install the drivers for ReSpeaker 2Mic (this might take some time)
+```
+cd wyoming-satellite/
+sudo bash etc/install-respeaker-drivers.sh
+```
+
+<br>
+
+Reboot the Satellite
+```
+sudo reboot
+```
+
