@@ -32,3 +32,10 @@ Putting the parts together is quite easy. If you use the Adafruit speaker, tiny 
 3. Attach the JST cable to the ReSpeaker 2-pin port
 
 ## Raspberry Pi OS Lite (64bit)
+
+## Setting up the Pi
+
+1. Insert the SD card in to the Pi (if you haven't already).
+2. attach the MicrUSB power cord to the microUSB port in Pi marked as "power". Optionally you can also power it through the ReSpeaker Hat's microUSB power port.
+3. Starting the Pi first time might make it restart few times, but once it is up and running you should find out it's IP address so that you can login through SSH.
+4. Once you have the IP address launch **PuTTy**
