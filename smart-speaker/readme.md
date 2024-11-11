@@ -12,6 +12,8 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 * [Setting Up The Wyoming Satellite](#Setting-Up-The-Wyoming-Satellite)
 * [Checking The Audio Devices](#Checking-The-Audio-Devices)
 
+<br>
+
 ### **Parts used**
 * Raspberry Pi Zero 2 W
 * 2x20 Pin Header for the Pi
