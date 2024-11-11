@@ -36,7 +36,7 @@
 ## WLED Projects
 * [Virtual Fireplace](wled/virtual-fireplace/readme.md)
 
-## Other Projects
+## Other Projects | Printable 3D Models
 * [Philips Hue Motion Sensor - Wall Mount](https://github.com/EvisHome/Home-Assistant/tree/main/other-projects/philips-hue-motion-sensor-mount)
 * [Philips Hue Motion Sensor - Eye Lid](https://github.com/EvisHome/Home-Assistant/tree/main/other-projects/philips-hue-motion-sensor-eye-lid)
 
