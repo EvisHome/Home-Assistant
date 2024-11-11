@@ -9,7 +9,8 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 ## TOC
 
 * [Parts Used](#Parts-Used)
-* [Build](#Build)
+* [Software used](#Software-used)
+* [Building The Speaker](#Build)
 * [Installing OS](#Installing-OS)
 * [Setting Up The Wyoming Satellite](#Setting-Up-The-Wyoming-Satellite)
 * [Checking The Audio Devices](#Checking-The-Audio-Devices)
