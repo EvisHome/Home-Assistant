@@ -6,9 +6,11 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 
 ## TOC
 
-* [Parts Used](#parts-used)
-* [Build](#build)
+* [Parts Used](#Parts-Used)
+* [Build](#Build)
 * [Installing OS](#Installing-OS)
+* [Setting Up The Wyoming Satellite](#Setting-Up-The-Wyoming-Satellite)
+* [Audio Devices](#Audio-Devices)
 
 ### **Parts used**
 * Raspberry Pi Zero 2 W
