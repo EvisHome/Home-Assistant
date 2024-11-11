@@ -382,3 +382,49 @@ RestartSec=1
 [Install]
 WantedBy=default.target
 ```
+
+Updating the Satellite service
+```
+sudo systemctl edit --force --full wyoming-satellite.service
+```
+
+with the parts ..
+```
+[Unit]
+...
+Requires=2mic_leds.service
+
+[Service]
+...
+ExecStart=/home/evis/wyoming-satellite/script/run ... --event-uri 'tcp://127.0.0.1:10500'
+...
+
+[Install]
+...
+```
+
+Reload and restart the satellite service
+```
+sudo systemctl daemon-reload
+```
+```
+sudo systemctl restart wyoming-satellite.service
+```
+
+Check that the LED service is automatically loaded
+```
+sudo systemctl status wyoming-satellite.service 2mic_leds.service
+```
+
+Try a voice command and you should see the LEDs change color based ot the status.
+
+To check the logs run
+```
+journalctl -u 2mic_leds.service -f
+```
+
+
+**When ever you make changes to the service, remember to run**
+```
+sudo systemctl daemon-reload
+```
