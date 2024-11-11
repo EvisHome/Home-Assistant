@@ -154,4 +154,70 @@ You should be hearing the sample you recorded.
 
 ## Running the Satellite
 
+In the directory *wyoming-satellite* run the the following
 
+```
+script/run \
+  --debug \
+  --name 'my satellite' \
+  --uri 'tcp://0.0.0.0:10700' \
+  --mic-command 'arecord -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t raw' \
+  --snd-command 'aplay -D plughw:CARD=seeed2micvoicec,DEV=0 -r 22050 -c 1 -f S16_LE -t raw'
+```
+
+<br>
+
+## Home Assistant | Discovery
+
+After a while you should see the the satellite as *Discovered (Wyoming Protocol)*, you can clikc *Configure* and *Submit*, choose the area for your satellite and click *Finish*.
+
+<br>
+
+## Create Services
+
+Running wyoming-satellite as a systemd service
+
+create a service file
+```
+sudo systemctl edit --force --full wyoming-satellite.service
+```
+
+Insert the content in to the file. Change the *evis* to what every your directiory is.
+```
+[Unit]
+Description=Wyoming Satellite
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/evis/wyoming-satellite/script/run --name 'my satellite' --uri 'tcp://0.0.0.0:10700' --mic-command 'arecord -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t raw' --snd-command 'aplay -D plughw:CARD=seeed2micvoicec,DEV=0 -r 22050 -c 1 -f S16_LE -t raw'
+WorkingDirectory=/home/evis/wyoming-satellite
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target
+```
+
+Save the file and exit with the editor *CTRL + X*
+
+<br>
+
+Enable the service to start at boot
+```
+sudo systemctl enable --now wyoming-satellite.service
+```
+
+To get back to the shell prompt use *CRTL + C*
+
+To check the logs in real-time
+```
+journalctl -u wyoming-satellite.service -f
+```
+When neede the service can be disabled and stopped with
+```
+sudo systemctl disable --now wyoming-satellite.service
+```
+
+## Audio Enhancements
