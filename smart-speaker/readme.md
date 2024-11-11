@@ -4,6 +4,8 @@ Building a speaker which can control the Home Assistant smart home in my local l
 
 This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will need a working Home Assistant installation.
 
+<br>
+
 ## TOC
 
 * [Parts Used](#Parts-Used)
