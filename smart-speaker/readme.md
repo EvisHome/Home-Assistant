@@ -171,6 +171,12 @@ script/run \
 
 After a while you should see the the satellite as *Discovered (Wyoming Protocol)*, you can clikc *Configure* and *Submit*, choose the area for your satellite and click *Finish*.
 
+![image](https://github.com/user-attachments/assets/6de9e63f-507c-4568-94dc-577385de3077)
+
+![image](https://github.com/user-attachments/assets/468d5a55-13ae-4544-8970-0dcb8efcbc3f)
+
+
+
 <br>
 
 ## Create Services
