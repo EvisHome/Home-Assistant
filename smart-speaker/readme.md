@@ -213,7 +213,11 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/home/evis/wyoming-satellite/script/run --name 'my satellite' --uri 'tcp://0.0.0.0:10700' --mic-command 'arecord -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t raw' --snd-command 'aplay -D plughw:CARD=seeed2micvoicec,DEV=0 -r 22050 -c 1 -f S16_LE -t raw'
+ExecStart=/home/evis/wyoming-satellite/script/run \
+  --name 'office satellite' \
+  --uri 'tcp://0.0.0.0:10700' \
+  --mic-command 'arecord -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t raw' \
+  --snd-command 'aplay -D plughw:CARD=seeed2micvoicec,DEV=0 -r 22050 -c 1 -f S16_LE -t raw'
 WorkingDirectory=/home/evis/wyoming-satellite
 Restart=always
 RestartSec=1
