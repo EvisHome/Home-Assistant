@@ -6,9 +6,9 @@ This projects uses paid subscriptions from Nabu Casa and from OpenAI. You will n
 
 ## TOC
 
-* [Parts Used](#parts_used)
+* [Parts Used](#parts-used)
 * [Build](#build)
-* [Installing OS](#Installing_OS)
+* [Installing OS](#Installing-OS)
 
 ### **Parts used**
 * Raspberry Pi Zero 2 W
