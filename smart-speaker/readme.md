@@ -296,7 +296,8 @@ Description=Wyoming openWakeWord
 
 [Service]
 Type=simple
-ExecStart=/home/evis/wyoming-openwakeword/script/run --uri 'tcp://127.0.0.1:10400'
+ExecStart=/home/evis/wyoming-openwakeword/script/run \
+  --uri 'tcp://127.0.0.1:10400'
 WorkingDirectory=/home/evis/wyoming-openwakeword
 Restart=always
 RestartSec=1
@@ -320,12 +321,22 @@ Requires=wyoming-openwakeword.service
 
 [Service]
 ...
-ExecStart=/home/pi/wyoming-satellite/script/run ... --wake-uri 'tcp://127.0.0.1:10400' --wake-word-name 'ok_nabu'
+ExecStart=/home/pi/wyoming-satellite/script/run ... \
+  --wake-uri 'tcp://127.0.0.1:10400' \
+  --wake-word-name 'ok_nabu'
 ...
 
 [Install]
 ...
 ```
+You can change the wake word to any of the included ones:
+
+* ok_nabu
+* hey_jarvis
+* alexa
+* hey_mycroft
+* hey_rhasspy
+
 
 Reload the Satellite Service and restart it
 ```
@@ -394,7 +405,8 @@ Description=2Mic LEDs
 
 [Service]
 Type=simple
-ExecStart=/home/evis/wyoming-satellite/examples/.venv/bin/python3 2mic_service.py --uri 'tcp://127.0.0.1:10500'
+ExecStart=/home/evis/wyoming-satellite/examples/.venv/bin/python3 2mic_service.py \
+  --uri 'tcp://127.0.0.1:10500'
 WorkingDirectory=/home/evis/wyoming-satellite/examples
 Restart=always
 RestartSec=1
@@ -416,7 +428,8 @@ Requires=2mic_leds.service
 
 [Service]
 ...
-ExecStart=/home/evis/wyoming-satellite/script/run ... --event-uri 'tcp://127.0.0.1:10500'
+ExecStart=/home/evis/wyoming-satellite/script/run ... \
+  --event-uri 'tcp://127.0.0.1:10500'
 ...
 
 [Install]
