@@ -481,7 +481,7 @@ sudo systemctl daemon-reload
 ```
 
 
-## My __wyoming-satellite.service__
+## My _wyoming-satellite.service_
 
 ```
 
