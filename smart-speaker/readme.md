@@ -74,10 +74,10 @@ Add a file called **ssh** into the bootfs directory. And restart the Pi, now SSH
 <br>
 
 Install system dependencies:
-```
+```sh
 sudo apt-get update
 ```
-```
+```sh
 sudo apt-get install --no-install-recommends  \
   git \
   python3-venv
@@ -85,8 +85,15 @@ sudo apt-get install --no-install-recommends  \
 
 <br>
 
+*__Run in your home directory__*
+
+* you can check the current directory with `pwd`
+* use `cd` without any arguments to navigate to your home directory.
+
+<br>
+
 Clone the **wyoming-satellite** repository
-```
+```sh
 git clone https://github.com/rhasspy/wyoming-satellite.git
 ```
 
@@ -101,14 +108,14 @@ sudo bash etc/install-respeaker-drivers.sh
 <br>
 
 Reboot the Satellite
-```
+```sh
 sudo reboot
 ```
 
 <br>
 
 Reconnect to the satellite with SSH and continue
-```
+```sh
 cd wyoming-satellite/
 python3 -m venv .venv
 .venv/bin/pip3 install --upgrade pip
@@ -120,7 +127,7 @@ python3 -m venv .venv
   -r requirements_vad.txt
 ```
 Test if the installation was succesful
-```
+```sh
 script/run --help
 ```
 
@@ -129,7 +136,7 @@ script/run --help
 ## Checking The Audio Devices
 
 ### List your available microphones
-```
+```sh
 arecord -L
 ```
 With ReSpeaker 2MIC Hat you should see
@@ -275,7 +282,12 @@ sudo apt-get install --no-install-recommends  \
   libopenblas-dev
 ```
 
-In your *home* directory clone the repository and run
+*__Run in your home directory__*
+```
+cd
+```
+
+Clone the repository and run
 ```
 git clone https://github.com/rhasspy/wyoming-openwakeword.git
 ```
@@ -373,6 +385,12 @@ sudo systemctl daemon-reload
 
 The ReSpeaker 2MIC hat has some LEDs included, and this will change the color of the LEDs depending on the stallite state.
 
+
+*__Run in your home directory__*
+```
+cd
+```
+
 From your home directory, run
 
 ```
@@ -460,4 +478,40 @@ journalctl -u 2mic_leds.service -f
 **When ever you make changes to the service, remember to run**
 ```
 sudo systemctl daemon-reload
+```
+
+
+## My __wyoming-satellite.service__
+
+```
+
+[Unit]
+Description=Wyoming Satellite
+Wants=network-online.target
+After=network-online.target
+Requires=wyoming-openwakeword.service
+Requires=2mic_leds.service
+
+[Service]
+Type=simple
+ExecStart=/home/evis/wyoming-satellite/script/run \
+    --name 'office satellite' \
+    --uri 'tcp://0.0.0.0:10700' \
+    --mic-command 'arecord -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t raw' \
+    --snd-command 'aplay -D plughw:CARD=seeed2micvoicec,DEV=0 -r 16000 -c 1 -f S16_LE -t raw' \
+    --snd-command-rate 16000 \
+    --snd-volume-multiplier 1 \
+    --mic-auto-gain 7 \
+    --mic-noise-suppression 3 \
+    --wake-uri 'tcp://127.0.0.1:10400' \
+    --wake-word-name 'ok_nabu' \
+    --event-uri 'tcp://127.0.0.1:10500' \
+    --awake-wav sounds/awake.wav \
+    --timer-finished-wav sounds/timer_finished.wav
+WorkingDirectory=/home/evis/wyoming-satellite
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target
 ```
