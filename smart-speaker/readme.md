@@ -49,6 +49,9 @@ Putting the parts together is quite easy. If you use the Adafruit speaker, tiny 
 2. Attach the ReSpeaker Hat on to the Raspberry Pi
 3. Attach the JST cable to the ReSpeaker 2-pin port
 
+## Build
+<p float="left"> <img src="build-1.jpg" width="24%" /> <img src="build-2.jpg" width="24%" /> <img src="build-3.jpg" width="24%" /> <img src="build-4.jpg" width="24%" /> </p> 
+
 <br>
 
 ## Installing OS
