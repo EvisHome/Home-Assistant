@@ -125,6 +125,7 @@ sensor:
 
 I taped the the SF15-600 sensors to the beams on about chest/shoulder level under the mattresses.
 
+<p float="left"> <img src="esp32-1.png" width="24%" /> <img src="esp32-2.png" width="24%" /> <img src="bed-1.png" width="24%" /> <img src="bed-2.png" width="24%" /> </p> 
 	
 ## Home Assistant
 
