@@ -21,6 +21,8 @@ I tried a pressure mattress under my mattress topper, but that was so annoying I
 * SF15-600 10 kg - Flexible Thin Film Pressure Sensor
 * Wires and connectors
 
+## Diagram
+
 ![image](https://github.com/user-attachments/assets/f2c43f53-7ee8-4ed9-a1c7-096777f4c1ab)
 
 ## ESPHome Code
@@ -125,7 +127,7 @@ sensor:
 
 I taped the the SF15-600 sensors to the beams on about chest/shoulder level under the mattresses.
 
-<p float="left"> <img src="esp32-1.png" width="24%" /> <img src="esp32-2.png" width="24%" /> <img src="bed-1.png" width="24%" /> <img src="bed-2.png" width="24%" /> </p> 
+<p float="left"> <img src="ESP32-1.png" width="24%" /> <img src="ESP32-2.png" width="24%" /> <img src="bed-1.png" width="24%" /> <img src="bed-2.png" width="24%" /> </p> 
 	
 ## Home Assistant
 
