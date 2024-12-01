@@ -28,11 +28,12 @@
 * [Sticky Top Card](examples/sticky-top-card/)
 
 ## ESPHome Projects
+
+* [Bed Occupancy Sensor(s)](esphome/bed-occupancy-sensor/)
 * [Project Box Creator](esphome/project-box-creator/readme.md)
 * [Horizontal Blinds (tilt)](esphome/horizontal-blinds/)
 * [Room Presence](esphome/presence/)
 * [Room Presence v2 / Presence Box](esphome/presence-box-2/)
-* [Bed Occupancy Sensor(s)](esphome/bed-occupancy-sensor/)
 
 ## Smart Speaker
 * [DIY Smart Speaker (Pi Zero 2w & Respeaker 2mic hat + OpenAI with Nabu Casa)](smart-speaker/readme.md)
