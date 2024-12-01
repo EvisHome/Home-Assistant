@@ -1,5 +1,8 @@
 # Home-Assistant
 
+![image](github-main-image.jpg)
+
+
 ## Dashboards
 *Using (custom) integrations to build dashboards*
 * [Unifi Network Dashboard](dashboards/unifi-network-dashboard/)
