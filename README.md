@@ -17,10 +17,10 @@
 
 ## Home Assistant "Cards"
 * Todays Energy Price and Usage
+* Declutter Room / Area Card Template
 
 ## Examples/References
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
-* Declutter Room / Area Card Template
 * [automation delay visualization](examples/automation-delay-visualization/readme.md)
 * [mushroom-chip-card examples](examples/mushroom-chip-card/)
 * [air-purifier card (with mushroom cards)](examples/air-purifier/)
