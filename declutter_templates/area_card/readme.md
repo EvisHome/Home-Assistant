@@ -20,7 +20,6 @@ decluttering_templates:
     card:
       type: picture-elements
       elements:
-        // OVERLAY CARD, HOLD CLICK TOGGLES THE AREA LIGHTS
         - type: custom:button-card
           entity: light.[[entity_name]]_lights
           show_name: false
@@ -37,7 +36,7 @@ decluttering_templates:
             left: 50%
             width: 100%
             height: 100%
-            z-index: 9
+            z-index: 3
           styles:
             card:
               - border-radius: 8px
@@ -46,11 +45,10 @@ decluttering_templates:
               - box-shadow: 0px 0px
           card_mod:
             style: |
-              // AREA PRESENCE INDICATOR
               ha-card {
-                {% if is_state('select.[[entity_name]]_presence','presence') %}
+                {% if is_state('input_select.[[entity_name]]_presence','presence') %}
                   border: 3px solid rgba(36, 255, 0, 0.8);
-                {% elif is_state('select.[[entity_name]]_presence','idle') %}
+                {% elif is_state('input_select.[[entity_name]]_presence','idle') %}
                   border: 3px solid rgba(255, 163, 0, 0.8);
                 {% else %}
                   border: 0px solid rgba(0, 0, 0, 0);
@@ -69,43 +67,18 @@ decluttering_templates:
             card:
               - border-radius: 0px
               - border: 0px
-              - height: 29%
-              - background-color: rgb(0,0,0,0.5)
+              - height: 30%
+              - background-color: rgb(0,0,0,0)
               - box-shadow: 0px 0px 2px rgb(255,255,255,0)
-              - font-size: 6cqw
+              - font-size: 5cqw
             name:
               - font-family: arial
               - font-weight: bold
               - text-transform: uppercase
-              - justify-self: center
-              - padding-left: 0px
+              - justify-self: left
+              - padding-left: 15px
               - color: rgb(255, 255, 255, 1)
-              - text-shadow: 0px 0px 4px rgb(0,0,0,1)
-        - type: custom:button-card
-          name: '[[display_name]]'
-          style:
-            top: 50%
-            left: 50%
-            width: 100%
-            height: 100%
-            z-index: 2
-            container-type: inline-size
-          styles:
-            card:
-              - border-radius: 0px
-              - border: 0px
-              - height: 29%
-              - background-color: rgb(0,0,0,0.5)
-              - box-shadow: 0px 0px 2px rgb(255,255,255,0)
-              - font-size: 6cqw
-            name:
-              - font-family: arial
-              - font-weight: bold
-              - text-transform: uppercase
-              - justify-self: center
-              - padding-left: 0px
-              - color: rgb(255, 255, 255, 1)
-              - text-shadow: 0px 0px 4px rgb(0,0,0,1)
+              - text-shadow: 0px 0px 5px rgb(0,0,0,1)
         - type: custom:button-card
           entity: '[[temperature_sensor]]'
           icon: mdi:account-circle
@@ -121,7 +94,7 @@ decluttering_templates:
             left: 50%
             width: 100%
             height: 100%
-            z-index: 3
+            z-index: 2
             container-type: inline-size
           styles:
             name:
@@ -138,8 +111,9 @@ decluttering_templates:
               - position: absolute
               - top: 7%
               - right: 3%
-              - font-size: 5.5cqw
+              - font-size: 5cqw
               - font-weight: bold
+              - text-shadow: 0px 0px 5px rgb(0,0,0,1)
         - type: custom:mushroom-chips-card
           chips:
             - type: template
@@ -322,6 +296,37 @@ decluttering_templates:
                 --chip-background: rgba(0,0,0,0);
                 --chip-box-shadow: 0px 0px;
                 --chip-border-width: 0;
+              }
+        - type: custom:timer-bar-card
+          entities:
+            - timer.[[entity_name]]_lights_off_timer
+          invert: true
+          sync_issues: ignore
+          bar_height: 2px
+          bar_foreground: orange
+          bar_background: '#111'
+          layout: full_row
+          text_width: 0px
+          bar_width: 100%
+          card_mod:
+            style: |
+              :host {
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                border: 0px;
+              }
+              ha-card {
+                left: 44%;
+                width: 113%;
+                height: 4px;
+                padding: 0px;
+                z-index: 3;
+                margin: 0px;
+                margin-top: -39px;
+                border: 0px;
+                background-color: rgb(0,0,0,0);
+                box-shadow: 0px 0px 2px rgb(255,255,255,0);
               }
       entity: light.[[entity_name]]_lights
       image: local/rooms/room_[[entity_name]].jpg
