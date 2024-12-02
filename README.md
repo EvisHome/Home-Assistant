@@ -3,7 +3,7 @@
 ![image](github-main-image.jpg)
 
 
-## Dashboards
+## Home Assistant Dashboards
 *Using (custom) integrations to build dashboards*
 * [Unifi Network Dashboard](dashboards/unifi-network-dashboard/)
 * [Unifi Access Points Dashboard](dashboards/unifi-ap-dashboard/)
