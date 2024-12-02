@@ -99,7 +99,7 @@ stepper:
     step_pin: D7
     sleep_pin:
       number: D5
-#      inverted: yes #A4988
+      #inverted: yes #A4988
       inverted: yes #DRV8825
     max_speed: 500 steps/s
     acceleration: inf
