@@ -1,4 +1,4 @@
-# Home-Assistant
+# Smart Home | Home-Assistant
 
 ![image](github-main-image.jpg)
 
