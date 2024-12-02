@@ -1,22 +1,26 @@
+substitutions:
+  device_id: room_name
+  name: Room Name
+
 esphome:
-  name: livingroom-horizontal-blinds
+  name: "${device_id}-horizontal-blinds"
   on_boot:
     priority: -100
     then:
       - stepper.report_position:
-          id: livingroom_stepper
+          id: ${device_id}_stepper
           position: !lambda "return id(saved_position);"
       - stepper.set_target:
-          id: livingroom_stepper
+          id: ${device_id}_stepper
           target: !lambda "return id(saved_position);"
       - stepper.set_speed:
-          id: livingroom_stepper
+          id: ${device_id}_stepper
           speed: 500 steps/s
       - script.execute: update_cover_position
 
 esp8266:
   board: nodemcuv2
-  restore_from_flash: true
+  restore_from_flash: true # restore states from flash
 
 
 # Enable logging
@@ -24,13 +28,15 @@ logger:
 
 # Enable Home Assistant API
 api:
+  encryption:
+    key: !secret api_key
   services:
     - service: set_stepper_target
       variables:
         target: int
       then:
         - stepper.set_target:
-            id: livingroom_stepper
+            id: ${device_id}_stepper
             target: !lambda 'return target;'
         - script.execute: record_stepper_position
     - service: set_stepper_speed
@@ -38,157 +44,153 @@ api:
         speed: int
       then:
         - stepper.set_speed:
-            id: livingroom_stepper
+            id: ${device_id}_stepper
             speed: !lambda 'return speed;'
     - service: set_stepper_position
       variables:
         stepper_position: int
       then:
         - stepper.report_position:
-            id: livingroom_stepper
+            id: ${device_id}_stepper
             position: !lambda "return stepper_position;"
         - stepper.set_target:
-            id: livingroom_stepper
+            id: ${device_id}_stepper
             target: !lambda "return stepper_position;"
 
-# Tested values (one rotation) to fully close or open the blinds
 globals:
   - id: open_position
     type: int
-    initial_value: '3050' # <-- Replace | "Closed to other direction"
+    initial_value: '3050'
   - id: middle_position
     type: int
-    initial_value: '2025' # <--- Replace | Blinds Tilt Middle/Fully Open
+    initial_value: '2025'
   - id: closed_position
     type: int
-    initial_value: '1000' # <---  Replace | Blinds Tilt Closed
+    initial_value: '1000'
   - id: saved_position
     type: int
-    initial_value: '1000' # <---  Replace | Blinds Tilt Closed
+    initial_value: '1000'
     restore_value: true
 
 ota:
+  platform: esphome
   password: !secret ota_password
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
+  #manual_ip:
+    #static_ip: x.x.x.x
+    #gateway: x.x.x.
+    #subnet: 255.255.255.0
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "Livingroom-Blinds-Hotspot"
+    ssid: "${name}-Blinds-Hotspot"
     password: !secret ap_password
 
 captive_portal:
 
-# WEB PORTAL FOR TESTING
-#web_server:
-#  port: 80
-#  version: 2
-#  include_internal: true
-#  auth:
-#    username: !secret web_user
-#    password: !secret web_pass
 
 stepper:
   - platform: a4988
-    id: livingroom_stepper
+    id: ${device_id}_stepper
     dir_pin: D6
     step_pin: D7
     sleep_pin:
       number: D5
-      inverted: yes # inverting since connected the Enable pin
+#      inverted: yes #A4988
+      inverted: yes #DRV8825
     max_speed: 500 steps/s
     acceleration: inf
     deceleration: inf
 
 cover:
   - platform: template
-    id: "livingroom_horizontal_blinds"
+    id: ${device_id}_window_blinds
     device_class: blind
-    name: "Livingroom Horizontal Blinds"
+    name: "${name} Window Blinds"
     has_position: true
     optimistic: false
     open_action:
       - logger.log: "Opening"
       - cover.template.publish:
-          id: livingroom_horizontal_blinds
+          id: ${device_id}_window_blinds
           current_operation: OPENING
       - stepper.set_target:
-          id: livingroom_stepper
+          id: ${device_id}_stepper
           target: !lambda "return id(open_position);"
       - while:
           condition:
-            lambda: 'return id(livingroom_stepper).current_position < id(open_position);'
+            lambda: 'return id(${device_id}_stepper).current_position < id(open_position);'
           then:
             - script.execute: update_cover_position
             - delay: 1000 ms
       - script.execute: update_cover_position
       - script.execute: record_stepper_position
       - cover.template.publish:
-          id: livingroom_horizontal_blinds
+          id: ${device_id}_window_blinds
           current_operation: IDLE
     close_action:
       - logger.log: "Closing"
       - cover.template.publish:
-          id: livingroom_horizontal_blinds
+          id: ${device_id}_window_blinds 
           current_operation: CLOSING
       - stepper.set_target:
-          id: livingroom_stepper
+          id: ${device_id}_stepper
           target: !lambda "return id(closed_position);"
       - while:
           condition:
-            lambda: 'return id(livingroom_stepper).current_position > id(closed_position);'
+            lambda: 'return id(${device_id}_stepper).current_position > id(closed_position);'
           then:
             - script.execute: update_cover_position
             - delay: 1000 ms
       - script.execute: update_cover_position
       - script.execute: record_stepper_position
       - cover.template.publish:
-          id: livingroom_horizontal_blinds
+          id: ${device_id}_window_blinds
           current_operation: IDLE
     position_action:
       - logger.log: "Setting position"
       - stepper.set_target:
-          id: livingroom_stepper
+          id: ${device_id}_stepper
           target: !lambda 'return (float(pos) * float( float(id(open_position)) - float(id(closed_position)) )) + float(id(closed_position));'
       - while:
           condition:
-            lambda: 'return id(livingroom_stepper).current_position != ((float(pos) * float( float(id(open_position)) - float(id(closed_position)) )) + float(id(closed_position)));'
+            lambda: 'return id(${device_id}_stepper).current_position != ((float(pos) * float( float(id(open_position)) - float(id(closed_position)) )) + float(id(closed_position)));'
           then:
             - script.execute: update_cover_position
             - delay: 1000 ms
       - script.execute: update_cover_position
       - script.execute: record_stepper_position
       - cover.template.publish:
-          id: livingroom_horizontal_blinds
+          id: ${device_id}_window_blinds
           current_operation: IDLE
     stop_action:
       - logger.log: "Stopping"
       - cover.template.publish:
-          id: livingroom_horizontal_blinds
+          id: ${device_id}_window_blinds
           current_operation: IDLE
       - stepper.set_target:
-          id: livingroom_stepper
-          target: !lambda 'return id(livingroom_stepper).current_position;'
+          id: ${device_id}_stepper
+          target: !lambda 'return id(${device_id}_stepper).current_position;'
       - script.execute: update_cover_position
       - script.execute: record_stepper_position
     
 sensor:
   - platform: template
-    name: "Livingroom stepper position"
-    lambda: return id(livingroom_stepper).current_position;
+    name: "Current stepper position"
+    lambda: return id(${device_id}_stepper).current_position;
     update_interval: 5s
     
 script:
   - id: update_cover_position
     then:
       - cover.template.publish:
-          id: livingroom_horizontal_blinds
-          position: !lambda 'return float( float(id(livingroom_stepper).current_position) - float(id(closed_position))) / float( float(id(open_position)) - float(id(closed_position)) );'
+          id: ${device_id}_window_blinds
+          position: !lambda 'return float( float(id(${device_id}_stepper).current_position) - float(id(closed_position))) / float( float(id(open_position)) - float(id(closed_position)) );'
   - id: record_stepper_position
     then:
       - globals.set:
           id: saved_position
-          value: !lambda 'return id(livingroom_stepper).current_position;'
-    
+          value: !lambda 'return id(${device_id}_stepper).current_position;'
