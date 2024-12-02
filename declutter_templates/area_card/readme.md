@@ -346,3 +346,46 @@ decluttering_templates:
             z-index: 0;
           }
 ```
+
+## Using the card
+
+```yaml
+type: custom:decluttering-card
+template: area_card
+variables:
+  - entity_name: living_room
+  - display_name: Living Room
+  - temperature_sensor: sensor.airthings_wave_temperature
+  - device_1: media_player.70pus9005_12_2
+  - device_1_icon: mdi:television
+  - device_1_color: green
+  - device_1_state: "on"
+  - device_1_animation: none
+  - device_2: binary_sensor.backyard_door_sensor_contact
+  - device_2_icon: mdi:door
+  - device_2_color: red
+  - device_2_state: "on"
+  - device_2_animation: blink
+  - device_3: binary_sensor.inner_back_door_contact
+  - device_3_icon: mdi:door-open
+  - device_3_color: red
+  - device_3_state: "on"
+  - device_3_animation: blink
+  - device_4: input_select.sofa_presence
+  - device_4_icon: mdi:sofa
+  - device_4_state: presence
+  - device_4_color: green
+  - device_4_animation: none
+  - device_5: fan.philips_air_purifier
+  - device_5_icon: mdi:air-filter
+  - device_5_state: "on"
+  - device_5_color: green
+  - device_5_animation: none
+  - device_6: light.fireplace
+  - device_6_icon: mdi:fireplace
+  - device_6_state: "on"
+  - device_6_color: orange
+  - device_6_animation: none
+layout_options:
+  grid_columns: 2
+```
