@@ -29,7 +29,7 @@ When the card is clicked (tap_action) in the this will take you to the area spec
  
 I have setup my Home view as the first view and I have set my rooms and other areas as subviews.
 
-![image](https://github.com/user-attachments/assets/556fe7d0-6e69-4ea6-964b-b0967e3a15de)
+
 <br><br>
 ### Helper Entities
 Following helper entities are needed. (or you can remove the part of the code if you don't want these). These are part of my area presence systems and lights automation. In short you can use presence activated and deactivated lights or absence based deactivation of lights, when rooms or areas are not occupied. Different states of area presence is indicated with card border color.
