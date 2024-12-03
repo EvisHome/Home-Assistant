@@ -1,6 +1,6 @@
 # Room Card | Declutter Card
 
-<p float="left"> <img src="room-card-demo.gif" width="49%" /> <img src=lobby-presence-demo.gif" width="49%" /> </p> 
+<p float="left"> <img src="room-card-demo.gif" width="49%" /> <img src="lobby-presence.gif" width="49%" /> </p> 
 
 ## Overview
 This card needs some perquisites and uses my custom built presence model in NodeRed (it can be removed, it's marked in the YAML code).
