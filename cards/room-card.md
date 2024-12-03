@@ -6,22 +6,20 @@
 This card needs some perquisites and uses my custom built presence model in NodeRed (it can be removed, it's marked in the YAML code).
  
 The card allows quickly setting similar looking area cards, visualizing room occupancy, room light group status, and up to 6 different devices or sensors. The device icons, colors, state values can be quite easily be customized per card as needed. The Devices or sensors will be visible while the states match.
-
 <br><br>
 ## Background
 I wanted a card that I can quickly turn room lights on or off, see an overview of the room, occupancy, temperature and other sensor and devices states. And like I normally do, I wanted it my way .. customized and over engineered.
-
 <br><br>
 ## Prerequisites
 You need to have some helper entities set for this and follow few entity naming practices.
-
+<br><br>
 ### Naming practices
 Your area or room light group should be named as (or you can modify the code as needed. I have greate helper light groups for all the rooms I have.
 
 * light.AREA_lights
 
 When long pressing (hold_action) the card these lights will be toggled on and off.
-
+<br><br>
 ### View navigation path
 
 * /lovelace/AREA
@@ -32,7 +30,7 @@ When the card is clicked (tap_action) in the this will take you to the area spec
 I have setup my Home view as the first view and I have set my rooms and other areas as subviews.
 
 ![image](https://github.com/user-attachments/assets/556fe7d0-6e69-4ea6-964b-b0967e3a15de)
-
+<br><br>
 ### Helper Entities
 Following helper entities are needed. (or you can remove the part of the code if you don't want these). These are part of my area presence systems and lights automation. In short you can use presence activated and deactivated lights or absence based deactivation of lights, when rooms or areas are not occupied. Different states of area presence is indicated with card border color.
 
@@ -40,12 +38,11 @@ The timer is used to visualize the time left when the lights will be turned off.
 
 timer.AREA_lights_off_timer
 input_select.[[entity_name]]_presence : presence | idle | absence
-
+<br><br>
 ### Area Picture
 Area picture in the following path, or change the path as needed.
  
 * local/rooms/room_AREA.jpg
-
 <br><br>
 ## Custom Cards
 
@@ -56,7 +53,7 @@ You need to have the following custom-cards installed with HACS.
 * custom:mushroom-chips-card
 * custom:timer-bar-card
 * card-mod
-
+<br><br>
 ### Sections view & Layout
 The same YAML works with both custom:decluttering-card and custom:streamline-card. I am still using the unmainteined decluttering card as the streamline card acts a bit weird with the new sections layouts.
  
@@ -68,7 +65,7 @@ layout_options:
 ```
 
 The streamline card looks nice in the UI, and seems to support the layout .. but not really. It doesn't remember the layout setting when you re-edit the card, and by default it sets the row value which in this case messes up with the card height, which probably more about my YAML (it can be fixed by removing the rows value) or using the same example from above
-
+<br><br>
 ## View Raw Configuration Editor
 
 ```yaml
@@ -423,13 +420,13 @@ decluttering_templates: # works, but not maintained anymore
             z-index: 0;
           }
 ```
-
+<br><br>
 ## Card Configuration
 
 You can have up to 6 devices, in my Kitchen example I only have 5 devices.
 
 ![image](https://github.com/user-attachments/assets/264c0383-911d-425b-ae0c-a1f65b61a02c)
-
+<br><br>
 ### Card Configuration
 
 ```yaml
@@ -466,6 +463,6 @@ variables:
   - device_5_color: green
   - device_5_animation: none
 ```
-
+<br><br>
 ### Examples
 ![image](https://github.com/user-attachments/assets/673c1b5f-a4ad-4f38-a9ab-c2a33430b07b)
