@@ -134,6 +134,9 @@ I taped the the SF15-600 sensors to the beams on about chest/shoulder level unde
 ![image](https://github.com/user-attachments/assets/431e864b-5b74-43d1-a4c6-37b8dcec8373)
 
 
+![image](https://github.com/user-attachments/assets/b1771b75-00ba-47a9-a65b-810441cc2aa8)
+
+
 
 
 	
