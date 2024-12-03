@@ -465,4 +465,5 @@ variables:
 ```
 <br><br>
 ### Examples
-![image](https://github.com/user-attachments/assets/673c1b5f-a4ad-4f38-a9ab-c2a33430b07b)
+This example how I am using this presence model in tandem with the declutter room card and my light automation visualization. A speed up version of me coming home from the front-door, to mud room, through hallway to kitchen .. checking the fridge, turning on coffee machine ..
+![image](room-cards-demo.gif)
