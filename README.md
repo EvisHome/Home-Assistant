@@ -20,6 +20,12 @@
 * [Room Card | Declutter Template](https://github.com/EvisHome/Home-Assistant/blob/main/cards/room-card.md)
   * Presence Model [Node-Red]
   * Automated Lights Model [Node-Red]
+ 
+## Node-Red
+* Presence Model
+* Automated Lights Model
+* Hue Dimmer Switch (v1)
+* Hue Tap Dial Switch
 
 ## Examples/References
 *Includes CSS tricks with card_mod, card combinations to control devices etc.*
