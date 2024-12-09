@@ -63,3 +63,9 @@ You need something that detects presence and delivers on | off state to the the 
 <img src="img/room-presence-flow.png" width="100%" />
 
 For the area presence subflow, edit the area variable to match your helper entity area name
+
+<img src="img/node-red-presence-subflow-properties.png" width="100%" />
+
+## Room Cards Presence Visualization Example
+
+This example how I am using this presence model in tandem with the declutter room card and my light automation visualization. A speed up version of me coming home from the front-door, to mud room, through hallway to kitchen .. checking the fridge, turning on coffee machine ..
