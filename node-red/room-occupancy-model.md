@@ -14,4 +14,8 @@ For clarity the Node-Red flow has been divided to a subflow, which has one envin
 
 ## Area Presence Flow & Declutter Room Card
 
+[Check the room card here]()
+
+<p float="left"> <img src="room-card-demo.gif" width="49%" /> <img src="lobby-presence.gif" width="49%" /> </p> 
+
 
