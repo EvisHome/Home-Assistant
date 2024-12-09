@@ -16,6 +16,6 @@ For clarity the Node-Red flow has been divided to a subflow, which has one envin
 
 [Check the room card here](https://github.com/EvisHome/Home-Assistant/blob/main/cards/room-card.md)
 
-<p float="left"> <img src="room-card-demo.gif" width="49%" /> <img src="lobby-presence.gif" width="49%" /> </p> 
+<p float="left"> <img src="img/lobby-presence-card.gif" width="49%" /> <img src="img/room-presence-flow.png" width="49%" /> </p> 
 
 
