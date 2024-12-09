@@ -69,3 +69,5 @@ For the area presence subflow, edit the area variable to match your helper entit
 ## Room Cards Presence Visualization Example
 
 This example how I am using this presence model in tandem with the declutter room card and my light automation visualization. A speed up version of me coming home from the front-door, to mud room, through hallway to kitchen .. checking the fridge, turning on coffee machine ..
+
+![image](room-cards-demo.gif)
