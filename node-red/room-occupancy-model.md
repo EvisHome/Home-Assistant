@@ -45,6 +45,8 @@ Couple of helper entities are needed to get this functioning
 <br><br>
 ### Helper Entities
 
+The Helper entities are needed for each of the areas or rooms you are planning to setup
+
 <br><br>
 * __input_boolean.lobby_occupancy__
 
