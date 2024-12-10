@@ -18,10 +18,10 @@
 ## Home Assistant Cards & Templates
 * Todays Energy Price and Usage
 * [Room Card | Declutter Template](https://github.com/EvisHome/Home-Assistant/blob/main/cards/room-card.md)
-  * Presence Model [Node-Red]
-  * Automated Lights Model [Node-Red]
+  * [Presence Model - Node-RED](https://github.com/EvisHome/Home-Assistant/blob/main/node-red/room-occupancy-model.md)
+  * Automated Lights Model [Node-RED]
  
-## Node-Red
+## Node-RED
 * [Presence Model](https://github.com/EvisHome/Home-Assistant/blob/main/node-red/room-occupancy-model.md)
 * Automated Lights Model
 * Hue Dimmer Switch (v1)
