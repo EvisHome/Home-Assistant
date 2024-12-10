@@ -3,7 +3,8 @@
 <p float="left"> <img src="room-card-demo.gif" width="49%" /> <img src="lobby-presence.gif" width="49%" /> </p> 
 
 ## Overview
-This card needs some perquisites and uses my custom built presence model in NodeRed (it can be removed, it's marked in the YAML code).
+This card needs some perquisites and uses my custom built [presence model in Node-RED](https://github.com/EvisHome/Home-Assistant/blob/main/node-red/room-occupancy-model.md) (it can be removed, it's marked in the YAML code).
+
  
 The card allows quickly setting similar looking area cards, visualizing room occupancy, room light group status, and up to 6 different devices or sensors. The device icons, colors, state values can be quite easily be customized per card as needed. The Devices or sensors will be visible while the states match.
 <br><br>
