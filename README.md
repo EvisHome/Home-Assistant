@@ -22,7 +22,7 @@
   * Automated Lights Model [Node-Red]
  
 ## Node-Red
-* Presence Model
+* [Presence Model](https://github.com/EvisHome/Home-Assistant/blob/main/node-red/room-occupancy-model.md)
 * Automated Lights Model
 * Hue Dimmer Switch (v1)
 * Hue Tap Dial Switch
