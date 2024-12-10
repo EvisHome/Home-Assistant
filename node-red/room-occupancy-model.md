@@ -42,20 +42,25 @@ Here is the full JSON example with the Area Presence subflow, in case you want t
 
 Couple of helper entities are needed to get this functioning
 
+<br><br>
 ### Helper Entities
 
+<br><br>
 * __input_boolean.lobby_occupancy__
 
 this replicates the trigger sensor state (used in some automations, and wanted to follow certain naming model)
 
+<br><br>
 * __input_select.lobby_presence__
 
 presence | idle | absence
 
+<br><br>
 * __input_number.lobby_presence_idle_time__
 
 idle time in seconds after no presence detected
 
+<br><br>
 ### Node-Red Flow setup
 
 You need something that detects presence and delivers on | off state to the the presence subflow. In most rooms I use Aqara FP2s, I have few DIY mmWave radars in some rooms, Frigate Person detection in outdoor areas, and PIR based sensors.
@@ -66,6 +71,7 @@ For the area presence subflow, edit the area variable to match your helper entit
 
 <img src="img/node-red-presence-subflow-properties.png" width="100%" />
 
+<br><br>
 ## Room Cards Presence Visualization Example
 
 This example how I am using this presence model in tandem with the declutter room card and my light automation visualization. A speed up version of me coming home from the front-door, to mud room, through hallway to kitchen .. checking the fridge, turning on coffee machine ..
