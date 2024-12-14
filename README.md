@@ -1,6 +1,6 @@
 # Smart Home | Home-Assistant
 
-![image](github-main-image.jpg)
+![image](evis-home-lab.jpg)
 
 
 ## Home Assistant Dashboards
