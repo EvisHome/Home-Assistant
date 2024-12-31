@@ -18,14 +18,18 @@ The *Button Press Loop* function mimics Philips Hue multipress actions. Dependin
 
 ## Node-Red Diagrams & JSON
 
+Breaking done the different parts
+
 ### Philips Hue Tap Dial Switch (Button Presses Switching to different outputs)
 
 Diagram:
 <img src="img/tap-dial-button-presses-switch-node.png" width="100%" />
+
+This node splits the button pressactions from the Tap Dial entity to different outputs
 
 JSON:
 ```
 [{"id":"aef4a30dc44bbd8e","type":"switch","z":"dd968b7cf8b8e6f5","name":"Philips Hue Tap Dial Switch ","property":"payload","propertyType":"msg","rules":[{"t":"eq","v":"button_1_press","vt":"str"},{"t":"eq","v":"button_1_press_release","vt":"str"},{"t":"eq","v":"button_1_hold","vt":"str"},{"t":"eq","v":"button_1_hold_release","vt":"str"},{"t":"eq","v":"button_2_press","vt":"str"},{"t":"eq","v":"button_2_press_release","vt":"str"},{"t":"eq","v":"button_2_hold","vt":"str"},{"t":"eq","v":"button_2_hold_release","vt":"str"},{"t":"eq","v":"button_3_press","vt":"str"},{"t":"eq","v":"button_3_press_release","vt":"str"},{"t":"eq","v":"button_3_hold","vt":"str"},{"t":"eq","v":"button_3_hold_release","vt":"str"},{"t":"eq","v":"button_4_press","vt":"str"},{"t":"eq","v":"button_4_press_release","vt":"str"},{"t":"eq","v":"button_4_hold","vt":"str"},{"t":"eq","v":"button_4_hold_release","vt":"str"},{"t":"eq","v":"dial_rotate_left_step","vt":"str"},{"t":"eq","v":"dial_rotate_left_slow","vt":"str"},{"t":"eq","v":"dial_rotate_left_fast","vt":"str"},{"t":"eq","v":"dial_rotate_right_step","vt":"str"},{"t":"eq","v":"dial_rotate_right_slow","vt":"str"},{"t":"eq","v":"dial_rotate_right_fast","vt":"str"}],"checkall":"true","repair":false,"outputs":22,"x":440,"y":3500,"wires":[[],["5c1aec931929066c","3b5fd3c89a3a139e"],[],["ca09ed5b245c57b3","3b5fd3c89a3a139e"],[],["4c85ff060aaf7175","d37a0aecbf51f32a"],[],["d37a0aecbf51f32a","ef9abeffd2d6389f"],[],["180fd03035351d65","9591bcada6112436"],[],["180fd03035351d65","eb799d2e50a94d11"],[],["e2c2ba9c3214f61a","95a34393987902e5"],[],["e2c2ba9c3214f61a","3c2f59d8760fff37"],["a18fa3c95d6da005"],["a18fa3c95d6da005"],["a18fa3c95d6da005"],["a18fa3c95d6da005"],["a18fa3c95d6da005"],["a18fa3c95d6da005"]]}]
 ```
 
-## Node-Red JSON
+
