@@ -21,7 +21,7 @@ The *Button Press Loop* function mimics Philips Hue multipress actions. Dependin
 ### Philips Hue Tap Dial Switch (Button Presses Switching to different outputs)
 
 Diagram:
-
+<img src="img/tap-dial-button-presses-switch-node.png" width="100%" />
 
 JSON:
 ```
