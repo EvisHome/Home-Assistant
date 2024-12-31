@@ -1,5 +1,7 @@
 # Hue Tap Dial Switch
 
+<img src="img/node-red-presence-subflow.png" width="100%" />
+
 ## Overview
 I have set my light switches so that multiple presses on the buttons change the scene of the light(s) that are linked to that button and holding the same button turns the linked light(s) off.
 
