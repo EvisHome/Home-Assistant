@@ -19,11 +19,13 @@ blueprint:
           domain: input_boolean
     area_idle_time_id:
       name: Area Idle Time ID
+      description: A delay time when absence is detected and when the area is considered to be unoccupied.
       selector:
         entity:
           domain: input_number
     sensor_entity:
-      name: Sensor
+      name: Area Occupancy Sensor
+      description: The occupancy sensor that detect presence on this area
       selector:
         entity:
           domain: binary_sensor
