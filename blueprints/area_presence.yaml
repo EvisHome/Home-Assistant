@@ -8,22 +8,24 @@ blueprint:
       selector:
         area: {}
     area_presence_id:
-      name: Area Presence ID
+      name: Area Presence State Selector Helper
+      description: Area Presence State Selector Helper with values presence | idle | absence
       selector:
         entity:
           domain: input_select
     area_occupancy_id:
-      name: Area Occupancy ID
+      name: Area Occupancy State On/Off Helper
+      description: Area Presence State Boolean Helper
       selector:
         entity:
           domain: input_boolean
     area_idle_time_id:
-      name: Area Idle Time ID
+      name: Area Idle Time Helper
       description: A delay time when absence is detected and when the area is considered to be unoccupied.
       selector:
         entity:
           domain: input_number
-    sensor_entity:
+    area_sensor_entity:
       name: Area Occupancy Sensor
       description: The occupancy sensor that detect presence on this area
       selector:
@@ -31,7 +33,7 @@ blueprint:
           domain: binary_sensor
   trigger:
     - platform: state
-      entity_id: !input 'sensor_entity'
+      entity_id: !input 'area_sensor_entity'
   variables:
     area_presence_id: !input 'area_presence_id'
     area_occupancy_id: !input 'area_occupancy_id'
