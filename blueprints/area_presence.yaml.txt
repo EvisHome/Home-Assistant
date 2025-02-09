@@ -1,0 +1,129 @@
+blueprint:
+  name: Area Presence
+  description: Blueprint for managing area presence based on occupancy sensors.
+  domain: automation
+  input:
+    area:
+      name: Area
+      description: Name of the area
+      selector:
+        text:
+          multiline: false
+    occupancy_sensor:
+      name: Occupancy Sensor
+      description: Occupancy sensor entity
+      selector:
+        entity:
+          domain: binary_sensor
+    bedside_sensor:
+      name: Bedside Sensor
+      description: Bedside occupancy sensor entity
+      selector:
+        entity:
+          domain: binary_sensor
+    presence_input:
+      name: Area Presence Input
+      description: Area presence input select entity
+      selector:
+        entity:
+          domain: input_select
+    idle_time_input:
+      name: Area Idle Time Input
+      description: Area idle time input number entity
+      selector:
+        entity:
+          domain: input_number
+    occupancy_input:
+      name: Area Occupancy Input
+      description: Area occupancy input boolean entity
+      selector:
+        entity:
+          domain: input_boolean
+    front_door_sensor:
+      name: Front Door Sensor
+      description: Front door Frigate occupancy sensor entity
+      selector:
+        entity:
+          domain: binary_sensor
+
+trigger:
+  - platform: state
+    entity_id: !input occupancy_sensor
+    to: 'on'
+  - platform: state
+    entity_id: !input occupancy_sensor
+    to: 'off'
+  - platform: state
+    entity_id: !input front_door_sensor
+    to: 'on'
+  - platform: state
+    entity_id: !input front_door_sensor
+    to: 'off'
+
+condition:
+  - condition: state
+    entity_id: !input bedside_sensor
+    state: 'off'
+
+action:
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: !input occupancy_sensor
+            state: 'on'
+        sequence:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: !input occupancy_input
+          - service: input_select.select_option
+            target:
+              entity_id: !input presence_input
+            data:
+              option: 'presence'
+      - conditions:
+          - condition: state
+            entity_id: !input occupancy_sensor
+            state: 'off'
+        sequence:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: !input occupancy_input
+          - service: input_select.select_option
+            target:
+              entity_id: !input presence_input
+            data:
+              option: 'absence'
+          - delay:
+              seconds: '{{ states(!input idle_time_input) | int }}'
+          - service: input_select.select_option
+            target:
+              entity_id: !input presence_input
+            data:
+              option: 'idle'
+      - conditions:
+          - condition: state
+            entity_id: !input front_door_sensor
+            state: 'on'
+        sequence:
+          - service: input_boolean.turn_on
+            target:
+              entity_id: !input occupancy_input
+          - service: input_select.select_option
+            target:
+              entity_id: !input presence_input
+            data:
+              option: 'presence'
+      - conditions:
+          - condition: state
+            entity_id: !input front_door_sensor
+            state: 'off'
+        sequence:
+          - service: input_boolean.turn_off
+            target:
+              entity_id: !input occupancy_input
+          - service: input_select.select_option
+            target:
+              entity_id: !input presence_input
+            data:
+              option: 'absence'
+    default: []
