@@ -34,11 +34,6 @@ blueprint:
   trigger:
     - platform: state
       entity_id: !input 'area_sensor_entity'
-  variables:
-    area_presence_id: !input 'area_presence_id'
-    area_occupancy_id: !input 'area_occupancy_id'
-    area_idle_time_id: !input 'area_idle_time_id'
-    sensor_state: '{{ trigger.to_state.state }}'
   condition: []
   action:
     - choose:
