@@ -184,7 +184,11 @@ decluttering_templates: # works, but not maintained anymore
           chips:
             - type: template
               entity: '[[device_1]]'
-              icon: '[[device_1_icon]]'
+              icon: |
+                {% if is_state(entity,'[[device_1_state]]') %}
+                  [[device_1_icon]]
+                {% else %}
+                {% endif %}
               icon_color: |
                 {% if is_state(entity,'[[device_1_state]]') %}
                   [[device_1_color]]
@@ -211,7 +215,11 @@ decluttering_templates: # works, but not maintained anymore
                   }
             - type: template
               entity: '[[device_2]]'
-              icon: '[[device_2_icon]]'
+              icon: |
+                {% if is_state(entity,'[[device_2_state]]') %}
+                  [[device_2_icon]]
+                {% else %}
+                {% endif %}
               icon_color: |
                 {% if is_state(entity,'[[device_2_state]]') %}
                   [[device_2_color]]
@@ -238,7 +246,11 @@ decluttering_templates: # works, but not maintained anymore
                   }
             - type: template
               entity: '[[device_3]]'
-              icon: '[[device_3_icon]]'
+              icon: |
+                {% if is_state(entity,'[[device_3_state]]') %}
+                  [[device_3_icon]]
+                {% else %}
+                {% endif %}
               icon_color: |
                 {% if is_state(entity,'[[device_3_state]]') %}
                   [[device_3_color]]
@@ -265,7 +277,11 @@ decluttering_templates: # works, but not maintained anymore
                   }
             - type: template
               entity: '[[device_4]]'
-              icon: '[[device_4_icon]]'
+              icon: |
+                {% if is_state(entity,'[[device_4_state]]') %}
+                  [[device_4_icon]]
+                {% else %}
+                {% endif %}
               icon_color: |
                 {% if is_state(entity,'[[device_4_state]]') %}
                   [[device_4_color]]
@@ -292,7 +308,11 @@ decluttering_templates: # works, but not maintained anymore
                   }
             - type: template
               entity: '[[device_5]]'
-              icon: '[[device_5_icon]]'
+              icon: |
+                {% if is_state(entity,'[[device_5_state]]') %}
+                  [[device_5_icon]]
+                {% else %}
+                {% endif %}
               icon_color: |
                 {% if is_state(entity,'[[device_5_state]]') %}
                   [[device_5_color]]
@@ -319,7 +339,11 @@ decluttering_templates: # works, but not maintained anymore
                   }
             - type: template
               entity: '[[device_6]]'
-              icon: '[[device_6_icon]]'
+              icon: |
+                {% if is_state(entity,'[[device_6_state]]') %}
+                  [[device_6_icon]]
+                {% else %}
+                {% endif %}
               icon_color: |
                 {% if is_state(entity,'[[device_6_state]]') %}
                   [[device_6_color]]
